@@ -1,7 +1,7 @@
 var nav = document.getElementById('nav'); // Identify target
 var nav
 
-window.addEventListener('scroll', function(event) { // To listen for event
+window.addEventListener('scroll', function (event) { // To listen for event
     event.preventDefault();
 
     if (window.scrollY <= 150) { // Just an example
@@ -15,3 +15,11 @@ window.addEventListener('scroll', function(event) { // To listen for event
 
     }
 });
+function ScrollRight() {
+
+    document.getElementById("initiatives-container").scrollLeft += 800;
+} 
+function ScrollLeft() {
+
+    document.getElementById("initiatives-container").scrollLeft -= 800;
+}

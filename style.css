@@ -148,6 +148,12 @@ nav {
   .md\:min-h-full {
     min-height: 100vh;
   }
+  .div-show-arrow-right {
+    cursor: url('images/arrow-icon.png'), auto ;
+  }
+  .div-show-arrow-left {
+    cursor:  url('images/arrow-icon-left.png'), auto ;
+  }
 
 }
 
