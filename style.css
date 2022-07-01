@@ -17,12 +17,12 @@
   background-color: rgb(146, 141, 141);
   border-radius: 20px;
   height: 0px;
-
 }
- .initiatives-container::-webkit-scrollbar-track {
+
+.initiatives-container::-webkit-scrollbar-track {
   background: transparent;
   margin-right: 45vw;
-  margin-left:  45vw;
+  margin-left: 45vw;
   border-radius: 20px;
 }
 
@@ -89,12 +89,13 @@ nav {
 
 
 .section {
-  height: 95vh; 
+  height: 95vh;
 }
 
 .snap-y {
   scroll-snap-type: y proximity;
 }
+
 .snap-x {
   scroll-snap-type: x mandatory;
 }
@@ -128,13 +129,13 @@ nav {
 
 
 .shadow-yellow-200:hover {
-  box-shadow:inset 0px 0px 4px 1px rgb(255, 240, 179);
+  box-shadow: inset 0px 0px 4px 1px rgb(255, 240, 179);
 }
 
 
 
 @media (min-width: 768px) {
-  .nav-scrolled .container .div_iefdhiu  {
+  .nav-scrolled .container .div_iefdhiu {
     margin-left: 0px;
     margin-right: auto;
     padding-left: 0px;
@@ -145,21 +146,20 @@ nav {
   .md\:text-left {
     text-align: left;
   }
+
   .md\:min-h-full {
     min-height: 100vh;
   }
+
   .div-show-arrow-right {
-    cursor: url('images/arrow-icon.png'), auto ;
+    cursor: url('images/arrow-icon.png'), auto;
   }
+
   .div-show-arrow-left {
-    cursor:  url('images/arrow-icon-left.png'), auto ;
+    cursor: url('images/arrow-icon-left.png'), auto;
   }
 
 }
 
 /* small devices */
-@media (max-width: 768px) {
-
-
-
-}
+@media (max-width: 768px) {}

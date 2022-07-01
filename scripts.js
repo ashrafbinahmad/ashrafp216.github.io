@@ -15,6 +15,7 @@ window.addEventListener('scroll', function (event) { // To listen for event
 
     }
 });
+
 function ScrollRight() {
 
     document.getElementById("initiatives-container").scrollLeft += 800;
