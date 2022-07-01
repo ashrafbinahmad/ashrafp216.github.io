@@ -8,6 +8,23 @@
 
 }
 
+.initiatives-container::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+
+.initiatives-container::-webkit-scrollbar-thumb {
+  background-color: rgb(146, 141, 141);
+  border-radius: 20px;
+
+}
+ .initiatives-container::-webkit-scrollbar-track {
+  background: rgb(216, 214, 214);
+  margin-right: 35vw;
+  margin-left:  35vw;
+  border-radius: 20px;
+}
+
 div.head {
   background-image: url('images/slide_4.jpg');
   background-position: top;
@@ -68,17 +85,17 @@ nav {
   height: 100px;
 }
 
-section {
-  min-height: 100vh;
-}
+
 
 .section {
-
-  height: 95vh;
+  height: 95vh; 
 }
 
 .snap-y {
-  scroll-snap-type: y var(--tw-scroll-snap-strictness);
+  scroll-snap-type: y mandatory;
+}
+.snap-x {
+  scroll-snap-type: x mandatory;
 }
 
 .snap-center {
@@ -95,7 +112,9 @@ section {
   padding-left: 20vw;
 }
 
-
+.hover\:scale-75:hover {
+  transform: scale(1.02);
+}
 
 @media (min-width: 768px) {
   .nav-scrolled .container .div_iefdhiu  {
@@ -109,6 +128,9 @@ section {
   .md\:text-left {
     text-align: left;
   }
+  .md\:min-h-full {
+    min-height: 100vh;
+  }
 
 }
 
@@ -117,5 +139,10 @@ section {
   text-center {
     text-align: center;
   }
+
+  .min-h-full {
+    min-height: 100vh;
+  }
+
 
 }

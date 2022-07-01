@@ -35,9 +35,9 @@
       </div>
 
 
-      <div class="mr-0 ml-auto text-lg  mt-1  invisible w-0 md:w-auto md:visible overflow-hidden">
+      <div id="menu" class="mr-0 ml-auto text-lg  mt-1  invisible w-0 md:w-auto md:visible overflow-hidden">
         <ul class="flex">
-          <li class="flex mx-2 hover:text-gray-300 cursor-pointer">
+          <li class="flex mx-2 hover:text-gray-300 cursor-pointer ">
             <a href="#About">About</a>
           </li>
           <li class="flex mx-2 hover:text-gray-300 cursor-pointer">
@@ -54,7 +54,7 @@
     </div>
   </nav>
 
-  <div class="head text-white flex section fixed z-0 w-full">
+  <div id="head" class="head text-white flex section fixed z-0 w-full">
     <div class="container mx-auto p-5 ">
       <div class="head_content pt-48 ">
 
@@ -77,76 +77,78 @@
     </div>
   </div>
 
-  <section id="message" class="section-after-head align-middle relative bg-white rounded-t-xl ">
-    <div class="section-gap snap-start"></div>
-    <div class="grid md:grid-cols-2 container mx-auto flex flex-wrap">
-      <div class="flex md:w-1/2 w-full">
+  <section id="message" class="section-after-head align-middle relative bg-white rounded-t-xl md:min-h-full">
+    <div class="section-gap text-center ">
+      <div class="mt-2 w-10 md:w-20 h-2 bg-gray-300 mx-auto rounded-b-lg"></div>
+    </div>
+    <div class="grid md:grid-cols-2 container mx-auto">
+      <div class="grid md:w-1/2 w-full">
         <img src="images/Quotation-mark-low-flipped.png" alt=""
-          class="absolute mt-0 ml-20 md:h-20 h-16 w-auto flip z-0">
-        
-        <p
-          class=" max-w-40 p-20 md:pt-40 md:pt-24 text-center md:text-left md:text-   md:text-5xl text-3xl font-bold ">
-          The modern economic system is completely dominated by interest...
-          <p class="text-sm p-4">
-          Dr. Jafar Hudawi Kulathur
-        </p>
-        </p>
-        
-
+          class="  mt-0 mx-auto md:ml-20 md:h-20 h-16 w-auto flip z-0">
+        <div class="md:pl-20 pt-5">
+          <p
+            class="mx-auto max-w-xs md:max-w-auto self-center  text-center md:text-left md:text-5xl text-3xl font-bold ">
+            The modern economic system is completely dominated by interest...
+          </p>
+          <p class="w-full text-lg text-center md:text-left py-5">
+            - Dr. Jafar Hudawi Kulathur
+          </p>
+        </div>
       </div>
-
-      <div class="grid flex  md:w-1/2 w-full ">
-
-        <img class="self-center flex-grow-0 flex-shrink-0 h-1/2 w-auto  mx-auto md:rounded-xl rounded-full" src="images/jafar_usthad.jpg" alt=""
-          srcset="" />
+      <div class="md:grid w-full ">
+        <img class="self-center md:h-3/4 h-1/2  w-auto  mx-auto md:rounded-2xl rounded-full"
+          src="images/jafar_usthad.jpg" alt="" srcset="" />
       </div>
     </div>
-
-
-
-
-
   </section>
 
-  <section id="About " class="z-0 relative bg-white">
+  <section id="Lecturers " class="z-0 relative bg-gray-100 md:min-h-full">
     <hr />
     <div class="container mx-auto align-center text-center p-5">
-      <h2 class="text-3xl mb-5 mt-10 font-bold">Lecturers</h2>
-      <div class="grid md:grid-cols-3 gap-20 place-content-center text-center align-items-center">
-        <div class="align-items-center text-center mb-8 p-5">
-          <img class="rounded-full mx-auto mb-5" src="images/download.png" alt="" srcset="" />
+      <div class="section-gap"></div>
+      <h2 class="text-3xl mb-5 font-bold">Lecturers</h2>
+      <div class="grid md:grid-cols-3 place-content-center text-center align-items-center md:divide-x divide-white">
+        
+        <div class="align-center text-center mb-8 p-5  px-10 ">
+          <img class="mx-auto rounded-full mx-auto mb-5" src="images/kc_usthad.jpg" alt="" srcset="" />
           <h4 class="name text-lg font-bold">aslkdjflkasdjf</h4>
           <p class="mt-5 text-center max-w-md">
             klasdjflkas djflkasjdf ljfljsdlfj asdfhjakslhglak dsfagjskdfgj lag
             asfgjkalskdgj sla
           </p>
         </div>
-        <div class="align-items-center text-center mb-8 p-5">
-          <img class="rounded-full mx-auto mb-5" src="images/download.png" alt="" srcset="" />
+        <div class="align-center text-center mb-8 p-5  px-10 ">
+          <img class="mx-auto rounded-full mx-auto mb-5" src="images/jafar_usthad.jpg" alt="" srcset="" />
           <h4 class="name text-lg font-bold">aslkdjflkasdjf</h4>
           <p class="mt-5 text-center max-w-md">
             klasdjflkas djflkasjdf ljfljsdlfj asdfhjakslhglak dsfagjskdfgj lag
             asfgjkalskdgj sla
           </p>
         </div>
-        <div class="align-items-center text-center mb-8 p-5">
-          <img class="rounded-full mx-auto mb-5" src="images/download.png" alt="" srcset="" />
+        <div class="align-center text-center mb-8 p-5  px-10 ">
+          <img class="mx-auto rounded-full mx-auto mb-5 h-auto w-full " src="images/download.png" alt="" srcset="" />
           <h4 class="name text-lg font-bold">aslkdjflkasdjf</h4>
           <p class="mt-5 text-center max-w-md">
             klasdjflkas djflkasjdf ljfljsdlfj asdfhjakslhglak dsfagjskdfgj lag
             asfgjkalskdgj sla
           </p>
         </div>
+        
       </div>
     </div>
     <script></script>
   </section>
 
-  <section id="initiatives" class="bg-gray-200 ">
-    <div class="container mx-auto align-center text-center p-5">
-      <h2 class="text-3xl mb-5 mt-10 font-bold">Initiatives</h2>
+  <section id="initiatives" class="relative bg-gray-800 md:min-h-full">
+    <div class="section-gap"></div>
+    <div class="container mx-auto p-5">
+      <h2 class="text-3xl mb-5 font-bold text-white text-center">Initiatives</h2>
     </div>
-    section initiatives
+    <div class="initiatives-container flex flex-wrap flex-col place-items-center h-96 w-full p-8  gap-20 overflow-x-auto snap-x duration-200">
+      <div class="mt-5 flex self-center bg-white rounded-2xl w-1/2 h-3/4 snap-center hover:scale-75"></div>
+      <div class="mt-5 flex self-center bg-white rounded-2xl w-1/2 h-3/4 snap-center hover:scale-75"></div>
+      <div class="mt-5 flex self-center   bg-white rounded-2xl w-1/2 h-3/4 snap-center hover:scale-75"></div>
+    </div>
   </section>
   <script src="scripts.js"></script>
 </body>
