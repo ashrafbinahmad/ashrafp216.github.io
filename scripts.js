@@ -24,3 +24,6 @@ function ScrollLeft() {
 
     document.getElementById("initiatives-container").scrollLeft -= 800;
 }
+function scrollToView(e) {
+    document.getElementById('initiatives-container').scrollLeft  = e.target.offsetLeft
+}

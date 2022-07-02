@@ -26,6 +26,22 @@
   border-radius: 20px;
 }
 
+.initiative-item-1 {
+  background: url('images/Islamic-coins-bg.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.initiative-item-1-img {
+  background: url('images/Islamic-coins.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
 div.head {
   background-image: url('images/slide_4.jpg');
   background-position: top;
