@@ -26,4 +26,5 @@ function ScrollLeft() {
 }
 function scrollToView(e) {
     document.getElementById('initiatives-container').scrollLeft  = e.target.offsetLeft
+    document.getElementById('initiatives-container').ScrollRight  = e.target.offsetRight
 }
