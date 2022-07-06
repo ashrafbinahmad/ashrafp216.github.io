@@ -76,12 +76,6 @@ nav {
   height: auto;
 }
 
-
-
-.section-after-head {
-  margin-top: 90vh;
-}
-
 .text-white {
   color: white;
 }
@@ -102,10 +96,14 @@ nav {
   height: 100px;
 }
 
+.section-after-head {
+  margin-top: 710px;
+  
+}
 
-
-.section {
+.section.head {
   height: 95vh;
+
 }
 
 .snap-y {
@@ -139,7 +137,8 @@ nav {
 }
 
 .min-h-full {
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 800px;
 }
 
 

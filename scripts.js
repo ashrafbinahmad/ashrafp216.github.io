@@ -16,15 +16,21 @@ window.addEventListener('scroll', function (event) { // To listen for event
     }
 });
 
+// var head = document.getElementById('head')
+// function workOnLoad() {
+//     head.style.height = '800px'
+//     document.getElementById('section-after-head').style.marginTop = head.style.height
+
+// }
+
 function ScrollRight() {
 
     document.getElementById("initiatives-container").scrollLeft += 800;
-} 
+}
 function ScrollLeft() {
 
     document.getElementById("initiatives-container").scrollLeft -= 800;
 }
 function scrollToView(e) {
-    document.getElementById('initiatives-container').scrollLeft  = e.target.offsetLeft
-    document.getElementById('initiatives-container').ScrollRight  = e.target.offsetRight
+    document.getElementById('initiatives-container').scrollLeft = e.target.offsetLeft
 }
