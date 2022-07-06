@@ -8,21 +8,21 @@
 
 }
 
-.initiatives-container::-webkit-scrollbar {
+.initiatives-container::-webkit-scrollbar, .Dept_committee_container::-webkit-scrollbar {
   display: block;
   width: 5px;
 }
 
-.initiatives-container::-webkit-scrollbar-thumb {
-  background-color: rgb(146, 141, 141);
+.initiatives-container::-webkit-scrollbar-thumb, .Dept_committee_container::-webkit-scrollbar-thumb {
+  background-color: rgba(146, 141, 141, 0.281);
   border-radius: 20px;
   height: 0px;
 }
 
-.initiatives-container::-webkit-scrollbar-track {
+.initiatives-container::-webkit-scrollbar-track, .Dept_committee_container::-webkit-scrollbar-track {
   background: transparent;
-  margin-right: 45vw;
-  margin-left: 45vw;
+  margin-right: 20vw;
+  margin-left: 20vw;
   border-radius: 20px;
 }
 
@@ -136,10 +136,14 @@ nav {
   text-align: center;
 }
 
-.min-h-full {
-  height: 100vh;
-  max-height: 800px;
+.max-h-800px {
+    max-height: 800px;
 }
+.max-h-auto {
+    max-height: unset;
+}
+
+
 
 
 
@@ -157,6 +161,11 @@ nav {
 
   }
 
+  .h-screen-scalable {
+    height: 100vh;
+    max-height: 800px;
+  }
+
   /* medium devices */
   .md\:text-left {
     text-align: left;
@@ -164,6 +173,9 @@ nav {
 
   .md\:min-h-full {
     min-height: 100vh;
+  }
+  .md\:max-h-800px {
+    max-height: 800px;
   }
 
   .div-show-arrow-right {
