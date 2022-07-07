@@ -34,3 +34,19 @@ function ScrollLeft() {
 function scrollToView(e) {
     document.getElementById('initiatives-container').scrollLeft = e.target.offsetLeft
 }
+function ShowMoreInfo(id) {
+    var currentEl = document.getElementById(id)
+    if (!currentEl.classList.contains('Showing-More-Info')) {
+        currentEl.classList.replace('Btn-Show-More-Info','Showing-More-Info')
+    }  else {
+        MoreInfo.classList.remove()
+    }
+
+}
+function CloseShowMoreInfo(id) {
+    var MoreInfo = document.getElementById(id);
+    if (MoreInfo.classList.contains('Showing-More-Info')) {
+        MoreInfo.classList.add('Btn-Show-More-Info')
+        MoreInfo.classList.remove()
+    }
+}
