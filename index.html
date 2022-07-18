@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
   <link rel="stylesheet" href="style.css" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Link Swiper's CSS -->
 </head>
 
@@ -53,46 +54,178 @@
       </div>
     </div>
   </nav>
+  <header>
+    <div id="head" class="head text-white flex section fixed z-0 w-full">
+      <div class="container mx-auto p-5 ">
+        <div class="head_content pt-48 ">
 
-  <div id="head" class="head text-white flex section fixed z-0 w-full">
-    <div class="container mx-auto p-5 ">
-      <div class="head_content pt-48 ">
+          <h1 class="text-5xl mb-10 ">
+            <p class="text-2xl leading-relaxed pl-1 ">Department of</p> Islamic <br> Economics <br> and <br> Finance
+          </h1>
 
-        <h1 class="text-5xl mb-10 ">
-          <p class="text-2xl leading-relaxed pl-1 ">Department of</p> Islamic <br> Economics <br> and <br> Finance
-        </h1>
+        </div>
+        <div class="icons mr-0 ml-auto">
+          <a
+            href="https://www.facebook.com/%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A-%D8%A8%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-100344009057312/">
+            <i class="p-2 cursor-pointer fa fa-facebook-official text-gray-300"></i></a>
+          <a href="https://twitter.com">
+            <i class="p-2 cursor-pointer fa fa-twitter text-gray-300"></i></a>
+          <a href="https://www.instagram.com/fin.aissance/">
+            <i class="cursor-pointer fa fa-instagram text-gray-300"></i></a>
+          <a href="https://dhiu.in">
+            <u class="p-2 cursor-pointer text-gray-300">dhiu.in</u></a>
+        </div>
+      </div>
+      <div></div>
+      <div id="btn-toggle" class="w-10 h-10 absolute rounded bg-black right-10 bottom-20 z-50"
+        onclick="ToggleShowMoreInfo('more_info')">
+        <div class="bar ml-auto mr-2 mt-1 w-3/6 bg-white rounded-full " style="height: 3px;"></div>
+        <div class="bar ml-auto mr-2 mt-1 w-1/5 bg-white rounded-full " style="height: 3px;"></div>
+        <div class="bar ml-auto mr-2 mt-1 w-3/5 bg-white rounded-full " style="height: 3px;"></div>
+      </div>
+      <div id="more_info" class="info-hidden w-0 h-screen absolute left-0 top-0 overflow-hidden">
+        <div class="p-2 self-center text-center text-red-900 hover:bg-red-900 rounded-full hover:text-yellow-100">X
+        </div>
+        <div class="container info-container mx-auto  ">
+          <div class="info-content">
+            <div x-data="setup()">
+              <div class="grid md:grid-cols-2 grid-rows-2  info-grid gap-2">
+                <div class="grid info-menu">
+                  <ul id="info-menu-list flex">
+                    <template x-for="(tab, index) in tabs" :key="index">
+                      <li class="cursor-pointer py-2 px-4 text-gray-500  "
+                        :class="activeTab===index ? 'text-yellow-100 border-r-4 text-bold border-yellow-100 ' : ''"
+                        @click="activeTab = index" x-text="tab"></li>
+                    </template>
+                  </ul>
+                </div>
+                <div class="grid text-sm  max-w-3xl overflow-y-auto md:pl-24 text-gray-300 text-lg leading-6 md:whitespace-pre">
+                  <div id="info-about " x-show="activeTab===0" class=" ">
+                    <h1 class="text-2xl text-yellow-300 pb-5 underline">About the course</h1>
+
+                    <p class="">Master of Islamic Economics and
+                      Finance is two year PG course
+                      provided by Darul Huda Islamic
+                      University. Our course introduces
+                      and develops knowledge of the
+                      students in various specialised
+                      areas across a range of core subjects
+                      as well as giving solid foundation in
+                      Islamic nance principles, providing
+                      the skills need to move into wide
+                      variety of careers after graduation.
+                      Through a variety of modules, the
+                      students can learn about the ethos,
+                      principles and practices of islamic
+                      nance. The course also enables to
+                      pursue specialisation in several
+                      important areas of Islamic nance
+                      <br>
+                      <br>
+                      including Islamic banking
+                      operations and currency system in
+                      Islam.
+                      The mixed philosophy of the
+                      program enables the graduate to
+                      attain the knowledge needed to
+                      understand the global nancial
+                      system and to propose viable
+                      alternatives to the existing
+                      conventional models by blending
+                      guidance from Sharia with modern
+                      scientic knowledge.
+                    </p>
+                  </div>
+                  <div id="info-about " x-show="activeTab===1" class=" ">
+                    <h1 class="text-2xl text-yellow-300 pb-5 underline">Programme structure</h1>
+                    <p class="">The program is designed for two years, full time, post graduate
+                      degree organized in four semesters. <br><br>
+                       Students with thesis mode should cover four specialization
+                      papers from their department and only two (one in one
+                      semester) from their sister department of the kulliya within four
+                      semesters. <br><br>
+                       Students with course only mode should cover six
+                      specialization papers from their department and only two (one
+                      in one semester) from their sister department of the kulliya
+                      within four semesters. <br><br>
+                      Students are also requested to cover ve block papers (Qur'an,
+                      Hadith, Fiqh, General and Elective) consisting of 19 papers within
+                      four semesters. In Qur'an block students have to cover only three
+                      papers while in the Elective block they can enjoy the selection of 4
+                      papers from 8 provided papers. <br>
+                      Taking a paper from each block except from the Qur'an block is
+                      mandatory
+                    </p>
+                  </div>
+                  <div id="info-about " x-show="activeTab===2" class=" ">
+                    <h1 class="text-2xl text-yellow-300 pb-5 underline">Student Life</h1>
+
+                    <p class="">Department of Islamic economics and nance is a centre of
+                      constructive, intellectual and productive dialogues and
+                      academic ventures in the University. Earnest students in the
+                      department have vibrant avenues to explore new trends in
+                      the global nancial system, connect with prominent
+                      academicians and thrive in diverse elds. Department is a
+                      great place to gear up your academic enthusiasm through
+                      multifarious engagements ranging from authoring books,
+                      writing journal articles, participating in academic
+                      conferences, organising seminars, webinars, and
+                      workshops. <br><br>
+                      The department provides a bounteous scope of
+                      extracurricular activities for the holistic development of
+                      students and encourages them to make the most of their
+                      experience on campus grounded in Islamic values.
+                      For the accomplishment of academic instincts of the
+                      department, the department facilitates two weeks long
+                      national and international eld trips. In the academic eld
+                      visits, students can acquire rst hand experiences of
+                      multiple Islamic nancial institutions such as Islamic banks
+                      and interact with prominent academicians and scholars
+                      working in this eld.
+                    </p>
+                  </div>
+                  <div id="info-about " x-show="activeTab===3" class=" ">
+                    <h1 class="text-2xl text-yellow-300 pb-5 underline">Placement and Career</h1>
+
+                    <p class="">Graduates of this course will be equipped to
+                       Undertake various methods of research and produce authentic thesis works and
+                      dessertations on various topics related to Islamic economics and nance. <br> <br>
+                       Demonstrate expertise in multiple elds within the Islamic economics and nance
+                      including the theory, practice and the understanding of implementation of various
+                      Islamic nancial products. <br><br>
+                       Find out and oer new Islamic nancial products that can be applied in Islamic nancial
+                      institutions as alternatives for those which are applied in conventional nancial
+                      institutions. <br><br>
+                       To look forward to acquiring job experience in countries where Islamic nance services
+                      are being set up especially in the eld of Sharia screening and advising.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
-      <div class="icons mr-0 ml-auto">
-        <a
-          href="https://www.facebook.com/%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A-%D8%A8%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-100344009057312/">
-          <i class="p-2 cursor-pointer fa fa-facebook-official text-gray-300"></i></a>
-        <a href="https://twitter.com">
-          <i class="p-2 cursor-pointer fa fa-twitter text-gray-300"></i></a>
-        <a href="https://www.instagram.com/fin.aissance/">
-          <i class="cursor-pointer fa fa-instagram text-gray-300"></i></a>
-        <a href="https://dhiu.in">
-          <u class="p-2 cursor-pointer text-gray-300">dhiu.in</u></a>
-      </div>
+
     </div>
-  </div>
+  </header>
 
   <section id="message section-after-head"
     class="section-after-head align-middle relative bg-white rounded-t-xl min-h-full snap-start">
     <!-- More info  remove .Showing-More-Info class from the div-->
-    <input type="checkbox" name="toggle_More_info" id="toggle_More_info">
-    <label for="toggle_More_info">
-      <div id="more_info" class=" Btn-Show-More-Info" onclick="ShowMoreInfo('more_info')">
-        <div class="bar ml-auto mr-2 mt-1 w-3/6 bg-white rounded-full " style="height: 3px;"></div>
-        <div class="bar ml-auto mr-2 mt-1 w-1/5 bg-white rounded-full " style="height: 3px;"></div>
-        <div class="bar ml-auto mr-2 mt-1 w-3/5 bg-white rounded-full " style="height: 3px;"></div>
-        <button id="close" class="flex ml-auto mr-0 bg-red-300 w-10 h-10 hidden"
-          onclick="CloseShowMoreInfo('more_info')"></button>
-        <div class="h-full w-full bg-white hidden"></div>
+    <!-- <input type="checkbox" name="toggle_More_info" id="toggle_More_info"> -->
+    <!-- / <div id="more_info" class="Btn-Show-More-Info" onclick="ToggleShowMoreInfo('more_info')">
+      <div class="bar ml-auto mr-2 mt-1 w-3/6 bg-white rounded-full " style="height: 3px;"></div>
+      <div class="bar ml-auto mr-2 mt-1 w-1/5 bg-white rounded-full " style="height: 3px;"></div>
+      <div class="bar ml-auto mr-2 mt-1 w-3/5 bg-white rounded-full " style="height: 3px;"></div>
+      <button id="close" class="flex ml-auto mr-0 bg-red-300 w-10 h-10 hidden"
+        onclick="CloseShowMoreInfo('more_info')"></button>
+      <div class="h-full w-full bg-white hidden"></div> -->
 
-      </div>
+    </div>
 
-    </label>
+    <!-- </label> -->
 
     <div class="section-gap text-center ">
       <div class="mt-2 w-10 md:w-20 h-2 bg-gray-300 mx-auto rounded-lg"></div>
@@ -311,6 +444,12 @@
     <script></script>
   </section>
   <div onload="workOnLoad()">.</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+    integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Flip.min.js"
+    integrity="sha512-98oWClulhnGKlxmGJShhS651oP8eAaaLLcGF8b/Nx1BKv+BsMqfbnmLJ8OnXoqnaQd6hOo0WE/gcQ2QkeBLHIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="scripts.js"></script>
 </body>
 

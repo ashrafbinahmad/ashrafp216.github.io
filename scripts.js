@@ -1,27 +1,21 @@
-var nav = document.getElementById('nav'); // Identify target
-var nav
+gsap.registerPlugin(Flip);
 
-window.addEventListener('scroll', function (event) { // To listen for event
+var nav = document.getElementById('nav');
+
+window.addEventListener('scroll', function (event) {
     event.preventDefault();
 
-    if (window.scrollY <= 150) { // Just an example
-        // nav.style.backgroundColor = 'transparent'; // or default color
+    if (window.scrollY <= 150) {
         nav.classList.add('nav-normal')
         nav.classList.remove('nav-scrolled')
     } else {
-        // nav.style.backgroundColor = 'color'
         nav.classList.add('nav-scrolled')
         nav.classList.remove('nav-normal')
 
     }
 });
 
-// var head = document.getElementById('head')
-// function workOnLoad() {
-//     head.style.height = '800px'
-//     document.getElementById('section-after-head').style.marginTop = head.style.height
 
-// }
 
 function ScrollRight() {
 
@@ -34,19 +28,25 @@ function ScrollLeft() {
 function scrollToView(e) {
     document.getElementById('initiatives-container').scrollLeft = e.target.offsetLeft
 }
-function ShowMoreInfo(id) {
-    var currentEl = document.getElementById(id)
-    if (!currentEl.classList.contains('Showing-More-Info')) {
-        currentEl.classList.replace('Btn-Show-More-Info','Showing-More-Info')
-    }  else {
-        MoreInfo.classList.remove()
-    }
 
-}
-function CloseShowMoreInfo(id) {
-    var MoreInfo = document.getElementById(id);
-    if (MoreInfo.classList.contains('Showing-More-Info')) {
-        MoreInfo.classList.add('Btn-Show-More-Info')
-        MoreInfo.classList.remove()
+function ToggleShowMoreInfo(id) {
+    var el = document.getElementById(id)
+    if (!el.classList.contains('info')) {
+        el.classList.replace('info-hidden', 'info')
+    } else {
+        el.classList.replace('info', 'info-hidden')
     }
 }
+
+function setup() {
+    return {
+      activeTab: 0,
+      tabs: [
+          "About",
+          "Program Structure",
+          "Student life",
+          "Placement and Career",
+      ]
+    };
+  };
+
