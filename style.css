@@ -50,7 +50,7 @@ div.head {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  max-height: 53rem;
+background-color: black;
 }
 
 nav {
@@ -61,17 +61,15 @@ nav {
 
 .nav-normal {
   flex: auto;
-  color: white;
   margin-top: -5rem;
-  background-color: rgba(0, 0, 0, 0.705);
+  background-color: transparent;
   color: white;
   padding: 0.3rem;
-  height: auto;
+  height: 0;
 }
 
 .nav-scrolled {
   flex: auto;
-  color: white;
   margin-top: -5rem;
   background-color: rgba(0, 0, 0, 0.705);
   color: white;
@@ -83,6 +81,10 @@ nav {
   color: white;
 }
 
+.display-none {
+  display: none;
+}
+
 .transition-0 {
   transition-duration: 0s;
 }
@@ -91,10 +93,7 @@ nav {
   height: 4rem;
 }
 
-.section-after-head {
-  margin-top: 40rem;
 
-}
 
 
 
@@ -117,20 +116,23 @@ nav {
 .nav-scrolled .container .flex-grow {
   display: none;
 }
+
 .nav-scrolled .container .div_iefdhiu .darul {
   display: none;
 }
+
+.nav-scrolled .container #menu {
+  margin-top: -10px;
+}
+
 .nav-scrolled {
   height: 2rem;
 }
 
-
 .nav-scrolled .container .div_iefdhiu {
-  margin-left: auto;
   margin-right: auto;
-  padding-left: 20vw;
+  margin-top: -9px;
   transition-duration: .5s;
-  font-size: 1.5rem;
 
 }
 
@@ -193,16 +195,6 @@ nav {
   cursor: pointer;
 }
 
-/* .info .btn>*:not(.bar) {
-  visibility: visible;
-  display: block;
-}
-
-.btn-info .btn>*:not(.bar) {
-  visibility: hidden;
-  width: 0;
-  height: 0;
-} */
 
 #btn-toggle.info-off {
   background-color: unset;
@@ -217,9 +209,6 @@ nav {
   margin-top: -5rem;
   margin-right: 2rem;
   transition-duration: 1.5s;
-  /* visibility: hidden;
-  width: 0;
-  height: 0; */
 }
 
 #btn-toggle.info-on>*.close {
@@ -230,10 +219,6 @@ nav {
 
 }
 
-
-
-
-
 .shadow-yellow-200:hover {
   box-shadow: inset 0px 0px 4px 1px rgb(255, 240, 179);
 }
@@ -241,17 +226,19 @@ nav {
 
 /* md */
 @media (min-width: 768px) {
+  .nav-scrolled .container .div_iefdhiu {
+    font-size: 1.5rem;
+  }
+
   .info-container {
     padding: 0 0 0 0;
     margin: auto;
   }
-  .section-after-head {
-    margin-top: 47rem;
-  
-  }
+
+
 
   .info-grid {
-    grid-template-columns:  auto 13rem
+    grid-template-columns: auto 13rem
   }
 
   .nav-scrolled .container .div_iefdhiu {
@@ -266,6 +253,10 @@ nav {
   }
 
   /* medium devices */
+  .md\:display-none {
+    display: none;
+  }
+
   .md\:text-left {
     text-align: left;
   }

@@ -1,5 +1,23 @@
 gsap.registerPlugin(Flip);
 AOS.init();
+const firebaseConfig = {
+    apiKey: "AIzaSyBcXNbJFY2KNxt4DXi-fIrJuyU7ksH8-ak",
+    authDomain: "iefwebsite.firebaseapp.com",
+    databaseURL: "https://iefwebsite-default-rtdb.firebaseio.com",
+    projectId: "iefwebsite",
+    storageBucket: "iefwebsite.appspot.com",
+    messagingSenderId: "1005055631588",
+    appId: "1:1005055631588:web:3324c5f4f8470c5258ccf1",
+    measurementId: "G-YJREGCGRLK"
+  };
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+function SaveToDb(data, ref) {
+    console.log("trying to save")
+    firebase.database().ref(ref).push(data);
+}
 
 var nav = document.getElementById('nav');
 
@@ -60,6 +78,7 @@ function menuData() {
 }
 
 function lecturers_data() {
+    FileSystem.
     console.log(data.lecturers)
     return {
         lecturers: data.lecturers
