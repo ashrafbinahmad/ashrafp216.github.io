@@ -88,7 +88,7 @@ nav {
 }
 
 .section-gap {
-  height: 6.25rem;
+  height: 4rem;
 }
 
 .section-after-head {
@@ -114,10 +114,24 @@ nav {
   scroll-snap-align: start;
 }
 
+.nav-scrolled .container .flex-grow {
+  display: none;
+}
+.nav-scrolled .container .div_iefdhiu .darul {
+  display: none;
+}
+.nav-scrolled {
+  height: 2rem;
+}
+
+
 .nav-scrolled .container .div_iefdhiu {
   margin-left: auto;
   margin-right: auto;
   padding-left: 20vw;
+  transition-duration: .5s;
+  font-size: 1.5rem;
+
 }
 
 .hover\:scale-75:hover {
@@ -244,7 +258,6 @@ nav {
     margin-left: 0px;
     margin-right: auto;
     padding-left: 0px;
-
   }
 
   .h-screen-scalable {

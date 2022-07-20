@@ -22,12 +22,12 @@
 <body class="scroll-pt-0 snap-y">
   <nav id="nav" class="nav-normal z-10 ">
     <div class="container mx-auto flex flex-shrink-0">
-      <div class="div_iefdhiu flex md:ml-0 md:mr-0">
-        <h1 class=" md:mt-1 md:text-2xl text-lg px-5">
+      <div class="div_iefdhiu flex md:ml-0 md:mr-0 md:text-2xl text-lg px-5">
+        <h1 class=" md:mt-1 ">
           IEF |
           <a class="cursor-pointer hover:text-gray-300" href="http://dhiu.in/" target="_blank">DHIU</a>
         </h1>
-        <div class="max-h-10 overflow-hidden">
+        <div class="max-h-10 overflow-hidden darul">
           <h2 class="ml-8 text-sm invisible w-0 h-0 md:visible md:w-auto md:h-auto">
             Darul Huda <br />
             Islamic University
@@ -38,9 +38,9 @@
       <div class="flex flex-grow"></div>
       <div x-data="menuData()">
         <div id="menu" class="flex" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
-          class="duration-0 mr-0 ml-auto text-lg  mt-1  md:w-auto md:visible overflow-hidden ">
+          class="duration-0 mr-0 ml-auto text-lg  md:w-auto md:visible overflow-hidden ">
           <ul
-            class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto">
+            class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2">
             <template x-for="(item,index) in items" :key="index">
               <li class="md:flex  md:w-auto  mx-2 hover:text-gray-300 cursor-pointer "
                 @click="window.scrollTo({ top: document.getElementById(item.link), behavior: 'smooth'}); ">
@@ -56,26 +56,30 @@
     </div>
   </nav>
   <header>
-    <div id="head" class="head text-white section fixed z-0 w-full h-screen">
+    <div id="head" class="head text-white section fixed z-0 w-full h-screen absolute">
       <div class="container mx-auto p-5 ">
         <div class="head_content pt-48 ">
 
-          <h1 class="text-5xl mb-10 ">
-            <p class="text-2xl leading-relaxed pl-1 ">Department of</p> Islamic <br> Economics <br> and <br> Finance
+          <h1 class="md:text-7xl text-5xl mb-10 text-center">
+            <p class="md:text-4xl text-2xl leading-tight ">DEPARTMENT OF </p> ISLAMIC <br> ECONOMICS <br> AND <br>
+            FINANCE
           </h1>
 
         </div>
-        <div class="icons mr-0 ml-auto">
+        <h2 class="icons mx-auto text-center text-gray-400 text-sm">
           <a
             href="https://www.facebook.com/%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A-%D8%A8%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-100344009057312/">
-            <i class="p-2 cursor-pointer fa fa-facebook-official text-gray-300"></i></a>
+            <i class="pr-2 cursor-pointer fa fa-facebook-official "></i></a>
           <a href="https://twitter.com">
-            <i class="p-2 cursor-pointer fa fa-twitter text-gray-300"></i></a>
+            <i class="px-2 cursor-pointer fa fa-twitter "></i></a>
           <a href="https://www.instagram.com/fin.aissance/">
-            <i class="cursor-pointer fa fa-instagram text-gray-300"></i></a>
+            <i class="cursor-pointer fa fa-instagram "></i></a>
+          <br>
           <a href="https://dhiu.in">
-            <u class="p-2 cursor-pointer text-gray-300">dhiu.in</u></a>
-        </div>
+            <u class="pl-2 cursor-pointer ">dhiu.in</u></a>
+        </h2>
+        <br>
+        <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300">DARUL HUDA ISLAMIC UNIVERSITY</h2>
       </div>
       <div></div>
 
@@ -85,111 +89,32 @@
             <div x-data="setup()">
               <div class="grid md:grid-cols-2 grid-rows-2  info-grid gap-2 mt-20">
 
-                <div id="tab-field" class="grid order-2 md:order-1 text-sm  max-w-3xl overflow-y-auto md:pl-24 text-gray-300 text-sm leading-6 mx-auto">
+                <div id="tab-field"
+                  class="grid order-2 md:order-1 text-sm  max-w-3xl overflow-y-auto md:pl-24 text-gray-300 text-sm leading-6 mx-auto">
                   <div id="info-about " x-show="activeTab===0" class=" ">
                     <h1 class="text-xl text-yellow-200 pb-5 underline">About the course</h1>
-
-                    <p class="">Master of Islamic Economics and
-                      Finance is two year PG course
-                      provided by Darul Huda Islamic
-                      University. Our course introduces
-                      and develops knowledge of the
-                      students in various specialised
-                      areas across a range of core subjects
-                      as well as giving solid foundation in
-                      Islamic nance principles, providing
-                      the skills need to move into wide
-                      variety of careers after graduation.
-                      Through a variety of modules, the
-                      students can learn about the ethos,
-                      principles and practices of islamic
-                      nance. The course also enables to
-                      pursue specialisation in several
-                      important areas of Islamic nance
-                      <br>
-                      <br>
-                      including Islamic banking
-                      operations and currency system in
-                      Islam.
-                      The mixed philosophy of the
-                      program enables the graduate to
-                      attain the knowledge needed to
-                      understand the global nancial
-                      system and to propose viable
-                      alternatives to the existing
-                      conventional models by blending
-                      guidance from Sharia with modern
-                      scientic knowledge.
-                    </p>
+                    <p x-html="tabs.about"></p>
                   </div>
                   <div id="info-about " x-show="activeTab===1" class=" ">
                     <h1 class="text-xl text-yellow-200 pb-5 underline">Programme structure</h1>
-                    <p class="">The program is designed for two years, full time, post graduate
-                      degree organized in four semesters. <br><br>
-                       Students with thesis mode should cover four specialization
-                      papers from their department and only two (one in one
-                      semester) from their sister department of the kulliya within four
-                      semesters. <br><br>
-                       Students with course only mode should cover six
-                      specialization papers from their department and only two (one
-                      in one semester) from their sister department of the kulliya
-                      within four semesters. <br><br>
-                      Students are also requested to cover ve block papers (Qur'an,
-                      Hadith, Fiqh, General and Elective) consisting of 19 papers within
-                      four semesters. In Qur'an block students have to cover only three
-                      papers while in the Elective block they can enjoy the selection of 4
-                      papers from 8 provided papers. <br>
-                      Taking a paper from each block except from the Qur'an block is
-                      mandatory
-                    </p>
+                    <p x-html="tabs.Program_Structure"></p>
+
                   </div>
                   <div id="info-about " x-show="activeTab===2" class=" ">
                     <h1 class="text-xl text-yellow-200 pb-5 underline">Student Life</h1>
+                    <p x-html="tabs.Student_life"></p>
 
-                    <p class="">Department of Islamic economics and nance is a centre of
-                      constructive, intellectual and productive dialogues and
-                      academic ventures in the University. Earnest students in the
-                      department have vibrant avenues to explore new trends in
-                      the global nancial system, connect with prominent
-                      academicians and thrive in diverse elds. Department is a
-                      great place to gear up your academic enthusiasm through
-                      multifarious engagements ranging from authoring books,
-                      writing journal articles, participating in academic
-                      conferences, organising seminars, webinars, and
-                      workshops. <br><br>
-                      The department provides a bounteous scope of
-                      extracurricular activities for the holistic development of
-                      students and encourages them to make the most of their
-                      experience on campus grounded in Islamic values.
-                      For the accomplishment of academic instincts of the
-                      department, the department facilitates two weeks long
-                      national and international eld trips. In the academic eld
-                      visits, students can acquire rst hand experiences of
-                      multiple Islamic nancial institutions such as Islamic banks
-                      and interact with prominent academicians and scholars
-                      working in this eld.
-                    </p>
                   </div>
                   <div id="info-about " x-show="activeTab===3" class=" ">
                     <h1 class="text-xl text-yellow-200 pb-5 underline">Placement and Career</h1>
+                    <p x-html="tabs.Placement"></p>
 
-                    <p class="">Graduates of this course will be equipped to
-                       Undertake various methods of research and produce authentic thesis works and
-                      dessertations on various topics related to Islamic economics and nance. <br> <br>
-                       Demonstrate expertise in multiple elds within the Islamic economics and nance
-                      including the theory, practice and the understanding of implementation of various
-                      Islamic nancial products. <br><br>
-                       Find out and oer new Islamic nancial products that can be applied in Islamic nancial
-                      institutions as alternatives for those which are applied in conventional nancial
-                      institutions. <br><br>
-                       To look forward to acquiring job experience in countries where Islamic nance services
-                      are being set up especially in the eld of Sharia screening and advising.
-                    </p>
                   </div>
                 </div>
                 <div id="tab-items" class="md:grid flex  order-1 md:order-2 info-menu mb-10 md:pt-56">
                   <ul id="info-menu-list " class="md:overflow-hidden md:block  overflow-x-scroll flex flex-shrink-0 ">
-                    <template x-for="(tab, index) in tabs" :key="index">
+
+                    <template x-for="(tab, index) in tabs.items" :key="index">
                       <li class="cursor-pointer py-2 px-2 text-gray-500 md:block inline-flex"
                         :class="activeTab===index ? 'text-white md:border-l-4 border-b-4 md:border-b-0 text-bold border-white ' : ''"
                         onclick="document.getElementById('info-menu-list').scrollLeft = event.target.offsetLeft"
@@ -209,7 +134,7 @@
     class="section-after-head z-0 align-middle relative bg-white rounded-t-xl min-h-full snap-start">
     <div id="btn-toggle"
       class="info-off cursor-pointer overflow-hidden w-10 h-10 absolute rounded bg-gray-800 md:right-10 right-5 md:-top-20 -top-10 z-15 pt-1"
-       onclick="ToggleShowMoreInfo()">
+      onclick="ToggleShowMoreInfo()">
       <div class="close  text-white text-center mt-1 text-bold -ml-20" style="height: 3px;">X</div>
       <div class="bar ml-auto mr-2 mt-1 w-3/6 bg-white rounded-full " style="height: 3px;"></div>
       <div class="bar ml-auto mr-2 mt-1 w-1/5 bg-white rounded-full " style="height: 3px;"></div>
@@ -224,7 +149,8 @@
         <div class=" pt-5 mx-auto">
           <img src="images/Quotation-mark-low-flipped.png" alt=""
             class="mx-auto md:ml-0 my-5 mt-0  md:h-20 h-16 w-auto">
-          <p class="py-5 max-w-sm md:max-w-auto self-center  text-center md:text-left md:text-5xl text-3xl font-bold ">
+          <p
+            class="p-5 md:p-0 md:py-5 max-w-sm md:max-w-auto self-center  text-center md:text-left md:text-5xl text-3xl font-bold ">
             The modern economic system is completely dominated by interest...
           </p>
           <p class="w-full text-lg text-center md:text-left py-5  ">
@@ -240,50 +166,36 @@
     </div>
   </section>
 
-  <section id="Lecturers " class="z-0 relative bg-gray-100 h-screen-scalable snap-start">
+  <section id="Lecturers " class="z-0 relative bg-gray-100 .h-screen-scalable snap-start">
     <hr />
     <div class="container mx-auto align-center text-center p-5">
       <div class="section-gap"></div>
       <h2 class="text-3xl mb-5 font-bold" data-aos="fade-up" data-aos-duration="1000">Lecturers</h2>
-      <div class="grid md:grid-cols-3 place-content-center text-center align-items-center md:divide-x divide-white">
+      <div class="flex flex-nowrap place-content-center align-center md:py-24  md:divide-x divide-white">
 
+        <div x-data="lecturers_data()">
+          <template x-for="(lecturer,index) in lecturers" :key="index">
+            <div class="flex flex-col flex-none inline-flex align-center text-center mb-8 p-5  px-10 max-w-sm"
+              data-aos="fade-up" data-aos-duration="1000">
+              <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 w-56 h-auto"
+                :src="lecturer.image" />
+              <div class="flex mx-auto">
+                <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name">
+                </h4>
+                <small class="bg-yellow-800 rounded p-1 text-white inline-flex  " x-show="lecturer.HoD">HoD</small>
+              </div>
 
-        <div class="align-center text-center mb-8 p-5  px-10" data-aos="fade-up" data-aos-duration="1000">
-          <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5"
-            src="images/kc_usthad.jpg" alt="" srcset="" />
-          <h4 class="name text-lg font-bold text-yellow-900">KC Muhammad Baqawi</h4>
-          <p class="mt-5 text-center max-w-md">
-            Graduated from Madrasah Al-Baqiyath Alsalihat, Vellore.
-          </p>
+              <p class="mt-5 text-center max-w-md text-sm" x-text="lecturer.description"></p>
+            </div>
+          </template>
         </div>
-        <div class="align-center text-center mb-8 p-5  px-10 order-1 md:order-2" data-aos="fade-up"
-          data-aos-duration="1000">
-          <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5"
-            src="images/jafar_usthad.jpg" alt="" srcset="" />
-          <h4 class="name text-lg font-bold text-yellow-900">Dr. Jafar Hudawi <small
-              class="bg-yellow-400 rounded p-1 text-white">HoD</small></h4>
-          <p class="mt-5 text-center max-w-md">
-            Graduated from Darul Huda Islamic University, PhD in Arabic language and literature from University of
-            Calicut.
-          </p>
-        </div>
-        <div class="align-center text-center mb-8 p-5  px-10 order-3 md:order-3" data-aos="fade-up"
-          data-aos-duration="1000">
-          <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 h-auto w-full "
-            src="images/download.png" alt="" srcset="" />
-          <h4 class="name text-lg font-bold text-yellow-900">Dr. Ramees Hudawi Chelembra</h4>
-          <p class="mt-5 text-center max-w-md">
-            Graduated from Darul Huda Islamic University, BA, MA and PhD in economics in Calicut University.
-          </p>
-        </div>
-
       </div>
     </div>
     <script></script>
   </section>
 
   <section id="initiatives" class="relative bg-gray-800 h-screen h-screen-scalable">
-    <div class="section-gap"></div>
+    <!-- <div class="section-gap"></div> -->
     <div class="container mx-auto p-5">
       <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center text-white">Initiatives</h2>
     </div>
@@ -441,6 +353,7 @@
     integrity="sha512-98oWClulhnGKlxmGJShhS651oP8eAaaLLcGF8b/Nx1BKv+BsMqfbnmLJ8OnXoqnaQd6hOo0WE/gcQ2QkeBLHIQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="data.js"></script>
   <script src="scripts.js"></script>
 </body>
 

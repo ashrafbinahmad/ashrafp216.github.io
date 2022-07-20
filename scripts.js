@@ -4,7 +4,7 @@ AOS.init();
 var nav = document.getElementById('nav');
 
 window.addEventListener('scroll', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     if (window.scrollY <= 150) {
         nav.classList.add('nav-normal')
@@ -47,25 +47,23 @@ function ToggleShowMoreInfo() {
 function setup() {
     return {
         activeTab: 0,
-        tabs: [
-            "About",
-            "Program Structure",
-            "Student life",
-            "Placement and Career",
-        ]
+        tabs: data.tabs
     };
 };
 
 function menuData() {
     return {
         show_menu: false,
-        items: [
-            { name: 'Lecturers', link: '#Lecturers' },
-            { name: 'Initiatives', link: '#initiative' },
-            { name: 'Message', link: '#message' }
-        ]
+        items: data.menu_items
     }
 
+}
+
+function lecturers_data() {
+    console.log(data.lecturers)
+    return {
+        lecturers: data.lecturers
+    }
 }
 
 function ScrollTo(selecter) {
