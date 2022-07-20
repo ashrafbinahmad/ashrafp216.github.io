@@ -1,4 +1,5 @@
 gsap.registerPlugin(Flip);
+AOS.init();
 
 var nav = document.getElementById('nav');
 
@@ -17,6 +18,7 @@ window.addEventListener('scroll', function (event) {
 
 
 
+
 function ScrollRight() {
 
     document.getElementById("initiatives-container").scrollLeft += 800;
@@ -29,24 +31,44 @@ function scrollToView(e) {
     document.getElementById('initiatives-container').scrollLeft = e.target.offsetLeft
 }
 
-function ToggleShowMoreInfo(id) {
+function ToggleShowMoreInfo() {
+    var id = 'more_info'
     var el = document.getElementById(id)
+    var toggle_btn = document.getElementById('btn-toggle')
     if (!el.classList.contains('info')) {
         el.classList.replace('info-hidden', 'info')
+        toggle_btn.classList.replace('info-off', 'info-on')
     } else {
         el.classList.replace('info', 'info-hidden')
+        toggle_btn.classList.replace('info-on', 'info-off')
     }
 }
 
 function setup() {
     return {
-      activeTab: 0,
-      tabs: [
-          "About",
-          "Program Structure",
-          "Student life",
-          "Placement and Career",
-      ]
+        activeTab: 0,
+        tabs: [
+            "About",
+            "Program Structure",
+            "Student life",
+            "Placement and Career",
+        ]
     };
-  };
+};
 
+function menuData() {
+    return {
+        show_menu: false,
+        items: [
+            { name: 'Lecturers', link: '#Lecturers' },
+            { name: 'Initiatives', link: '#initiative' },
+            { name: 'Message', link: '#message' }
+        ]
+    }
+
+}
+
+function ScrollTo(selecter) {
+    var el = document.querySelector(selecter);
+    console.log(selecter)
+}

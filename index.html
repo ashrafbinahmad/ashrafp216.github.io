@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <title>IEF | DHIU</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
     integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,15 +14,14 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Darker Grotesque" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- Link Swiper's CSS -->
 </head>
 
 <body class="scroll-pt-0 snap-y">
   <nav id="nav" class="nav-normal z-10 ">
-    <div class="container mx-auto flex">
+    <div class="container mx-auto flex flex-shrink-0">
       <div class="div_iefdhiu flex md:ml-0 md:mr-0">
         <h1 class=" md:mt-1 md:text-2xl text-lg px-5">
           IEF |
@@ -34,28 +35,28 @@
         </div>
 
       </div>
-
-
-      <div id="menu" class="mr-0 ml-auto text-lg  mt-1  invisible w-0 md:w-auto md:visible overflow-hidden">
-        <ul class="flex">
-          <li class="flex mx-2 hover:text-gray-300 cursor-pointer ">
-            <a href="#About">About</a>
-          </li>
-          <li class="flex mx-2 hover:text-gray-300 cursor-pointer">
-            <a href="#Initiatives">Initiatives</a>
-          </li>
-          <li class="flex mx-2 hover:text-gray-300 cursor-pointer">
-            <a href="#message">Message</a>
-          </li>
-        </ul>
-      </div>
-      <div class="visible md:invisible text-lg ">
-        <i class="fa fa-bars"></i>
+      <div class="flex flex-grow"></div>
+      <div x-data="menuData()">
+        <div id="menu" class="flex" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
+          class="duration-0 mr-0 ml-auto text-lg  mt-1  md:w-auto md:visible overflow-hidden ">
+          <ul
+            class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto">
+            <template x-for="(item,index) in items" :key="index">
+              <li class="md:flex  md:w-auto  mx-2 hover:text-gray-300 cursor-pointer "
+                @click="window.scrollTo({ top: document.getElementById(item.link), behavior: 'smooth'}); ">
+                <a :href="item.link" x-text="item.name"></a>
+              </li>
+            </template>
+          </ul>
+        </div>
+        <div class="visible md:invisible text-lg " @click="show_menu = !show_menu">
+          <i class="fa fa-bars"></i>
+        </div>
       </div>
     </div>
   </nav>
   <header>
-    <div id="head" class="head text-white flex section fixed z-0 w-full">
+    <div id="head" class="head text-white section fixed z-0 w-full h-screen">
       <div class="container mx-auto p-5 ">
         <div class="head_content pt-48 ">
 
@@ -77,31 +78,16 @@
         </div>
       </div>
       <div></div>
-      <div id="btn-toggle" class="w-10 h-10 absolute rounded bg-black right-10 bottom-20 z-50"
-        onclick="ToggleShowMoreInfo('more_info')">
-        <div class="bar ml-auto mr-2 mt-1 w-3/6 bg-white rounded-full " style="height: 3px;"></div>
-        <div class="bar ml-auto mr-2 mt-1 w-1/5 bg-white rounded-full " style="height: 3px;"></div>
-        <div class="bar ml-auto mr-2 mt-1 w-3/5 bg-white rounded-full " style="height: 3px;"></div>
-      </div>
-      <div id="more_info" class="info-hidden w-0 h-screen absolute left-0 top-0 overflow-hidden">
-        <div class="p-2 self-center text-center text-red-900 hover:bg-red-900 rounded-full hover:text-yellow-100">X
-        </div>
+
+      <div id="more_info" class="info-hidden w-0 h-screen absolute left-0 top-0 overflow-hidden ">
         <div class="container info-container mx-auto  ">
-          <div class="info-content">
+          <div class="info-content ">
             <div x-data="setup()">
-              <div class="grid md:grid-cols-2 grid-rows-2  info-grid gap-2">
-                <div class="grid info-menu">
-                  <ul id="info-menu-list flex">
-                    <template x-for="(tab, index) in tabs" :key="index">
-                      <li class="cursor-pointer py-2 px-4 text-gray-500  "
-                        :class="activeTab===index ? 'text-yellow-100 border-r-4 text-bold border-yellow-100 ' : ''"
-                        @click="activeTab = index" x-text="tab"></li>
-                    </template>
-                  </ul>
-                </div>
-                <div class="grid text-sm  max-w-3xl overflow-y-auto md:pl-24 text-gray-300 text-lg leading-6 md:whitespace-pre">
+              <div class="grid md:grid-cols-2 grid-rows-2  info-grid gap-2 mt-20">
+
+                <div id="tab-field" class="grid order-2 md:order-1 text-sm  max-w-3xl overflow-y-auto md:pl-24 text-gray-300 text-sm leading-6 mx-auto">
                   <div id="info-about " x-show="activeTab===0" class=" ">
-                    <h1 class="text-2xl text-yellow-300 pb-5 underline">About the course</h1>
+                    <h1 class="text-xl text-yellow-200 pb-5 underline">About the course</h1>
 
                     <p class="">Master of Islamic Economics and
                       Finance is two year PG course
@@ -137,7 +123,7 @@
                     </p>
                   </div>
                   <div id="info-about " x-show="activeTab===1" class=" ">
-                    <h1 class="text-2xl text-yellow-300 pb-5 underline">Programme structure</h1>
+                    <h1 class="text-xl text-yellow-200 pb-5 underline">Programme structure</h1>
                     <p class="">The program is designed for two years, full time, post graduate
                       degree organized in four semesters. <br><br>
                        Students with thesis mode should cover four specialization
@@ -158,7 +144,7 @@
                     </p>
                   </div>
                   <div id="info-about " x-show="activeTab===2" class=" ">
-                    <h1 class="text-2xl text-yellow-300 pb-5 underline">Student Life</h1>
+                    <h1 class="text-xl text-yellow-200 pb-5 underline">Student Life</h1>
 
                     <p class="">Department of Islamic economics and nance is a centre of
                       constructive, intellectual and productive dialogues and
@@ -185,7 +171,7 @@
                     </p>
                   </div>
                   <div id="info-about " x-show="activeTab===3" class=" ">
-                    <h1 class="text-2xl text-yellow-300 pb-5 underline">Placement and Career</h1>
+                    <h1 class="text-xl text-yellow-200 pb-5 underline">Placement and Career</h1>
 
                     <p class="">Graduates of this course will be equipped to
                        Undertake various methods of research and produce authentic thesis works and
@@ -201,37 +187,39 @@
                     </p>
                   </div>
                 </div>
+                <div id="tab-items" class="md:grid flex  order-1 md:order-2 info-menu mb-10 md:pt-56">
+                  <ul id="info-menu-list " class="md:overflow-hidden md:block  overflow-x-scroll flex flex-shrink-0 ">
+                    <template x-for="(tab, index) in tabs" :key="index">
+                      <li class="cursor-pointer py-2 px-2 text-gray-500 md:block inline-flex"
+                        :class="activeTab===index ? 'text-white md:border-l-4 border-b-4 md:border-b-0 text-bold border-white ' : ''"
+                        onclick="document.getElementById('info-menu-list').scrollLeft = event.target.offsetLeft"
+                        @mouseover="activeTab = index" x-text="tab"></li>
+                    </template>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   </header>
 
-  <section id="message section-after-head"
-    class="section-after-head align-middle relative bg-white rounded-t-xl min-h-full snap-start">
-    <!-- More info  remove .Showing-More-Info class from the div-->
-    <!-- <input type="checkbox" name="toggle_More_info" id="toggle_More_info"> -->
-    <!-- / <div id="more_info" class="Btn-Show-More-Info" onclick="ToggleShowMoreInfo('more_info')">
+  <section id="message section-after-head "
+    class="section-after-head z-0 align-middle relative bg-white rounded-t-xl min-h-full snap-start">
+    <div id="btn-toggle"
+      class="info-off cursor-pointer overflow-hidden w-10 h-10 absolute rounded bg-gray-800 md:right-10 right-5 md:-top-20 -top-10 z-15 pt-1"
+       onclick="ToggleShowMoreInfo()">
+      <div class="close  text-white text-center mt-1 text-bold -ml-20" style="height: 3px;">X</div>
       <div class="bar ml-auto mr-2 mt-1 w-3/6 bg-white rounded-full " style="height: 3px;"></div>
       <div class="bar ml-auto mr-2 mt-1 w-1/5 bg-white rounded-full " style="height: 3px;"></div>
       <div class="bar ml-auto mr-2 mt-1 w-3/5 bg-white rounded-full " style="height: 3px;"></div>
-      <button id="close" class="flex ml-auto mr-0 bg-red-300 w-10 h-10 hidden"
-        onclick="CloseShowMoreInfo('more_info')"></button>
-      <div class="h-full w-full bg-white hidden"></div> -->
-
     </div>
-
-    <!-- </label> -->
-
     <div class="section-gap text-center ">
       <div class="mt-2 w-10 md:w-20 h-2 bg-gray-300 mx-auto rounded-lg"></div>
     </div>
     <div class="grid md:grid-cols-2 container mx-auto">
-      <div class="grid md:w-3/4 w-full">
+      <div class="grid md:w-3/4 w-full" data-aos="fade-up" data-aos-duration="1000">
 
         <div class=" pt-5 mx-auto">
           <img src="images/Quotation-mark-low-flipped.png" alt=""
@@ -245,7 +233,7 @@
           </p>
         </div>
       </div>
-      <div class="md:grid w-full ">
+      <div class="md:grid w-full " data-aos="fade-up" data-aos-duration="1000">
         <img class="self-center md:h-3/4 h-1/2  w-auto  mx-auto md:rounded-2xl rounded-full"
           src="images/jafar_usthad.jpg" alt="" srcset="" />
       </div>
@@ -256,11 +244,11 @@
     <hr />
     <div class="container mx-auto align-center text-center p-5">
       <div class="section-gap"></div>
-      <h2 class="text-3xl mb-5 font-bold">Lecturers</h2>
+      <h2 class="text-3xl mb-5 font-bold" data-aos="fade-up" data-aos-duration="1000">Lecturers</h2>
       <div class="grid md:grid-cols-3 place-content-center text-center align-items-center md:divide-x divide-white">
 
 
-        <div class="align-center text-center mb-8 p-5  px-10">
+        <div class="align-center text-center mb-8 p-5  px-10" data-aos="fade-up" data-aos-duration="1000">
           <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5"
             src="images/kc_usthad.jpg" alt="" srcset="" />
           <h4 class="name text-lg font-bold text-yellow-900">KC Muhammad Baqawi</h4>
@@ -268,7 +256,8 @@
             Graduated from Madrasah Al-Baqiyath Alsalihat, Vellore.
           </p>
         </div>
-        <div class="align-center text-center mb-8 p-5  px-10 order-1 md:order-2">
+        <div class="align-center text-center mb-8 p-5  px-10 order-1 md:order-2" data-aos="fade-up"
+          data-aos-duration="1000">
           <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5"
             src="images/jafar_usthad.jpg" alt="" srcset="" />
           <h4 class="name text-lg font-bold text-yellow-900">Dr. Jafar Hudawi <small
@@ -278,7 +267,8 @@
             Calicut.
           </p>
         </div>
-        <div class="align-center text-center mb-8 p-5  px-10 order-3 md:order-3">
+        <div class="align-center text-center mb-8 p-5  px-10 order-3 md:order-3" data-aos="fade-up"
+          data-aos-duration="1000">
           <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 h-auto w-full "
             src="images/download.png" alt="" srcset="" />
           <h4 class="name text-lg font-bold text-yellow-900">Dr. Ramees Hudawi Chelembra</h4>
@@ -450,6 +440,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Flip.min.js"
     integrity="sha512-98oWClulhnGKlxmGJShhS651oP8eAaaLLcGF8b/Nx1BKv+BsMqfbnmLJ8OnXoqnaQd6hOo0WE/gcQ2QkeBLHIQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="scripts.js"></script>
 </body>
 
