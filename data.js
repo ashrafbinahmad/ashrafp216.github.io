@@ -37,6 +37,35 @@ data = {
             description: "Graduated from Darul Huda Islamic University, BA, MA and PhD in economics in Calicut University.",
             HoD: false
         }
+    ],
+    initiatives: [
+        {
+            name: "Isnomics",
+            image: "images/Islamic-coins-bg.jpg",
+            description: "10 day campaign program conducted by the department that focused on the contributions of Islamic scholars in the held of economics."
+        },
+        {
+            name: "Finaissance",
+            image: "images/Islamic-coins-bg.jpg",
+            description: "Talk series program that provides the students with the opportunity to hear from prominent scholars in the field and interact with them."
+        },
+        {
+            name: "Seyaha",
+            image: "images/Islamic-coins-bg.jpg",
+            description: "Two weeks long academic trip through which the students can visit Islamic financial institutions and understand the operations going on there."
+        },
+        {
+            name: "Seminars and <br> Webinars",
+            image: "images/Islamic-coins-bg.jpg",
+            description: "Waqf Seminar  And more..."
+        },
+    ],
+    dept_committee: [
+        {
+            name: "",
+            image: "",
+            role: ""
+        },
     ]
 
 };

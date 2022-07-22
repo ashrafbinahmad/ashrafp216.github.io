@@ -14,6 +14,23 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
 function SaveToDb(data, ref) {
     console.log("trying to save")
     firebase.database().ref(ref).push(data);
@@ -78,10 +95,16 @@ function menuData() {
 }
 
 function lecturers_data() {
-    FileSystem.
     console.log(data.lecturers)
     return {
         lecturers: data.lecturers
+    }
+}
+
+function initiativesData() {
+    console.log(data.initiatives)
+    return {
+        initiatives: data.initiatives
     }
 }
 

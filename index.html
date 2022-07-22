@@ -17,10 +17,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 </head>
 
 <body class="scroll-pt-0 ">
-  <nav id="nav" class="nav-normal z-10 duration-100">
+  <nav id="nav" class="nav-normal z-20 duration-100">
     <div class="container mx-auto flex flex-shrink-0">
       <div class="div_iefdhiu flex md:ml-0 md:mr-0 md:text-2xl text-lg px-5  text-gray-300">
         <h1 class="  duration-0">
@@ -82,7 +84,14 @@
         <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300">DARUL HUDA ISLAMIC UNIVERSITY</h2>
       </div>
       <div></div>
-
+      <div id="btn-toggle"
+        class="info-off cursor-pointer overflow-hidden w-8 h-7 absolute rounded bg-gray-800  right-5  bottom-5 z-50 "
+        onclick="ToggleShowMoreInfo()">
+        <div class="close  text-white text-center mt-1 font-bold -ml-20" style="height: 3px;">X</div>
+        <div class="bar ml-auto mr-1 mt-1 w-3/6 bg-white rounded-full " style="height: 2px;"></div>
+        <div class="bar ml-auto mr-1 mt-1 w-1/5 bg-white rounded-full " style="height: 2px;"></div>
+        <div class="bar ml-auto mr-1 mt-1 w-3/5 bg-white rounded-full " style="height: 2px;"></div>
+      </div>
       <div id="more_info" class="info-hidden w-0 h-screen absolute left-0 top-0 overflow-auto ">
         <div class="container info-container mx-auto  ">
           <div class="info-content ">
@@ -117,7 +126,7 @@
 
                     <template x-for="(tab, index) in tabs.items" :key="index">
                       <li class="cursor-pointer py-2 px-2 text-gray-500 md:block inline-block"
-                        :class="activeTab===index ? 'text-white md:border-l-4 border-b-4 md:border-b-0 text-bold border-white ' : ''"
+                        :class="activeTab===index ? 'text-white md:border-l-4 border-b-4 md:border-b-0 font-bold border-white ' : ''"
                         onclick="document.getElementById('info-menu-list').scrollLeft = event.target.offsetLeft"
                         @mouseover="activeTab = index" x-text="tab"></li>
                     </template>
@@ -132,14 +141,7 @@
   </header>
 
   <section id="message section-after-head " class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full">
-    <div id="btn-toggle"
-      class="info-off cursor-pointer overflow-hidden w-10 h-10 absolute rounded bg-gray-800 md:right-10 right-5 md:-top-20 -top-10 z-15 pt-1"
-      onclick="ToggleShowMoreInfo()">
-      <div class="close  text-white text-center mt-1 text-bold -ml-20" style="height: 3px;">X</div>
-      <div class="bar ml-auto mr-2 mt-1 w-3/6 bg-white rounded-full " style="height: 3px;"></div>
-      <div class="bar ml-auto mr-2 mt-1 w-1/5 bg-white rounded-full " style="height: 3px;"></div>
-      <div class="bar ml-auto mr-2 mt-1 w-3/5 bg-white rounded-full " style="height: 3px;"></div>
-    </div>
+
     <div class="section-gap text-center ">
       <div class="mt-2 w-10 md:w-20 h-2 bg-gray-300 mx-auto rounded-lg"></div>
     </div>
@@ -155,7 +157,7 @@
           </p>
           <p class="w-full text-lg text-center md:text-left py-5  ">
             - Dr. Jafar Hudawi Kulathur <br>
-            <small class="bg-yellow-400 rounded p-1 text-white ml-3 text-xs">(Our Head of Dept.)</small>
+            <small class="bg-yellow-800 rounded p-1 text-white  text-xs">(Our Head of Dept.)</small>
           </p>
         </div>
       </div>
@@ -166,18 +168,18 @@
     </div>
   </section>
 
-  <section id="Lecturers " class="z-0 relative bg-gray-100 .h-screen-scalable ">
+  <section id="Lecturers " class="z-0 relative bg-gray-100  ">
     <hr />
     <div class="container mx-auto align-center text-center p-5">
       <div class="section-gap"></div>
-      <h2 class="text-3xl mb-5 font-bold" data-aos="fade-up" data-aos-duration="1000">Lecturers</h2>
+      <h2 class="text-3xl mb-5 font-bold" data-aos="fade-up" data-aos-duration="1000">LECTURERS</h2>
       <div class="flex flex-nowrap place-content-center align-center md:py-24  md:divide-x divide-white">
 
         <div x-data="lecturers_data()">
           <template x-for="(lecturer,index) in lecturers" :key="index">
             <div class="flex flex-col flex-none inline-flex align-center text-center mb-8 p-5  px-10 max-w-sm"
               data-aos="fade-up" data-aos-duration="1000">
-              <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 w-56 h-auto"
+              <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 w-56 h-auto  "
                 :src="lecturer.image" />
               <div class="flex mx-auto">
                 <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name">
@@ -194,21 +196,53 @@
     <script></script>
   </section>
 
-  <section id="initiatives" class="relative bg-gray-800 h-screen h-screen-scalable">
+  <section id="initiatives" class="relative  min-h-700px">
     <!-- <div class="section-gap"></div> -->
     <div class="container mx-auto p-5">
-      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center text-white">Initiatives</h2>
+      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center ">INITIATIVES</h2>
+
+      <div class="initiative-items h-full w-full px-2 ">
+        <div class=" " x-data="initiativesData()">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper"> <template x-for="(initiative, index) in initiatives" :key="index">
+
+                <div class="swiper-slide">
+                  <div
+                    class="initiative-item flex flex-col  pb-10 md:flex-row min-h-xl rounded-xl md:h-600px relative overflow-hidden p-2 md:p-5 border-2 border-gray-300 my-5 flex-shrink-0 md:flex-grow ">
+                    <div class="flex h-full place-content-center bg-gray-900 rounded-xl z-10">
+                      <img class=" my-auto rounded-xl md:rounded-none w-full mt-1/2     md:mx-1 z-10 "
+                        :src="initiative.image" :alt="initiative.description">
+                    </div>
+
+                    <div class="flex flex-col mt-5 mx-auto w-full   md:mx-0  z-10">
+                      <h1
+                        class="text-center md:text-left text-xl font-bold text-yellow-900 z-10 md:ml-10 md:text-5xl uppercase"
+                        x-html="initiative.name"></h1>
+                      <p class="flex py-2 mx-auto max-w-sm md:mb-10 md:mt-auto md:mr-10 md:ml-auto md:text-2xl font-thin md:text-left text-center  z-10 md:text-yellow-800"
+                        x-html="initiative.description"></p>
+                    </div>
+                    <div class="initiative-item-bg opacity-5 absolute left-0 top-0 w-full h-full -z-0"> </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="swiper-button-next text-black "> </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          </template>
+        </div>
+      </div>
     </div>
 
-    <div id="initiatives-container"
-      class="initiatives-container flex flex-row flex-row   w-full  px-5 md:p-8 gap-3 overflow-x-auto snap-x duration-100">
+    <!-- <div id="initiatives-container"
+      class="initiatives-container flex flex-row w-full  gap-3 overflow-x-auto snap-x duration-100">
 
       <div class="flex md:w-48 flex-shrink-0 "></div>
-      <!-- initiative items -->
 
-      <!-- 1 -->
       <div
-        class="initiative-item-1 flex mx-auto  my-auto flex-col p-6          py-24 md:text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
+        class="initiative-item-1 flex mx-auto  my-auto flex-col p-6 py-24 md:text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
         onclick="scrollToView(event)">
         <div class="md:mx-auto mb-5">
           <h1 class="flex mx-auto text-center text-yellow-300 font-bold text-2xl ">Isnomics</h1>
@@ -223,7 +257,6 @@
         </p>
       </div>
 
-      <!-- 2 -->
       <div
         class="initiative-item-1 flex mx-auto  my-auto flex-col p-6 py-24 text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
         onclick="scrollToView(event)">
@@ -243,7 +276,6 @@
         </p>
       </div>
 
-      <!-- 3 -->
       <div
         class="initiative-item-1 flex mx-auto  my-auto flex-col p-6         py-24 text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
         onclick="scrollToView(event)">
@@ -260,7 +292,6 @@
         </p>
       </div>
 
-      <!-- 4 -->
       <div
         class="initiative-item-1 flex mx-auto  my-auto flex-col p-6         py-24 text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
         onclick="scrollToView(event)">
@@ -281,14 +312,14 @@
       <div class="flex md:w-48 flex-shrink-0 "></div>
 
 
-    </div>
+    </div> -->
   </section>
 
   <section id="Dept_Committee " class="z-0 relative bg-gray-100 snap-start  h-screen h-screen-scalable">
     <hr />
     <div class=" container mx-auto  p-5">
       <div class="section-gap"></div>
-      <h2 class="text-3xl mb-5 font-bold text-center">Dept. Committee</h2>
+      <h2 class="text-3xl mb-5 font-bold text-center">Dept. COMMITTEE</h2>
       <!-- #CORE COMMITTEE -->
       <div
         class="Dept_committee_container flex flex-row flex-shrink-0 overflow-x-auto md:mx-auto  text-center mx-auto  md:pt-10 rounded-lg place-items-center text-center align-items-center md:divide-x divide-white snap-x">
@@ -395,6 +426,8 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
   </script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   <script src="data.js"></script>
   <script src="scripts.js"></script>
   <script src="jqueryScripts.js"></script>
