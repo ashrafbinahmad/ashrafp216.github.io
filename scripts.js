@@ -11,23 +11,23 @@ const firebaseConfig = {
     measurementId: "G-YJREGCGRLK"
   };
 
-// Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
 
 var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
+    spaceBetween: 40,
     centeredSlides: true,
     autoplay: {
       delay: 4000,
-      disableOnInteraction: false,
+      disableOnInteraction: true,
     },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".next",
+      prevEl: ".prev",
     },
   });
 
@@ -39,7 +39,7 @@ function SaveToDb(data, ref) {
 var nav = document.getElementById('nav');
 
 window.addEventListener('scroll', function (event) {
-    // event.preventDefault();
+    event.preventDefault();
 
     if (window.scrollY <= 150) {
         nav.classList.add('nav-normal')

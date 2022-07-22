@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>IEF | DHIU</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
@@ -25,12 +26,12 @@
   <nav id="nav" class="nav-normal z-20 duration-100">
     <div class="container mx-auto flex flex-shrink-0">
       <div class="div_iefdhiu flex md:ml-0 md:mr-0 md:text-2xl text-lg px-5  text-gray-300">
-        <h1 class="  duration-0">
+        <h1 class="  duration-0" data-aos="fade-right">
           IEF |
           <a class="cursor-pointer hover:text-gray-300" href="http://dhiu.in/" target="_blank">DHIU</a>
         </h1>
         <div class="max-h-10 overflow-hidden darul">
-          <h2 class="ml-8 text-sm invisible w-0 h-0 md:visible md:w-auto md:h-auto">
+          <h2 class="ml-8 text-sm invisible w-0 h-0 md:visible md:w-auto md:h-auto" data-aos="fade-right">
             Darul Huda <br />
             Islamic University
           </h2>
@@ -42,7 +43,8 @@
         <div id="menu" class="flex" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
           class="duration-0 mr-0 ml-auto text-lg  md:w-auto md:visible overflow-hidden ">
           <ul
-            class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2">
+            class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2"
+            data-aos="fade-left">
             <template x-for="(item,index) in items" :key="index">
               <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer "
                 @click="window.scrollTo({ top: document.getElementById(item.link), behavior: 'smooth'}); ">
@@ -62,13 +64,13 @@
       <div class="container mx-auto p-5 ">
         <div class="head_content pt-48 ">
 
-          <h1 class="md:text-7xl text-5xl mb-10 text-center">
+          <h1 class="md:text-7xl text-5xl mb-10 text-center" data-aos="zoom-in">
             <p class="md:text-4xl text-2xl leading-tight ">DEPARTMENT OF </p> ISLAMIC <br> ECONOMICS <br> AND <br>
             FINANCE
           </h1>
 
         </div>
-        <h2 class="icons mx-auto text-center text-gray-400 text-sm">
+        <h2 class="icons mx-auto text-center text-gray-400 text-sm" data-aos="fade-up">
           <a
             href="https://www.facebook.com/%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A-%D8%A8%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-100344009057312/">
             <i class="pr-2 cursor-pointer fa fa-facebook-official "></i></a>
@@ -81,7 +83,7 @@
             <u class="pl-2 cursor-pointer ">dhiu.in</u></a>
         </h2>
         <br>
-        <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300">DARUL HUDA ISLAMIC UNIVERSITY</h2>
+        <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300"  data-aos="fade-up">DARUL HUDA ISLAMIC UNIVERSITY</h2>
       </div>
       <div></div>
       <div id="btn-toggle"
@@ -140,7 +142,8 @@
     </div>
   </header>
 
-  <section id="message section-after-head " class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full">
+  <section id="message section-after-head " class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full "
+    data-aos="fade-up" data-aos-duration="1000">
 
     <div class="section-gap text-center ">
       <div class="mt-2 w-10 md:w-20 h-2 bg-gray-300 mx-auto rounded-lg"></div>
@@ -168,7 +171,7 @@
     </div>
   </section>
 
-  <section id="Lecturers " class="z-0 relative bg-gray-100  ">
+  <section id="Lecturers " class="z-0 relative bg-gray-100  " data-aos="fade-up" data-aos-duration="1000">
     <hr />
     <div class="container mx-auto align-center text-center p-5">
       <div class="section-gap"></div>
@@ -196,15 +199,23 @@
     <script></script>
   </section>
 
-  <section id="initiatives" class="relative  min-h-700px">
+  <section id="initiatives" class="relative  min-h-700px " data-aos="fade-up" data-aos-duration="1000">
     <!-- <div class="section-gap"></div> -->
-    <div class="container mx-auto p-5">
-      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center ">INITIATIVES</h2>
+    <div class="next flex invisible md:visible text-6xl w-7 h-full absolute bg-gray-300 hover:bg-gray-400 right-0">
+      <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-right"></i></div>
+    </div>
+    <div class="prev flex invisible md:visible text-6xl w-7 h-full absolute bg-gray-300 hover:bg-gray-400 left-0">
+      <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left"></i></div>
+    </div>
+    <div class="container mx-auto p-5 ">
+      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center " data-aos="fade-up" data-aos-duration="1000">INITIATIVES
+      </h2>
 
-      <div class="initiative-items h-full w-full px-2 ">
+      <div class="initiative-items h-full w-full px-2 self-center my-5" data-aos="fade-up" data-aos-duration="1000">
         <div class=" " x-data="initiativesData()">
           <div class="swiper mySwiper">
-            <div class="swiper-wrapper"> <template x-for="(initiative, index) in initiatives" :key="index">
+            <div class="swiper-wrapper">
+              <template x-for="(initiative, index) in initiatives" :key="index">
 
                 <div class="swiper-slide">
                   <div
@@ -226,9 +237,10 @@
                 </div>
               </template>
             </div>
-            <div class="swiper-button-next text-black "> </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+            <div class="mt-5">
+
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
 
           </template>
@@ -236,86 +248,11 @@
       </div>
     </div>
 
-    <!-- <div id="initiatives-container"
-      class="initiatives-container flex flex-row w-full  gap-3 overflow-x-auto snap-x duration-100">
 
-      <div class="flex md:w-48 flex-shrink-0 "></div>
-
-      <div
-        class="initiative-item-1 flex mx-auto  my-auto flex-col p-6 py-24 md:text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
-        onclick="scrollToView(event)">
-        <div class="md:mx-auto mb-5">
-          <h1 class="flex mx-auto text-center text-yellow-300 font-bold text-2xl ">Isnomics</h1>
-
-          <div class=" md:-mt-1 w-full bg-yellow-300 mx-auto rounded-xs" style="height:2px ; "></div>
-        </div>
-        <p class="flex pt-3  text-white text-xl">
-          10 day campaign program conducted by
-          the department that focused on the
-          contributions of Islamic scholars in the
-          eld of economics.
-        </p>
-      </div>
-
-      <div
-        class="initiative-item-1 flex mx-auto  my-auto flex-col p-6 py-24 text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
-        onclick="scrollToView(event)">
-
-        >
-
-        <div class="mx-auto mb-5">
-          <h1 class="flex mx-auto text-center text-yellow-300 font-bold text-2xl ">Finaissance</h1>
-
-          <div class=" -mt-1 w-full bg-yellow-300 mx-auto rounded-xs" style="height:2px ; "></div>
-        </div>
-        <p class="flex pt-3  text-white text-xl">
-          Talk series program that provides the
-          students with the opportunity to hear
-          from prominent scholars in the field and
-          interact with them.
-        </p>
-      </div>
-
-      <div
-        class="initiative-item-1 flex mx-auto  my-auto flex-col p-6         py-24 text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
-        onclick="scrollToView(event)">
-        <div class="mx-auto mb-5">
-          <h1 class="flex mx-auto text-center text-yellow-300 font-bold text-2xl ">Seyaha</h1>
-
-          <div class=" -mt-1 w-full bg-yellow-300 mx-auto rounded-xs" style="height:2px ; "></div>
-        </div>
-        <p class="flex pt-3  text-white text-xl">
-          Two weeks long academic trip through
-          which the students can visit Islamic
-          financial institutions and understand the
-          operations going on there.
-        </p>
-      </div>
-
-      <div
-        class="initiative-item-1 flex mx-auto  my-auto flex-col p-6         py-24 text-center flex-shrink-0 md:min-h-1/2 border-2 border-black  bg-gray-700 shadow-yellow-200 self-center rounded-lg w-full md:w-3/4 max-w-3xl   md:h-full snap-center hover:scale-25 overflow-hidden"
-        onclick="scrollToView(event)">
-        <div class="mx-auto mb-5">
-          <h1 class="flex mx-auto text-center text-yellow-300 font-bold text-2xl ">Seminars and Webinars</h1>
-
-          <div class=" -mt-1 w-full bg-yellow-300 mx-auto rounded-xs" style="height:2px ; "></div>
-        </div>
-        <p class="flex pt-3  text-white text-xl">
-          Waqf Seminar <br>
-          And more...
-        </p>
-      </div>
-
-
-
-
-      <div class="flex md:w-48 flex-shrink-0 "></div>
-
-
-    </div> -->
   </section>
 
-  <section id="Dept_Committee " class="z-0 relative bg-gray-100 snap-start  h-screen h-screen-scalable">
+  <section id="Dept_Committee " class="z-0 relative bg-gray-100 snap-start  h-screen h-screen-scalable hidden"
+    data-aos="fade-up" data-aos-duration="1000">
     <hr />
     <div class=" container mx-auto  p-5">
       <div class="section-gap"></div>
@@ -373,50 +310,62 @@
 
 
   </section>
-  <footer class="bg-gray-100 text-center">
-    <div class="px-6 pt-6">
-      <form action="">
-        <div class="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
-          <div class="md:ml-auto md:mb-6">
-            <p class="text-gray-800">
-              <strong>Sign up for our newsletter</strong>
-            </p>
-          </div>
+
+  <section id="notification" class="relative hidden" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container mx-auto p-5 ">
+      <div class="text-center w-full">
+        <img class="w-10 h-10 inline-block -mt-3" src="images/bell.gif" alt="" srcset="">
+        <h2 class="text-3xl font-bold inline-block">NOTIFICATION</h2>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-gray-500 text-center " data-aos="fade-up" data-aos-duration="1000">
+    <div class="flex mt-5 self-center h-96 content-center">
+      <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
+        <p class="text-xl font-thin text-gray-500"></p>
+        <form action="">
 
           <div class="md:mb-6">
             <input type="text" class="
-                form-control
-                block
-                w-full
-                px-3
-                py-1.5
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-              " id="email_input" placeholder="Email address" value="hdfsgi" />
+              border-0 
+                    form-control
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-transparent
+                    bg-clip-padding
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0 text-center text-3xl cursor-pointer focus:cursor-text 
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
+                  " id="email_input" placeholder="Signup for notification" value="" @click="el.placeholder='hi hi'" />
           </div>
 
           <div class="md:mr-auto mb-6">
             <button id="submit" type="submit"
-              class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
+              class="inline-block my-8 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
           </div>
-        </div>
-      </form>
+
+        </form>
+
+      </div>
     </div>
 
-    <div class="text-center text-gray-700 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center text-gray-300 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2021 Copyright:
-      <a class="text-gray-800" href="https://tailwind-elements.com/">Tailwind Elements</a>
+      <a class="text-gray-300" href="https://tailwind-elements.com/">Tailwind Elements</a>
     </div>
   </footer>
-  <div onload="workOnLoad()">.</div>
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
     integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
