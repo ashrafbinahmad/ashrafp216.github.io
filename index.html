@@ -3,13 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="google-signin-client_id" content="1005055631588-ut7ef95ae0psevgdut0cohn8298qour7.apps.googleusercontent.com">
+  <!-- <meta name="google-signin-client_id" content="1005055631588-ut7ef95ae0psevgdut0cohn8298qour7.apps.googleusercontent.com"> -->
   <title>IEF | DHIU</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-  </script> crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
     integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -204,10 +203,12 @@
 
   <section id="initiatives" class="relative  min-h-700px " data-aos="fade-up" data-aos-duration="1000">
     <!-- <div class="section-gap"></div> -->
-    <div class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-300 right-0">
+    <div
+      class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-300 right-0">
       <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-right "></i></div>
     </div>
-    <div class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-300 left-0">
+    <div
+      class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-300 left-0">
       <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left "></i></div>
     </div>
     <div class="container mx-auto p-5 ">
@@ -361,31 +362,7 @@
       </div>
     </div>
 
-    <div class="google-signIn">
-      <div id="my-signin2"></div>
-  <script>
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-  </script>
-
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    </div>
-
+<div id="glogin" class="bg-red-500 hover:bg-red-700 text-white cursor-pointer p-5">Login with Google</div>
     <div class="text-center text-gray-300 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
       <h2 class="icons mx-auto text-center text-gray-300 text-xl">
         <a href="https://twitter.com" target="_blank">

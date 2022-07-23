@@ -13,6 +13,7 @@ const firebaseConfig = {
 
 
 firebase.initializeApp(firebaseConfig);
+const GoogleAuth = new firebase.auth.GoogleAuthProvider();
 
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 40,

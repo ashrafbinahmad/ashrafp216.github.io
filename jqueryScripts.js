@@ -17,7 +17,17 @@ $('#submit').click(function (event) {
         alert("invalid email")
         return;
     }
-    SaveToDb(  emailInput, "emails");
+    SaveToDb(emailInput, "emails");
     alert('Thank you for subscribing')
 
+})
+
+$("#glogin").click(() => {
+    // alert("hi")
+    // Google provider object is created here.
+    const googleAuth =
+        new firebase.auth.GoogleAuthProvider();
+
+    // using the object we will authenticate the user.
+    firebase.auth().signInWithPopup(googleAuth);
 })
