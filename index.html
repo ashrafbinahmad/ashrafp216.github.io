@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="google-signin-client_id" content="1005055631588-ut7ef95ae0psevgdut0cohn8298qour7.apps.googleusercontent.com">
   <title>IEF | DHIU</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -358,6 +359,31 @@
         </form>
 
       </div>
+    </div>
+
+    <div class="google-signIn">
+      <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     </div>
 
     <div class="text-center text-gray-300 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
