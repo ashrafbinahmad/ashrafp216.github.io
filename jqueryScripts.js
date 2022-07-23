@@ -25,5 +25,5 @@ $('#submit').click(function (event) {
 $("#glogin").click(() => {
     const googleAuth =
         new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(googleAuth).then(alert(googleAuth.email));
+    firebase.auth().signInWithPopup(googleAuth).then((result) =>alert(result.email));
 })
