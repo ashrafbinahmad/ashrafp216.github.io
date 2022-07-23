@@ -23,11 +23,7 @@ $('#submit').click(function (event) {
 })
 
 $("#glogin").click(() => {
-    // alert("hi")
-    // Google provider object is created here.
     const googleAuth =
         new firebase.auth.GoogleAuthProvider();
-
-    // using the object we will authenticate the user.
-    firebase.auth().signInWithPopup(googleAuth);
+    firebase.auth().signInWithPopup(googleAuth).then(alert(googleAuth.email));
 })
