@@ -41,23 +41,28 @@ data = {
     initiatives: [
         {
             name: "Isnomics",
-            image: "images/Islamic-coins-bg.jpg",
-            description: "10 day campaign program conducted by the department that focused on the contributions of Islamic scholars in the held of economics."
+            image: "images/Isnomics.jpg",
+            description: "10 day campaign program conducted by the department that focused on the contributions of Islamic scholars in the held of economics.",
+            colors: { title: "#362c53", border: "#cc99ff", description: "#663399" }
         },
+
         {
             name: "Finaissance",
             image: "images/Islamic-coins-bg.jpg",
-            description: "Talk series program that provides the students with the opportunity to hear from prominent scholars in the field and interact with them."
+            description: "Talk series program that provides the students with the opportunity to hear from prominent scholars in the field and interact with them.",
+            colors: { title: "#402382", border: "#6246aa", description: "#402382" }
         },
         {
             name: "Seyaha",
             image: "images/Islamic-coins-bg.jpg",
-            description: "Two weeks long academic trip through which the students can visit Islamic financial institutions and understand the operations going on there."
+            description: "Two weeks long academic trip through which the students can visit Islamic financial institutions and understand the operations going on there.",
+            colors: { title: "#402382", border: "#cc99ff", description: "#402382" }
         },
         {
             name: "Seminars and <br> Webinars",
-            image: "images/Islamic-coins-bg.jpg",
-            description: "Waqf Seminar  And more..."
+            image: "images/waqf_seminar.jpg",
+            description: "Waqf Seminar  And more...",
+            colors: { title: "#663300", border: "#ead3b7", description: "#cc6600" }
         },
     ],
     dept_committee: [
