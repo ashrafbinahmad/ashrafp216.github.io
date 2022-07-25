@@ -15,18 +15,16 @@ $('#submit').click(function (event) {
     if (isValid) console.log(emailInput)
     else {
         alert("invalid email")
+        console.log(emailInput)
         return;
     }
-    SaveToDb(emailInput, "emails");
-    alert('Thank you for subscribing')
+    SaveToDb(emailInput, "emails", () => {
+        alert('Thank you for subscribing')
+        $('#email_input').val('')
+    });
 
 })
 
-$("#glogin").click(() => {
-    const googleAuth =
-        new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(googleAuth).then((result) => alert(userinfo.email));
-})
 
 $('emailInput').click((event) => {
     event.target.attr("placeholder", "Type a name (Lastname, Firstname)");

@@ -48,9 +48,9 @@ data = {
 
         {
             name: "Finaissance",
-            image: "images/Islamic-coins-bg.jpg",
+            image: "images/coins_thasbeeh.jpg",
             description: "Talk series program that provides the students with the opportunity to hear from prominent scholars in the field and interact with them.",
-            colors: { title: "#402382", border: "#6246aa", description: "#402382" }
+            colors: { title: "#663300", border: "#ead3b7", description: "#cc6600" }
         },
         {
             name: "Seyaha",

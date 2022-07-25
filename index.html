@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- <meta name="google-signin-client_id" content="1005055631588-ut7ef95ae0psevgdut0cohn8298qour7.apps.googleusercontent.com"> -->
   <title>IEF | DHIU</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -19,6 +18,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 
 </head>
 
@@ -43,8 +43,7 @@
         <div id="menu" class="flex" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
           class="duration-0 mr-0 ml-auto text-lg  md:w-auto md:visible overflow-hidden ">
           <ul
-            class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2"
-            data-aos="fade-left">
+            class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2">
             <template x-for="(item,index) in items" :key="index">
               <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer "
                 @click="window.scrollTo({ top: document.getElementById(item.link), behavior: 'smooth'}); ">
@@ -70,7 +69,7 @@
           </h1>
 
         </div>
-        <h2 class="icons mx-auto text-center text-gray-400 text-sm" data-aos="fade-up">
+        <h2 class="icons mx-auto text-center text-gray-400 text-sm">
           <a href="https://twitter.com" target="_blank">
             <i class="px-2 cursor-pointer fa fa-twitter "></i></a>
           <a href="https://www.youtube.com/channel/UCJ2NnNipDCR50L_CRoLyMqg" target="_blank">
@@ -85,7 +84,7 @@
 
         </h2>
         <br>
-        <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300" data-aos="fade-up">DARUL HUDA ISLAMIC
+        <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300">DARUL HUDA ISLAMIC
           UNIVERSITY</h2>
       </div>
       <div id="btn-toggle"
@@ -139,7 +138,6 @@
                     <template x-for="(tab, index) in tabs.items" :key="index">
                       <li class="cursor-pointer py-2 px-2 text-gray-500 md:block inline-block"
                         :class="activeTab===index ? 'text-white md:border-l-4 border-b-4 md:border-b-0 font-bold border-white ' : ''"
-                        onclick="document.getElementById('info-menu-list').scrollLeft = event.target.offsetLeft"
                         @mouseover="activeTab = index" x-text="tab"></li>
                     </template>
                   </ul>
@@ -190,8 +188,7 @@
 
         <div x-data="lecturers_data()">
           <template x-for="(lecturer,index) in lecturers" :key="index">
-            <div class="flex flex-col flex-none inline-flex align-center text-center mb-8 p-5  px-10 max-w-sm"
-              data-aos="fade-up" data-aos-duration="1000">
+            <div class="flex flex-col flex-none inline-flex align-center text-center mb-8 p-5  px-10 max-w-sm">
               <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 w-56 h-auto  "
                 :src="lecturer.image" />
               <div class="flex mx-auto">
@@ -336,15 +333,15 @@
   <footer class="bg-gray-500 text-center " data-aos="fade-up" data-aos-duration="1000">
     <div class="flex mt-5 self-center h-96 content-center">
       <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
-        <p class="text-xl font-thin text-gray-500"></p>
         <form action="">
 
           <div class="md:mb-6">
-            <input type="text" id="emailInput" class="
+            <input type="text" id="email_input" class="
               border-0 
                     form-control
                     block
-                    w-full
+                    mx-1
+                    w-96
                     px-3
                     py-1.5
                     text-base
@@ -355,30 +352,15 @@
                     rounded
                     transition
                     ease-in-out
-                    m-0 text-center text-3xl cursor-pointer focus:cursor-text 
+                    m-0 text-center text-xs cursor-pointer focus:cursor-text 
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
-                  " id="email_input" placeholder="Email" value=""  />
+                  " id="email_input" placeholder="Type your email to subscribe to our news letter" value=""  />
           </div>
 
-          <div class="md:mr-auto mb-6">
+          <div class="">
             <button id="submit" type="submit"
-              class="inline-block my-3 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
+              class="inline-block my-2 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
           </div>
-          <p class="font-medium text-xs text-gray-200 my-3 ">OR </p>
-          <div id="login" class="flex-grow-0 rounded-xl  mx-auto overflow-hidden flex flex-row text-xs">
-            <div id="glogin" class="bg-red-400 hover:bg-red-700 text-white cursor-pointer py-2 px-2 ">
-              <i class="fa fa-solid fa-google py-2"></i>
-              Login
-              with Google
-            </div>
-            <div id="fblogin" class="bg-blue-500 hover:bg-blue-700 text-white cursor-pointer py-2 px-2">
-              <i class="fa fa-solid fa-facebook-official py-2"></i>
-              Login
-              with Facebook
-            </div>
-          </div>
-
-
         </form>
 
       </div>

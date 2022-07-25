@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 
 firebase.initializeApp(firebaseConfig);
-const GoogleAuth = new firebase.auth.GoogleAuthProvider();
+
 
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 40,
@@ -34,9 +34,8 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
-function SaveToDb(data, ref) {
-    console.log("trying to save")
-    firebase.database().ref(ref).push(data);
+function SaveToDb(data, ref, action) {
+    firebase.database().ref(ref).push(data).then(action);
 }
 
 var nav = document.getElementById('nav');
