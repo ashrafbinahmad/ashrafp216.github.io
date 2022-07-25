@@ -8,30 +8,34 @@
 
 }
 
-/* .initiatives-container::-webkit-scrollbar,
-.Dept_committee_container::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: block;
   width: 5px;
 }
 
-.initiatives-container::-webkit-scrollbar-thumb,
-.Dept_committee_container::-webkit-scrollbar-thumb {
-  background-color: rgba(146, 141, 141, 0.281);
-  border-radius: 20px;
-  height: 0px;
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(100, 86, 5);
+  border-radius: 100px;
 }
 
-.initiatives-container::-webkit-scrollbar-track,
-.Dept_committee_container::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: transparent;
   margin-right: 20vw;
   margin-left: 20vw;
   border-radius: 20px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.icons a:hover {
+  color: white;
+}
+
 .initiative-item-1 {
-  /* background: url('images/Islamic-coins-bg.jpg'); */
-  /* background-position: top;
+  background: url('images/Islamic-coins-bg.jpg'); */
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -43,7 +47,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-}  */
+}  
 
 .initiative-item-bg {
   background-image: url('images/islamic_pattern.png');

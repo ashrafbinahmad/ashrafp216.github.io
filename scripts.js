@@ -20,11 +20,13 @@ var swiper = new Swiper(".mySwiper", {
     centeredSlides: true,
     autoplay: {
       delay: 4000,
-      disableOnInteraction: true,
+      disableOnInteraction: false,
     },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
+
     },
     navigation: {
       nextEl: ".next",
@@ -71,10 +73,13 @@ function ToggleShowMoreInfo() {
     var id = 'more_info'
     var el = document.getElementById(id)
     var toggle_btn = document.getElementById('btn-toggle')
+
     if (!el.classList.contains('info')) {
+        // if showing more info
         el.classList.replace('info-hidden', 'info')
         toggle_btn.classList.replace('info-off', 'info-on')
     } else {
+        // if not showing more info
         el.classList.replace('info', 'info-hidden')
         toggle_btn.classList.replace('info-on', 'info-off')
     }

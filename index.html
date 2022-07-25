@@ -26,12 +26,12 @@
   <nav id="nav" class="nav-normal z-20 duration-100">
     <div class="container mx-auto flex flex-shrink-0">
       <div class="div_iefdhiu flex md:ml-0 md:mr-0 md:text-2xl text-lg px-5  text-gray-300">
-        <h1 class="mt-1  duration-0" data-aos="fade-right">
+        <h1 class="mt-1  duration-0">
           IEF |
           <a class="cursor-pointer hover:text-gray-300" href="http://dhiu.in/" target="_blank">DHIU</a>
         </h1>
         <div class="max-h-10 overflow-hidden darul">
-          <h2 class="ml-8 text-sm invisible w-0 h-0 md:visible md:w-auto md:h-auto" data-aos="fade-right">
+          <h2 class="ml-8 text-sm invisible w-0 h-0 md:visible md:w-auto md:h-auto">
             Darul Huda <br />
             Islamic University
           </h2>
@@ -64,7 +64,7 @@
       <div class="container mx-auto p-5 ">
         <div class="head_content pt-48 ">
 
-          <h1 class="md:text-7xl text-5xl mb-10 text-center" data-aos="zoom-in">
+          <h1 class="md:text-7xl text-5xl mb-10 text-center">
             <p class="md:text-4xl text-2xl leading-tight ">DEPARTMENT OF </p> ISLAMIC <br> ECONOMICS <br> AND <br>
             FINANCE
           </h1>
@@ -89,9 +89,9 @@
           UNIVERSITY</h2>
       </div>
       <div id="btn-toggle"
-        class="info-off cursor-pointer overflow-hidden w-8 h-7 absolute rounded bg-gray-800  right-5  bottom-5 z-50 "
+        class="info-off cursor-pointer overflow-hidden w-7 h-7 absolute rounded bg-gray-800  right-5  bottom-5 z-50 "
         onclick="ToggleShowMoreInfo()">
-        <div class="close  text-white text-center mt-1 font-bold -ml-20" style="height: 3px;">X</div>
+        <div class="close  text-white text-center  font-bold -ml-20" style="height: 3px;">X</div>
         <div class="bar ml-auto mr-1 mt-1 w-3/6 bg-white rounded-full " style="height: 2px;"></div>
         <div class="bar ml-auto mr-1 mt-1 w-1/5 bg-white rounded-full " style="height: 2px;"></div>
         <div class="bar ml-auto mr-1 mt-1 w-3/5 bg-white rounded-full " style="height: 2px;"></div>
@@ -105,27 +105,35 @@
                 <div id="tab-field"
                   class="grid order-2 md:order-1 text-sm  max-w-3xl  md:pl-24 text-gray-300 text-sm leading-6 mx-auto md:mt-10 ">
 
-                  <div id="info-about " x-show="activeTab===0" class="overflow-y-auto pb-56">
+                  <div id="info-about " x-show="activeTab===0" class="overflow-y-auto pb-56 flex flex-col">
                     <h1 class="text-xl text-yellow-200 pb-5 underline invisible md:visible ">About the course</h1>
-                    <p x-html="tabs.about " class="md:mt-0 -mt-10"></p>
+                    <div class="h-96 md:h-full overflow-y-auto -mt-10 md:mt-0 overflow-hidden pr-2 self-center">
+                      <p x-html="tabs.about " class="md:mt-0 "></p>
+                    </div>
+
+
                   </div>
                   <div id="info-about " x-show="activeTab===1" class=" ">
                     <h1 class="text-xl text-yellow-200 pb-5 underline  invisible md:visible ">Programme structure</h1>
-                    <p x-html="tabs.Program_Structure"></p>
+                    <div class="h-96 md:h-full overflow-y-auto -mt-10 md:mt-0 overflow-hidden pr-2 self-center">
+                      <p x-html="tabs.Program_Structure"></p>
+                    </div>
 
                   </div>
                   <div id="info-about " x-show="activeTab===2" class=" ">
                     <h1 class="text-xl text-yellow-200 pb-5 underline  invisible md:visible ">Student Life</h1>
-                    <p x-html="tabs.Student_life"></p>
-
+                    <div class="h-96 md:h-full overflow-y-auto -mt-10 md:mt-0 overflow-hidden pr-2 self-center">
+                      <p x-html="tabs.Student_life"></p>
+                    </div>
                   </div>
                   <div id="info-about " x-show="activeTab===3" class=" ">
                     <h1 class="text-xl text-yellow-200 pb-5 underline  invisible md:visible ">Placement and Career</h1>
-                    <p x-html="tabs.Placement"></p>
-
+                    <div class="h-96 md:h-full overflow-y-auto -mt-10 md:mt-0 overflow-hidden pr-2 self-center">
+                      <p x-html="tabs.Placement"></p>
+                    </div>
                   </div>
                 </div>
-                <div id="tab-items" class="md:grid flex  order-1 md:order-2 info-menu mb-10 md:pt-56">
+                <div id="tab-items" class="md:grid flex  order-1 md:order-2 info-menu md:mb-10 md:pt-56">
                   <ul id="info-menu-list " class=" md:block   ">
 
                     <template x-for="(tab, index) in tabs.items" :key="index">
@@ -204,11 +212,11 @@
   <section id="initiatives" class="relative  min-h-700px " data-aos="fade-up" data-aos-duration="1000">
     <!-- <div class="section-gap"></div> -->
     <div
-      class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-300 right-0">
+      class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 right-0">
       <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-right "></i></div>
     </div>
     <div
-      class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-300 left-0">
+      class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 left-0">
       <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left "></i></div>
     </div>
     <div class="container mx-auto p-5 ">
@@ -221,23 +229,20 @@
             <div class="swiper-wrapper">
               <template x-for="(initiative, index) in initiatives" :key="index">
 
-                <div class="swiper-slide " >
+                <div class="swiper-slide ">
                   <div
-                    class="initiative-item flex flex-col  pb-10 md:flex-row min-h-xl rounded-xl md:h-600px relative overflow-hidden p-2 md:p-5 border-2 my-5 flex-shrink-0 md:flex-grow " :style="'border-color: '+ initiative.colors.border">
+                    class="initiative-item flex flex-col  pb-10 md:flex-row min-h-xl rounded-xl md:h-600px relative overflow-hidden p-2 md:p-5 border-2 my-5 flex-shrink-0 md:flex-grow "
+                    :style="'border-color: '+ initiative.colors.border">
                     <div class="flex h-full place-content-center bg-gray-900 rounded-xl z-10">
                       <img class=" my-auto rounded-xl md:rounded-none w-full mt-1/2     md:mx-1 z-10 "
                         :src="initiative.image" :alt="initiative.description">
                     </div>
 
                     <div class="flex flex-col mt-5 mx-auto w-full   md:mx-0  z-10">
-                      <h1
-                        class="text-center md:text-left text-xl font-black z-10 md:ml-10 md:text-5xl uppercase "
-                        :style="'color: '+ initiative.colors.title ;"
-                        x-html="initiative.name"></h1>
+                      <h1 class="text-center md:text-left text-xl font-black z-10 md:ml-10 md:text-5xl uppercase "
+                        :style="'color: '+ initiative.colors.title ;" x-html="initiative.name"></h1>
                       <p class="flex py-2 mx-auto max-w-sm md:mb-10 md:mt-auto md:mr-10 md:ml-auto md:text-2xl font-thin md:text-left text-center  z-10 md:text-yellow-800"
-                        x-html="initiative.description"
-                        :style="'color: '+ initiative.colors.description ;"
-                        ></p>
+                        x-html="initiative.description" :style="'color: '+ initiative.colors.description ;"></p>
                     </div>
                     <div class="initiative-item-bg opacity-5 absolute left-0 top-0 w-full h-full -z-0"> </div>
                   </div>
@@ -335,7 +340,7 @@
         <form action="">
 
           <div class="md:mb-6">
-            <input type="text" class="
+            <input type="text" id="emailInput" class="
               border-0 
                     form-control
                     block
@@ -352,16 +357,28 @@
                     ease-in-out
                     m-0 text-center text-3xl cursor-pointer focus:cursor-text 
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
-                  " id="email_input" placeholder="Signup for notification" value="" @click="el.placeholder='hi hi'" />
+                  " id="email_input" placeholder="Email" value=""  />
           </div>
 
           <div class="md:mr-auto mb-6">
             <button id="submit" type="submit"
               class="inline-block my-3 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
           </div>
-          <p class="text-xl text-gray-200 my-3 ">OR </p>
-          <div id="glogin" class="bg-red-500 hover:bg-red-700 text-white cursor-pointer p-5 flex-none rounded-xl">Login
-            with Google</div>
+          <p class="font-medium text-xs text-gray-200 my-3 ">OR </p>
+          <div id="login" class="flex-grow-0 rounded-xl  mx-auto overflow-hidden flex flex-row text-xs">
+            <div id="glogin" class="bg-red-400 hover:bg-red-700 text-white cursor-pointer py-2 px-2 ">
+              <i class="fa fa-solid fa-google py-2"></i>
+              Login
+              with Google
+            </div>
+            <div id="fblogin" class="bg-blue-500 hover:bg-blue-700 text-white cursor-pointer py-2 px-2">
+              <i class="fa fa-solid fa-facebook-official py-2"></i>
+              Login
+              with Facebook
+            </div>
+          </div>
+
+
         </form>
 
       </div>
