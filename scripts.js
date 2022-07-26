@@ -9,7 +9,7 @@ const firebaseConfig = {
     messagingSenderId: "1005055631588",
     appId: "1:1005055631588:web:3324c5f4f8470c5258ccf1",
     measurementId: "G-YJREGCGRLK"
-  };
+};
 
 
 firebase.initializeApp(firebaseConfig);
@@ -19,20 +19,20 @@ var swiper = new Swiper(".mySwiper", {
     spaceBetween: 40,
     centeredSlides: true,
     autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
+        delay: 4000,
+        disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
 
     },
     navigation: {
-      nextEl: ".next",
-      prevEl: ".prev",
+        nextEl: ".next",
+        prevEl: ".prev",
     },
-  });
+});
 
 function SaveToDb(data, ref, action) {
     firebase.database().ref(ref).push(data).then(action);
@@ -113,7 +113,10 @@ function initiativesData() {
     }
 }
 
-function ScrollTo(selecter) {
-    var el = document.querySelector(selecter);
-    console.log(selecter)
-}
+// function ScrollTo(selecter) {
+//     var el = document.querySelector(selecter);
+//     console.log(selecter)
+//     window.scrollTo({ top: el.scrollTop, behavior: 'smooth' })
+
+// }
+

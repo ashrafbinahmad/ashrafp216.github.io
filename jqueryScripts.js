@@ -29,3 +29,10 @@ $('#submit').click(function (event) {
 $('emailInput').click((event) => {
     event.target.attr("placeholder", "Type a name (Lastname, Firstname)");
 })
+
+// function ScrollTo(selecter) {
+//     var el = document.q ('#' +selecter);
+//     console.log(el.scrollTop)
+//     window.scrollTo({ top: el.scrollTop, behavior: 'smooth' })
+
+// }

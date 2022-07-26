@@ -33,25 +33,7 @@ body {
   color: white;
 }
 
-.initiative-item-1 {
-  background: url('images/Islamic-coins-bg.jpg'); */
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
 
-}
-
-.initiative-item-1-img {
-  background: url('images/Islamic-coins.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}  
-
-.initiative-item-bg {
-  background-image: url('images/islamic_pattern.png');
-}
 
 div.head {
   background-image: url('images/slide_4.jpg');
@@ -188,7 +170,9 @@ nav {
 
 }
 
-
+.hover_scaleup:hover {
+  transform: scale(1.2);
+}
 
 .info {
   position: absolute;
@@ -212,6 +196,13 @@ nav {
 
 #btn-toggle.info-off {
   background-color: unset;
+  border-radius: 1rem;
+}
+#btn-toggle.info-off:hover {
+  background-color: rgb(0, 88, 160);
+  border-radius: 1rem;
+  border-color: white;
+  transform: scale(1.05);
 }
 
 #btn-toggle.info-on {
@@ -219,40 +210,28 @@ nav {
   border-radius: 100%;
 }
 
-#btn-toggle.info-on>*.bar {
+#btn-toggle.info-on div>*.bar {
   margin-top: -5rem;
   margin-right: 2rem;
   transition-duration: 1.5s;
 }
+#btn-toggle.info-on p {
+ visibility: hidden;
+ display: none;
+ transition-duration: .5s ;
+}
 
-#btn-toggle.info-on>*.close {
+#btn-toggle.info-on div>*.close {
   visibility: visible;
   display: block;
   margin-left: 0;
   transition-duration: 1.5s;
-
 }
 
 .shadow-yellow-200:hover {
   box-shadow: inset 0px 0px 4px 1px rgb(255, 240, 179);
 }
-/* .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-} */
+
 
 
 /* md */
@@ -317,5 +296,8 @@ nav {
 @media (max-width: 768px) {
   .info-grid {
     grid-template-rows: auto auto
+  }
+  .sm\:h-625px {
+    height: 625px;
   }
 }
