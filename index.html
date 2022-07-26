@@ -45,21 +45,21 @@
           <ul
             class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2">
             <template x-for="(item,index) in items" :key="index">
-              <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer ">
+              <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer " @mouseup="show_menu = false">
                 <a :href="item.link" x-text="item.name"></a>
               </li>
             </template>
-            <!-- <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer relative py-2  "
-            onclick="document.querySelector('#email_input').select()"
+            <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer px-1 bg-yellow-200  rounded-sm "
+            onclick="document.getElementById ('email_input').focus()"
             >
-            <a href="#footer" class="z-20">
+            <a href="#footer" class=" text-black" onclick="document.getElementById ('email_input').focus()">
               Subscribe</a>
-              <span class="absolute w-full h-full top-0 left-0 bg-black -z-10 opacity-20"></span>
-            </li> -->
+              <!-- <span class="absolute w-full h-full top-0 left-0 bg-yellow-200 -z-30 opacity-50 hover:opacity-100"></span> -->
+            </li>
 
           </ul>
         </div>
-        <div class="visible md:invisible text-lg pt-1 pr-4" @click="show_menu = !show_menu">
+        <div class="visible md:invisible text-lg pt-1 pr-4  text-gray-300" @click="show_menu = !show_menu">
           <i class="fa fa-bars"></i>
         </div>
       </div>
@@ -365,7 +365,7 @@
                     ease-in-out
                     m-0 text-center text-xs cursor-pointer focus:cursor-text 
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
-                  " id="email_input" placeholder="Type your email to subscribe to our news letter" value="" />
+                  "  placeholder="Type your email to subscribe to our news letter" required />
           </div>
 
           <div class="">
@@ -394,8 +394,8 @@
       </h2>
     </div>
     <div class="bg-black text-gray-300">
-      <p class="p-2 text-xs">Created by <a
-          class="underline hover:text-white" href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
+      <p class="p-2 text-xs sm:text-2xs">Created by <a
+          class="underline hover:text-gray-300" href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
       </p>
     </div>
   </footer>

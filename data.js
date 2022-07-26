@@ -61,7 +61,7 @@ data = {
         {
             name: "Seminars and <br> Webinars",
             image: "images/waqf_seminar.jpg",
-            description: "Waqf Seminar  And more...",
+            description: "Waqf Seminar  And more... <br><br><br>",
             colors: { title: "#663300", border: "#ead3b7", description: "#cc6600" }
         },
     ],
