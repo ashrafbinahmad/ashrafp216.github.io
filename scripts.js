@@ -104,7 +104,7 @@ function lecturers_data() {
     return {
         lecturers: data.lecturers
     }
-}
+}   
 
 function initiativesData() {
     console.log(data.initiatives)
