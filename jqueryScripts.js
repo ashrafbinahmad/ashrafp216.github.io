@@ -31,7 +31,8 @@ function submitForm(event) {
     let myForm = document.getElementById("subscribe_form");
     let email = document.getElementById("email_input").value;
     console.log(email)
-    if (validateEmail(email)) {
+    let emailModel = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (!emailModel.test(email)) {
         console.log('null value');
         return;
     }
@@ -45,14 +46,14 @@ function submitForm(event) {
         .catch((error) => alert(error));
 }
 
-const validateEmail = (email) => {
-    emailModel = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    if (emailModel.test(email)) {
-        return String(email).toLowerCase()
-    } else {
-        return false
-    }
-};
+// const validateEmail = (email) => {
+//     emailModel = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//     if (emailModel.test(email)) {
+//         return String(email).toLowerCase()
+//     } else {
+//         return false
+//     }
+// };
 
 
 $('emailInput').click((event) => {
