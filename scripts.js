@@ -116,7 +116,7 @@ function ShowMessage(message) {
     let messageSpace = document.getElementById('messageSpace')
     let messageSpace_parent = document.getElementById('messageSpace_parent')
     messageSpace.innerText = message
-    messageSpace_parent.style.top = '3rem'
+    messageSpace_parent.style.top = '2rem'
     setTimeout(()=>{
         messageSpace_parent.style.top = '-3rem' 
     },5000)
