@@ -8,7 +8,7 @@ $("#aboutbtn").click(function () {
 });
 
 $('#submit').click(function (event) {
-    e.preventDefault();
+    event.preventDefault();
     let myForm = document.getElementById("subscribe_form");
     let formData = new FormData(myForm);
     fetch("/", {
