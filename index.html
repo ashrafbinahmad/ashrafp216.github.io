@@ -185,7 +185,7 @@
     </div>
   </section>
 
-  <section id="Lecturers" class="z-0 relative bg-gray-100  " data-aos="fade-up" data-aos-duration="1000">
+  <section id="Lecturers" class="z-0 relative bg-gray-200">
     <hr />
     <div class="container mx-auto align-center text-center p-5">
       <h2 class="text-3xl mb-5 font-bold" data-aos="fade-up" data-aos-duration="1000">LECTURERS</h2>
@@ -197,12 +197,12 @@
               <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 w-56 h-auto  "
                 :src="lecturer.image" />
               <div class="flex mx-auto">
-                <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name">
+                <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name"  data-aos="fade-up" data-aos-duration="1000">
                 </h4>
-                <small class="bg-yellow-800 rounded p-1 text-white inline-flex  " x-show="lecturer.HoD">HoD</small>
+                <small class="bg-yellow-800 rounded p-1 text-white inline-flex  " x-show="lecturer.HoD"  data-aos="fade-up" data-aos-delay="1000">HoD</small>
               </div>
 
-              <p class="mt-5 text-center max-w-md text-sm" x-text="lecturer.description"></p>
+              <p class="mt-5 text-center max-w-md text-sm" x-text="lecturer.description"  data-aos="fade-up" data-aos-duration="2000"></p>
             </div>
           </template>
         </div>
