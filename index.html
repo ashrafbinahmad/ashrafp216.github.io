@@ -30,17 +30,12 @@
           IEF |
           <a class="cursor-pointer hover:text-gray-300" href="http://dhiu.in/" target="_blank">DHIU</a>
         </h1>
-        <div class="max-h-10 overflow-hidden darul">
-          <h2 class="ml-8 text-sm invisible w-0 h-0 md:visible md:w-auto md:h-auto">
-            Darul Huda <br />
-            Islamic University
-          </h2>
-        </div>
+
 
       </div>
       <div class="flex flex-grow"></div>
       <div x-data="menuData()">
-        <div id="menu" class="flex" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
+        <div id="menu" class="flex hidden" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
           class="duration-0 mr-0 ml-auto text-lg  md:w-auto md:visible overflow-hidden ">
           <ul
             class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2">
