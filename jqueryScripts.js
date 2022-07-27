@@ -8,9 +8,12 @@ $("#aboutbtn").click(function () {
 });
 
 $('#submit').click(function (event) {
-    if (event.value == null) { console.log('null value'); return; }
     event.preventDefault();
     let myForm = document.getElementById("subscribe_form");
+    console.log(myForm)
+    if (myForm.value == null) { 
+        console.log('null value');
+        return; }
     let formData = new FormData(myForm);
     fetch("/", {
         method: "POST",
