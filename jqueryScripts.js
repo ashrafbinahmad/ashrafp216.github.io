@@ -12,9 +12,10 @@ $('#submit').click(function (event) {
     let myForm = document.getElementById("subscribe_form");
     let email = document.getElementById("email_input").value;
     console.log(email)
-    if (validateEmail(email)) { 
+    if (validateEmail(email)) {
         console.log('null value');
-        return; }
+        return;
+    }
     let formData = new FormData(myForm);
     fetch("/", {
         method: "POST",
@@ -26,12 +27,12 @@ $('#submit').click(function (event) {
 })
 
 const validateEmail = (email) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
+    if (email.test(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+        return String(email).toLowerCase()
+    } else {
+        return false
+    }
+};
 
 
 $('emailInput').click((event) => {
