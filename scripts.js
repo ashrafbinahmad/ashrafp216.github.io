@@ -113,5 +113,5 @@ function initiativesData() {
     }
 }
 function ShowMessage(message) {
-    Snackbar.show({text: message, pos: 'bottom-left'});
+    Snackbar.show({text: message, pos: 'top-left'});
 }
