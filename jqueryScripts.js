@@ -26,7 +26,7 @@ function submitForm(event) {
         body: new URLSearchParams(formData).toString(),
     })
         .then(() => {
-            ShowMessage("You will get event notifications to your email: "+ email)
+            ShowMessage("Thank you for subscribing to our news letter.You will get event notifications to your email: "+ email)
             document.getElementById("email_input").value = null;
         })
         .catch((error) => ShowMessage(error));
