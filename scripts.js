@@ -115,13 +115,5 @@ function initiativesData() {
 function ShowMessage(message) {
     let messageSpace = document.getElementById('messageSpace')
     messageSpace.innerText = message
-    // alert(message + "ShowMessageed.................")
+    document.getElementById('messageSpace_parent').style.top = '4rem'
 }
-// function ScrollTo(selecter) {
-//     var el = document.querySelector(selecter);
-//     console.log(selecter)
-//     window.scrollTo({ top: el.scrollTop, behavior: 'smooth' })
-
-// }
-
-  
