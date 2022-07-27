@@ -10,7 +10,7 @@ $("#aboutbtn").click(function () {
 $('#submit').click(function (event) {
     event.preventDefault();
     let myForm = document.getElementById("subscribe_form");
-    console.log(myForm)
+    console.log(myForm.value)
     if (myForm.value == null) { 
         console.log('null value');
         return; }
@@ -23,6 +23,14 @@ $('#submit').click(function (event) {
         .then(() => console.log("Form successfully submitted"))
         .catch((error) => alert(error));
 })
+
+const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
 
 
 $('emailInput').click((event) => {
