@@ -8,8 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link ref="stylesheet" type="text/css" href="dist/mdtoast.css" />
-  <script src="dist/mdtoast.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
     integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -47,16 +45,15 @@
           <ul
             class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2">
             <template x-for="(item,index) in items" :key="index">
-              <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer "
-                @mouseup="show_menu = false">
+              <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer " @mouseup="show_menu = false">
                 <a :href="item.link" x-text="item.name"></a>
               </li>
             </template>
-            <li
-              class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer px-1 bg-yellow-200  rounded-sm "
-              onclick="document.getElementById ('email_input').focus()">
-              <a href="#footer" class=" text-black" onclick="document.getElementById ('email_input').focus()">
-                Subscribe</a>
+            <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer px-1 bg-yellow-200  rounded-sm "
+            onclick="document.getElementById ('email_input').focus()"
+            >
+            <a href="#footer" class=" text-black" onclick="document.getElementById ('email_input').focus()">
+              Subscribe</a>
               <!-- <span class="absolute w-full h-full top-0 left-0 bg-yellow-200 -z-30 opacity-50 hover:opacity-100"></span> -->
             </li>
 
@@ -165,8 +162,8 @@
     </div>
   </header>
 
-  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full " data-aos="fade-up"
-    data-aos-duration="1000">
+  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full "
+    data-aos="fade-up" data-aos-duration="1000">
 
     <div class="section-gap text-center ">
       <div class="mt-2 w-10 md:w-20 h-2 bg-gray-300 mx-auto rounded-lg"></div>
@@ -344,7 +341,7 @@
     </div>
   </section>
 
-  <footer id="footer" class="bg-gray-900 text-center ">
+  <footer id="footer" class="bg-gray-900 text-center " >
     <div class="flex mt-5 self-c  enter h-56 content-center">
       <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
         <form action="" name="subscription" id="subscribe_form" netlify>
@@ -368,16 +365,17 @@
                     ease-in-out
                     m-0 text-center text-xs cursor-pointer focus:cursor-text 
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
-                  " placeholder="Type your email to subscribe to our news letter" required />
+                  "  placeholder="Type your email to subscribe to our news letter" required />
           </div>
 
           <div class="">
             <button id="submit" type="submit"
               class="inline-block my-2 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out"
-              onclick="submitForm(event)">Subscribe</button>
+              onclick="submitForm(event)"
+              >Subscribe</button>
           </div>
         </form>
-        added nossssss
+added nossssss
       </div>
     </div>
 
@@ -398,14 +396,17 @@
       </h2>
     </div>
     <div class="bg-black text-gray-300">
-      <p class="p-2 text-xs sm:text-2xs">Created by <a class="underline hover:text-gray-300"
-          href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
+      <p class="p-2 text-xs sm:text-2xs">Created by <a
+          class="underline hover:text-gray-300" href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
       </p>
     </div>
 
   </footer>
 
-
+    <div class="fixed w-screen text-black z-50 h-auto -top-10 left-0 flex">
+      <div id="messageSpace" class="mx-auto bg-yellow-100 border-2 border-gray-600 rounded-lg p-3  inline-block">
+      </div>
+    </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
     integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
