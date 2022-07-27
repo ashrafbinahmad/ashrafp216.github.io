@@ -26,7 +26,7 @@ $("#aboutbtn").click(function () {
 //         .catch((error) => alert(error));
 // })
 
-function submit(event) {
+function submitForm(event) {
     event.preventDefault();
     let myForm = document.getElementById("subscribe_form");
     let email = document.getElementById("email_input").value;
