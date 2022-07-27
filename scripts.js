@@ -113,7 +113,5 @@ function initiativesData() {
     }
 }
 function ShowMessage(message) {
-    let messageSpace = document.getElementById('messageSpace')
-    messageSpace.innerText = message
-    document.getElementById('messageSpace_parent').style.top = '4rem'
+    Snackbar.show({text: message, pos: 'bottom-left'});
 }
