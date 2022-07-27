@@ -112,8 +112,8 @@ function initiativesData() {
         initiatives: data.initiatives
     }
 }
-function alert(message) {
-    alert(message + "alerted.................")
+function ShowMessage(message) {
+    alert(message + "ShowMessageed.................")
 }
 // function ScrollTo(selecter) {
 //     var el = document.querySelector(selecter);
