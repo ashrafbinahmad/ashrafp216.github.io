@@ -8,21 +8,16 @@ $("#aboutbtn").click(function () {
 });
 
 $('#submit').click(function (event) {
-    //event.preventDefault();
-    var emailInput = $('#email_input').val()
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    var isValid = regex.test(emailInput);
-    if (isValid) console.log(emailInput)
-    else {
-        alert("invalid email")
-        console.log(emailInput)
-        return;
-    }
-    SaveToDb(emailInput, "emails", () => {
-        alert('Thank you for subscribing')
-        $('#email_input').val('')
-    });
-
+    e.preventDefault();
+    let myForm = document.getElementById("pizzaOrder");
+    let formData = new FormData(myForm);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
 })
 
 
