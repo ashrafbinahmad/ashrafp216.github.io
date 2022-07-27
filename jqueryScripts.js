@@ -10,8 +10,9 @@ $("#aboutbtn").click(function () {
 $('#submit').click(function (event) {
     event.preventDefault();
     let myForm = document.getElementById("subscribe_form");
-    console.log(myForm.value)
-    if (myForm.value == null) { 
+    let email = document.getElementById("email_input").value;
+    console.log(email)
+    if (validateEmail(email)) { 
         console.log('null value');
         return; }
     let formData = new FormData(myForm);
