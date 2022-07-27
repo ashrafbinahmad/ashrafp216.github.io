@@ -33,7 +33,7 @@ function submitForm(event) {
     console.log(email)
     let emailModel = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (!emailModel.test(email)) {
-        console.log('null value');
+        alert('Invalide email. Please check your input')
         return;
     }
     let formData = new FormData(myForm);
@@ -42,9 +42,14 @@ function submitForm(event) {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
     })
-        .then(() => console.log("Form successfully submitted"))
+        .then(() => {
+            alert("You will get event notifications to your email: "+ email)
+            document.getElementById("email_input").value = null;
+        })
         .catch((error) => alert(error));
 }
+
+
 
 // const validateEmail = (email) => {
 //     emailModel = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
