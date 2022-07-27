@@ -40,7 +40,8 @@
           <ul
             class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2">
             <template x-for="(item,index) in items" :key="index">
-              <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer " @mouseup="show_menu = false">
+              <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer "
+                @mouseup="show_menu = false">
                 <a :href="item.link" x-text="item.name"></a>
               </li>
             </template>
@@ -156,8 +157,8 @@
     </div>
   </header>
 
-  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full "
-    data-aos="fade-up" data-aos-duration="1000">
+  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full " data-aos="fade-up"
+    data-aos-duration="1000">
 
     <div class="section-gap text-center ">
       <div class="mt-2 w-10 md:w-20 h-2 bg-gray-300 mx-auto rounded-lg"></div>
@@ -197,18 +198,21 @@
               <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 w-56 h-auto  "
                 :src="lecturer.image" />
               <div class="flex mx-auto">
-                <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name"  data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name"
+                  data-aos="fade-up" data-aos-duration="1000">
                 </h4>
-                <small class="bg-yellow-800 rounded p-1 text-white inline-flex  " x-show="lecturer.HoD"  data-aos="fade-up" data-aos-delay="1000">HoD</small>
+                <small class="bg-yellow-800 rounded p-1 text-white inline-flex  " x-show="lecturer.HoD"
+                  data-aos="fade-up" data-aos-delay="1000">HoD</small>
               </div>
 
-              <p class="mt-5 text-center max-w-md text-sm" x-text="lecturer.description"  data-aos="fade-up" data-aos-duration="2000"></p>
+              <p class="mt-5 text-center max-w-md text-sm" x-text="lecturer.description" data-aos="fade-up"
+                data-aos-duration="2000"></p>
             </div>
           </template>
         </div>
       </div>
     </div>
-    <script></script>
+    <hr />
   </section>
 
   <section id="events" class="relative  min-h-700px " data-aos="fade-up" data-aos-duration="1000">
@@ -222,7 +226,7 @@
       <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left "></i></div>
     </div>
     <div class="container mx-auto p-5 ">
-      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center " data-aos="fade-up" data-aos-duration="1000">events
+      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center " data-aos="fade-up" data-aos-duration="1000">EVENTS
       </h2>
 
       <div class="event-items h-full w-full px-2 self-center my-5" data-aos="fade-up" data-aos-duration="1000">
@@ -335,7 +339,7 @@
     </div>
   </section>
 
-  <footer id="footer" class="bg-gray-900 text-center " >
+  <footer id="footer" class="bg-gray-900 text-center ">
     <div class="flex mt-5 self-c  enter h-56 content-center">
       <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
         <form action="" name="subscription" id="subscribe_form" netlify>
@@ -359,17 +363,16 @@
                     ease-in-out
                     m-0 text-center text-xs cursor-pointer focus:cursor-text 
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
-                  "  placeholder="Type your email to subscribe to our news letter" required />
+                  " placeholder="Type your email to subscribe to our news letter" required />
           </div>
 
           <div class="">
             <button id="submit" type="submit"
               class="inline-block my-2 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out"
-              onclick="submitForm(event)"
-              >Subscribe</button>
+              onclick="submitForm(event)">Subscribe</button>
           </div>
         </form>
-added nossssss
+        added nossssss
       </div>
     </div>
 
@@ -390,17 +393,18 @@ added nossssss
       </h2>
     </div>
     <div class="bg-black text-gray-300">
-      <p class="p-2 text-xs sm:text-2xs">Created by <a
-          class="underline hover:text-gray-300" href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
+      <p class="p-2 text-xs sm:text-2xs">Created by <a class="underline hover:text-gray-300"
+          href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
       </p>
     </div>
 
   </footer>
 
-    <div id="messageSpace_parent" class="fixed w-screen text-gray-100 z-50 h-auto -top-10 left-0 flex duration-400 text-center text-sm">
-      <div id="messageSpace" class="mx-auto bg-gray-800 border-2 border-black rounded-lg p-2 max-w-sm inline-block">
-      </div>
+  <div id="messageSpace_parent"
+    class="fixed w-screen text-gray-100 z-50 h-auto -top-10 left-0 flex duration-400 text-center text-sm">
+    <div id="messageSpace" class="mx-auto bg-gray-800 border-2 border-black rounded-lg p-2 max-w-sm inline-block">
     </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
     integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
