@@ -113,7 +113,7 @@ function initiativesData() {
     }
 }
 function ShowMessage(message) {
-    mdtoast(message, { 
-        type: 'info'
-      });
+    let messageSpace = document.getElementById('messageSpace')
+    messageSpace.innerText = message
+    document.getElementById('messageSpace_parent').style.top = '3rem'
 }
