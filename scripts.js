@@ -113,7 +113,9 @@ function initiativesData() {
     }
 }
 function ShowMessage(message) {
-    alert(message + "ShowMessageed.................")
+    let messageSpace = document.getElementById('messageSpace')
+    messageSpace.innerText = message
+    // alert(message + "ShowMessageed.................")
 }
 // function ScrollTo(selecter) {
 //     var el = document.querySelector(selecter);
