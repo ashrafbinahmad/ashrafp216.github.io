@@ -1,8 +1,7 @@
 data = {
     menu_items: [
-        { name: 'Message', link: '#message' },
-        { name: 'Lecturers', link: '#Lecturers' },
-        { name: 'Initiatives', link: '#initiatives' },
+        { name: 'About us', link: '#aboutus' },
+        { name: 'Events', link: '#events' },
     ],
 
     tabs: {
