@@ -8,7 +8,7 @@ $("#aboutbtn").click(function () {
 });
 
 $('#submit').click(function (event) {
-    event.preventDefault();
+    //event.preventDefault();
     var emailInput = $('#email_input').val()
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var isValid = regex.test(emailInput);
