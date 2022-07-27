@@ -37,7 +37,7 @@ data = {
             HoD: false
         }
     ],
-    initiatives: [
+    events: [
         {
             name: "Isnomics",
             image: "images/Isnomics.jpg",

@@ -58,14 +58,14 @@ window.addEventListener('scroll', function (event) {
 
 function ScrollRight() {
 
-    document.getElementById("initiatives-container").scrollLeft += 800;
+    document.getElementById("events-container").scrollLeft += 800;
 }
 function ScrollLeft() {
 
-    document.getElementById("initiatives-container").scrollLeft -= 800;
+    document.getElementById("events-container").scrollLeft -= 800;
 }
 function scrollToView(e) {
-    document.getElementById('initiatives-container').scrollLeft = e.target.offsetLeft
+    document.getElementById('events-container').scrollLeft = e.target.offsetLeft
 }
 
 function ToggleShowMoreInfo() {
@@ -106,10 +106,10 @@ function lecturers_data() {
     }
 }   
 
-function initiativesData() {
-    console.log(data.initiatives)
+function eventsData() {
+    console.log(data.events)
     return {
-        initiatives: data.initiatives
+        events: data.events
     }
 }
 function ShowMessage(message) {

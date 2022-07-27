@@ -211,7 +211,7 @@
     <script></script>
   </section>
 
-  <section id="initiatives" class="relative  min-h-700px " data-aos="fade-up" data-aos-duration="1000">
+  <section id="events" class="relative  min-h-700px " data-aos="fade-up" data-aos-duration="1000">
     <!-- <div class="section-gap"></div> -->
     <div
       class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 right-0">
@@ -222,31 +222,31 @@
       <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left "></i></div>
     </div>
     <div class="container mx-auto p-5 ">
-      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center " data-aos="fade-up" data-aos-duration="1000">INITIATIVES
+      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center " data-aos="fade-up" data-aos-duration="1000">events
       </h2>
 
-      <div class="initiative-items h-full w-full px-2 self-center my-5" data-aos="fade-up" data-aos-duration="1000">
-        <div class=" " x-data="initiativesData()">
+      <div class="event-items h-full w-full px-2 self-center my-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class=" " x-data="eventsData()">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <template x-for="(initiative, index) in initiatives" :key="index">
+              <template x-for="(event, index) in events" :key="index">
 
                 <div class="swiper-slide ">
                   <div
-                    class="initiative-item flex flex-col  pb-10 md:flex-row min-h-xl rounded-xl md:h-600px relative overflow-hidden p-2 md:p-5 border-2 my-5 flex-shrink-0 md:flex-grow "
-                    :style="'border-color: '+ initiative.colors.border">
+                    class="event-item flex flex-col  pb-10 md:flex-row min-h-xl rounded-xl md:h-600px relative overflow-hidden p-2 md:p-5 border-2 my-5 flex-shrink-0 md:flex-grow "
+                    :style="'border-color: '+ event.colors.border">
                     <div class="flex h-full place-content-center bg-gray-900 rounded-xl z-10">
                       <img class=" my-auto rounded-xl md:rounded-none w-full mt-1/2     md:mx-1 z-10 "
-                        :src="initiative.image" :alt="initiative.description">
+                        :src="event.image" :alt="event.description">
                     </div>
 
                     <div class="flex flex-col mt-5 mx-auto w-full   md:mx-0  z-10">
                       <h1 class="text-center md:text-left text-xl font-black z-10 md:ml-10 md:text-5xl uppercase "
-                        :style="'color: '+ initiative.colors.title ;" x-html="initiative.name"></h1>
+                        :style="'color: '+ event.colors.title ;" x-html="event.name"></h1>
                       <p class="flex py-2 mx-auto max-w-sm md:mb-10 md:mt-auto md:mr-10 md:ml-auto md:text-2xl font-thin md:text-left text-center  z-10 md:text-yellow-800"
-                        x-html="initiative.description" :style="'color: '+ initiative.colors.description ;"></p>
+                        x-html="event.description" :style="'color: '+ event.colors.description ;"></p>
                     </div>
-                    <div class="initiative-item-bg opacity-5 absolute left-0 top-0 w-full h-full -z-0"> </div>
+                    <div class="event-item-bg opacity-5 absolute left-0 top-0 w-full h-full -z-0"> </div>
                   </div>
                 </div>
               </template>
