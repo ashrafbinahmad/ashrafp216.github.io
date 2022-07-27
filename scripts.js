@@ -118,6 +118,6 @@ function ShowMessage(message) {
     messageSpace.innerText = message
     messageSpace_parent.style.top = '2rem'
     setTimeout(()=>{
-        messageSpace_parent.style.top = '-3rem' 
+        messageSpace_parent.style.top = '-5rem' 
     },5000)
 }
