@@ -113,5 +113,7 @@ function initiativesData() {
     }
 }
 function ShowMessage(message) {
-    Snackbar.show({text: message, pos: 'top-left'});
+    mdtoast(message, { 
+        type: 'info'
+      });
 }
