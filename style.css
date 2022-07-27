@@ -67,6 +67,11 @@ nav {
   height: auto;
 }
 
+.serif {
+
+  font-family: serif;
+}
+
 .text-white {
   color: white;
 }
