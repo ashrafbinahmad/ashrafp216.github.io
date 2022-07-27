@@ -9,7 +9,7 @@ $("#aboutbtn").click(function () {
 
 $('#submit').click(function (event) {
     e.preventDefault();
-    let myForm = document.getElementById("pizzaOrder");
+    let myForm = document.getElementById("subscribe_form");
     let formData = new FormData(myForm);
     fetch("/", {
       method: "POST",
