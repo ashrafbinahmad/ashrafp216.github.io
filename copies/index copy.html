@@ -89,66 +89,74 @@
         <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300">DARUL HUDA ISLAMIC
           UNIVERSITY</h2>
       </div>
+      <div id="btn-toggle"
+        class="info-off duration-100 flex flex-row border-2 border-dotted border-gray-400  right-5  bottom-5 z-50 absolute bg-black p-1 cursor-pointer"
+        onclick="ToggleShowMoreInfo()">
+        <div class="overflow-hidden w-7 h-7 rounded flex flex-col">
+          <div class="close  text-red-300 text-center  font-bold -ml-20 " style="height: 3px; margin-top: 1px;"><i
+              class="fa fa-times"></i></div>
+          <div class="bar ml-auto mr-1 mt-1 w-3/6 bg-white rounded-full " style="height: 2px;"></div>
+          <div class="bar ml-auto mr-1 mt-1 w-1/5 bg-white rounded-full " style="height: 2px;"></div>
+          <div class="bar ml-auto mr-1 mt-1 w-3/5 bg-white rounded-full " style="height: 2px;"></div>
+        </div>
+        <p class="self-center text-sm ml-1  md:visible invisible md:w-auto w-0 md:h-auto h-0 ">More info</p>
+
+      </div>
+      <div id="more_info" class="info-hidden  w-0 h-screen absolute left-0 top-0 overflow-auto ">
+        <div class="container info-container mx-auto  ">
+          <div class="info-content ">
+            <div x-data="setup()">
+              <div class="grid md:grid-cols-2 grid-rows-2  info-grid gap-2 mt-20">
+
+                <div id="tab-field"
+                  class="grid order-2 md:order-1 text-sm  max-w-3xl  md:pl-24 text-gray-300 text-sm leading-6 mx-auto md:mt-10 ">
+
+                  <div id="info-about " x-show="activeTab===0" class="overflow-y-auto pb-56 flex flex-col">
+                    <h1 class="text-xl text-yellow-200 pb-5 underline invisible md:visible ">About the course</h1>
+                    <div class="h-96 md:h-full overflow-y-auto -mt-10 md:mt-0 overflow-hidden pr-2 self-center">
+                      <p x-html="tabs.about " class="md:mt-0 "></p>
+                    </div>
 
 
-    </div>
-  </header>
+                  </div>
+                  <div id="info-about " x-show="activeTab===1" class=" ">
+                    <h1 class="text-xl text-yellow-200 pb-5 underline  invisible md:visible ">Programme structure</h1>
+                    <div class="h-96 md:h-full overflow-y-auto -mt-10 md:mt-0 overflow-hidden pr-2 self-center">
+                      <p x-html="tabs.Program_Structure"></p>
+                    </div>
 
-  <section id="aboutus" class=" z-0 align-middle relative bg-white  h-screen bg-gray-900 flex flex-col">
-    <div id="more_info" class="flex flex-col">
-      <div class="container info-container mx-auto self-center p-4">
-        <div class="info-content ">
-          <div x-data="setup()">
-            <div class="grid   grid-rows-2  info-grid gap-2 h-full place-content-center">
-              <div id="tab-items" class=" flex   info-menu  ">
-                <ul id="info-menu-list " class=" mx-auto  align-items-center">
+                  </div>
+                  <div id="info-about " x-show="activeTab===2" class=" ">
+                    <h1 class="text-xl text-yellow-200 pb-5 underline  invisible md:visible ">Student Life</h1>
+                    <div class="h-96 md:h-full overflow-y-auto -mt-10 md:mt-0 overflow-hidden pr-2 self-center">
+                      <p x-html="tabs.Student_life"></p>
+                    </div>
+                  </div>
+                  <div id="info-about " x-show="activeTab===3" class=" ">
+                    <h1 class="text-xl text-yellow-200 pb-5 underline  invisible md:visible ">Placement and Career</h1>
+                    <div class="h-96 md:h-full overflow-y-auto -mt-10 md:mt-0 overflow-hidden pr-2 self-center">
+                      <p x-html="tabs.Placement"></p>
+                    </div>
+                  </div>
+                </div>
+                <div id="tab-items" class="md:grid flex  order-1 md:order-2 info-menu md:mb-10 md:pt-56">
+                  <ul id="info-menu-list " class=" md:block   ">
 
-                  <template x-for="(tab, index) in tabs.items" :key="index">
-                    <li class="cursor-pointer py-2 px-2 text-gray-500 inline-block"
-                      :class="activeTab===index ? 'text-white border-b-4  font-bold border-white ' : ''"
-                      @mouseover="setTimeout(()=> {activeTab = index}, 300)"
-                      @click="activeTab = index"
-                      x-text="tab">
-                    </li>
-                    <div class="bg-blue-500 h-2 w-full"></div>
-                  </template>
-                </ul>
+                    <template x-for="(tab, index) in tabs.items" :key="index">
+                      <li class="cursor-pointer py-2 px-2 text-gray-500 md:block inline-block"
+                        :class="activeTab===index ? 'text-white md:border-l-4 border-b-4 md:border-b-0 font-bold border-white ' : ''"
+                        @mouseover="activeTab = index" x-text="tab"></li>
+                    </template>
+                  </ul>
+                </div>
               </div>
-              <div id="tab-field"
-                class="grid text-sm  max-w-3xl  text-gray-300 text-sm leading-6 mx-auto md:mt-10 overflow-y-auto h-96   md:h-full py-7">
-
-                <div id="info-about" x-show="activeTab===0" class="">
-                  <div class="self-center">
-                  <p x-html="tabs.about " class="md:mt-0 "></p>
-                  </div>
-                </div>
-
-                <div id="info-Program_Structure" x-show="activeTab===1" class="">
-                  <div class="self-center">
-                    <p x-html="tabs.Program_Structure"></p>
-                  </div>
-                </div>
-
-                <div id="info-Student_life" x-show="activeTab===2" class="">
-                  <div class="self-center">
-                    <p x-html="tabs.Student_life"></p>
-                  </div>
-                </div>
-
-                <div id="info-Placement" x-show="activeTab===3" class="">
-                  <div class="self-center">
-                    <p x-html="tabs.Placement"></p>
-                  </div>
-                </div>
-
-              </div>
-
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </header>
+
   <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full " data-aos="fade-up"
     data-aos-duration="1000">
 
@@ -186,17 +194,19 @@
 
         <div x-data="lecturers_data()">
           <template x-for="(lecturer,index) in lecturers" :key="index">
-            <div class="flex flex-col flex-none inline-flex align-center text-center mb-8 p-5  px-10 max-w-sm"
-              data-aos="fade-up">
+            <div class="flex flex-col flex-none inline-flex align-center text-center mb-8 p-5  px-10 max-w-sm" data-aos="fade-up">
               <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 w-56 h-auto  "
                 :src="lecturer.image" />
               <div class="flex mx-auto">
-                <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name">
+                <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name"
+                  >
                 </h4>
-                <small class="bg-yellow-800 rounded p-1 text-white inline-flex  " x-show="lecturer.HoD">HoD</small>
+                <small class="bg-yellow-800 rounded p-1 text-white inline-flex  " x-show="lecturer.HoD"
+                  >HoD</small>
               </div>
 
-              <p class="mt-5 text-center max-w-md text-sm" x-text="lecturer.description"></p>
+              <p class="mt-5 text-center max-w-md text-sm" x-text="lecturer.description" 
+                ></p>
             </div>
           </template>
         </div>

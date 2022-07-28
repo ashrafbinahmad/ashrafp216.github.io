@@ -6,7 +6,7 @@ data = {
 
     tabs: {
         items: [
-            "About",
+            "About the course",
             "Program Structure",
             "Student life",
             "Placement and Career",
