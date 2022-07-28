@@ -6,7 +6,9 @@ $("#aboutbtn").click(function () {
     }, 2000);
     return false;
 });
-
+$(".swiper-slide-next").click(()=> {
+    swiper.slidePrev(speed, runCallbacks)
+})
 
 
 function submitForm(event) {

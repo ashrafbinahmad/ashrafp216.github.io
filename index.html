@@ -94,32 +94,31 @@
     </div>
   </header>
 
-  <section id="aboutus" class=" z-0 align-middle relative bg-white  h-screen bg-gray-900 flex flex-col">
+  <section id="aboutus" class=" z-0 align-middle relative bg-white   min-h-700px bg-gray-900 flex flex-col">
     <div id="more_info" class="flex flex-col">
       <div class="container info-container mx-auto self-center p-4">
         <div class="info-content ">
           <div x-data="setup()">
-            <div class="grid   grid-rows-2  info-grid gap-2 h-full place-content-center">
+            <div class="flex flex-col gap-2 h-full place-content-center">
               <div id="tab-items" class=" flex   info-menu  ">
                 <ul id="info-menu-list " class=" mx-auto  align-items-center">
 
                   <template x-for="(tab, index) in tabs.items" :key="index">
                     <li class="cursor-pointer py-2 px-2 text-gray-500 inline-block"
                       :class="activeTab===index ? 'text-white border-b-4  font-bold border-white ' : ''"
-                      @mouseover="setTimeout(()=> {activeTab = index}, 300)"
-                      @click="activeTab = index"
-                      x-text="tab">
+                      @click="activeTab = index" x-text="tab">
                     </li>
                     <div class="bg-blue-500 h-2 w-full"></div>
                   </template>
                 </ul>
               </div>
               <div id="tab-field"
-                class="grid text-sm  max-w-3xl  text-gray-300 text-sm leading-6 mx-auto md:mt-10 overflow-y-auto h-96   md:h-full py-7">
+                class=" text-sm  max-w-3xl  text-gray-300 text-sm leading-6 mx-auto md:mt-10 overflow-y-auto h-96   md:h-full py-7">
 
-                <div id="info-about" x-show="activeTab===0" class="">
-                  <div class="self-center">
-                  <p x-html="tabs.about " class="md:mt-0 "></p>
+                <div id="info-about" x-show="activeTab===0" class="flex flex-col">
+                  <div class="flex flex-grow"></div>
+                  <div class="">
+                    <p x-html="tabs.about " class="md:mt-0 "></p>
                   </div>
                 </div>
 
@@ -155,8 +154,8 @@
     <div class="section-gap text-center ">
       <div class="mt-2 w-10 md:w-20 h-2 bg-gray-300 mx-auto rounded-lg"></div>
     </div>
-    <div class="grid md:grid-cols-2 container mx-auto">
-      <div class="grid md:w-3/4 w-full" data-aos="fade-up" data-aos-duration="1000">
+    <div class="flex flex-col container mx-auto">
+      <div class=" md:w-3/4 w-full" data-aos="fade-up" data-aos-duration="1000">
 
         <div class=" pt-5 mx-auto">
           <img src="images/Quotation-mark-low-flipped.png" alt=""
@@ -171,14 +170,74 @@
           </p>
         </div>
       </div>
-      <div class="md:grid w-full " data-aos="fade-up" data-aos-duration="1000">
+      <div class=" w-full " data-aos="fade-up" data-aos-duration="1000">
         <img class="self-center md:h-3/4 h-1/2  w-auto  mx-auto md:rounded-2xl rounded-full"
           src="images/jafar_usthad.jpg" alt="" srcset="" />
       </div>
     </div>
   </section>
 
-  <section id="Lecturers" class="z-0 relative bg-gray-200">
+
+  <section id="events" class="relative  min-h-700px bg-gray-700">
+    <div
+      class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 right-0">
+      <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-right "></i></div>
+    </div>
+    <div
+      class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 left-0">
+      <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left "></i></div>
+    </div>
+    <div class="container mx-auto p-5 ">
+      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center text-white">EVENTS
+      </h2>
+
+      <div class="event-items h-full w-full px-2 self-center my-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class=" " x-data="eventsData()">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <template x-for="(event, index) in events" :key="index">
+
+                <div class="swiper-slide rounded-xl ">
+                  <div
+                    class="event-item bg-white flex flex-col  pb-10 md:flex-row min-h-xl rounded-lg md:h-600px relative overflow-hidden p-2 md:p-5 border-2 my-5 flex-shrink-0 md:flex-grow "
+                    :style="//'border-color: gray '+ event.colors.border">
+                    <div class="flex h-full place-content-center bg-gray-900 rounded-lg z-10">
+                      <img class=" my-auto rounded-xl md:rounded-none w-full mt-1/2     md:mx-1 z-10 "
+                        :src="event.image" :alt="event.description">
+                    </div>
+
+                    <div
+                      class="flex flex-col mt-5 mx-auto w-full   md:mx-0  z-10 text-center md:text-left md:ml-10 h-full content-between">
+                      <h1 class=" text-xl font-bold z-10 md:text-3xl uppercase "
+                        :style="'color: '+ event.colors.title ;" x-html="event.name"></h1>
+                      <div class="flex flex-grow"></div>
+                      <div class="mb-20">
+                        <p class="text-xl" x-text="AutoPrepent_0(index + 1)"></p>
+                        <p class="text-white p-2 py-1 inline-flex mb-3 rounded text-sm" x-html="event.date"
+                          :style="'background-color: '+ event.colors.description ;"></p>
+                        <p x-html="event.description" :style="'color: '+ event.colors.description ;"></p>
+
+                      </div>
+                    </div>
+                    <div class="event-item-bg opacity-5 absolute left-0 top-0 w-full h-full -z-0"> </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="mt-5">
+
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          </template>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+  <section id="Lecturers" class="z-0 relative bg-gray-100 hidden">
     <hr />
     <div class="container mx-auto align-center text-center p-5">
       <h2 class="text-3xl mb-5 font-bold" data-aos="fade-up" data-aos-duration="1000">LECTURERS</h2>
@@ -205,58 +264,6 @@
     <hr />
   </section>
 
-  <section id="events" class="relative  min-h-700px " data-aos="fade-up" data-aos-duration="1000">
-    <div
-      class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 right-0">
-      <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-right "></i></div>
-    </div>
-    <div
-      class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 left-0">
-      <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left "></i></div>
-    </div>
-    <div class="container mx-auto p-5 ">
-      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center " data-aos="fade-up" data-aos-duration="1000">EVENTS
-      </h2>
-
-      <div class="event-items h-full w-full px-2 self-center my-5" data-aos="fade-up" data-aos-duration="1000">
-        <div class=" " x-data="eventsData()">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <template x-for="(event, index) in events" :key="index">
-
-                <div class="swiper-slide ">
-                  <div
-                    class="event-item flex flex-col  pb-10 md:flex-row min-h-xl rounded-xl md:h-600px relative overflow-hidden p-2 md:p-5 border-2 my-5 flex-shrink-0 md:flex-grow "
-                    :style="'border-color: '+ event.colors.border">
-                    <div class="flex h-full place-content-center bg-gray-900 rounded-xl z-10">
-                      <img class=" my-auto rounded-xl md:rounded-none w-full mt-1/2     md:mx-1 z-10 "
-                        :src="event.image" :alt="event.description">
-                    </div>
-
-                    <div class="flex flex-col mt-5 mx-auto w-full   md:mx-0  z-10">
-                      <h1 class="text-center md:text-left text-xl font-black z-10 md:ml-10 md:text-5xl uppercase "
-                        :style="'color: '+ event.colors.title ;" x-html="event.name"></h1>
-                      <p class="flex py-2 mx-auto max-w-sm md:mb-10 md:mt-auto md:mr-10 md:ml-auto md:text-2xl font-thin md:text-left text-center  z-10 md:text-yellow-800"
-                        x-html="event.description" :style="'color: '+ event.colors.description ;"></p>
-                    </div>
-                    <div class="event-item-bg opacity-5 absolute left-0 top-0 w-full h-full -z-0"> </div>
-                  </div>
-                </div>
-              </template>
-            </div>
-            <div class="mt-5">
-
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          </template>
-        </div>
-      </div>
-    </div>
-
-
-  </section>
 
   <section id="Dept_Committee " class="z-0 relative bg-gray-100 snap-start  h-screen h-screen-scalable hidden"
     data-aos="fade-up" data-aos-duration="1000">
@@ -329,7 +336,7 @@
   </section>
 
   <footer id="footer" class="bg-gray-900 text-center ">
-    <div class="flex mt-5 self-c  enter h-56 content-center">
+    <div class="flex self-c  enter h-56 content-center">
       <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
         <form action="" name="subscription" id="subscribe_form" netlify>
 

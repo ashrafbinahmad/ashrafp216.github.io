@@ -42,26 +42,30 @@ data = {
             name: "Isnomics",
             image: "images/Isnomics.jpg",
             description: "10 day campaign program conducted by the department that focused on the contributions of Islamic scholars in the held of economics.",
-            colors: { title: "#362c53", border: "#cc99ff", description: "#663399" }
+            colors: { title: "#362c53", border: "#cc99ff", description: "#663399" },
+            date: "2021 September 04-14",
         },
 
         {
             name: "Finaissance",
             image: "images/coins_thasbeeh.jpg",
             description: "Talk series program that provides the students with the opportunity to hear from prominent scholars in the field and interact with them.",
-            colors: { title: "#663300", border: "#ead3b7", description: "#cc6600" }
+            colors: { title: "#663300", border: "#ead3b7", description: "#cc6600" },
+            date: "2021 September 01",
         },
         {
             name: "Seyaha",
             image: "images/Seyaha.jpg",
             description: "Two weeks long academic trip through which the students can visit Islamic financial institutions and understand the operations going on there.",
-            colors: { title: "#402382", border: "#cc99ff", description: "#402382" }
+            colors: { title: "#402382", border: "#cc99ff", description: "#402382" },
+            date: "2021 September 01",
         },
         {
             name: "Seminars and <br> Webinars",
             image: "images/waqf_seminar.jpg",
             description: "Waqf Seminar  And more... <br><br><br>",
-            colors: { title: "#663300", border: "#ead3b7", description: "#cc6600" }
+            colors: { title: "#663300", border: "#ead3b7", description: "#cc6600" },
+            date: "2021 September 01",
         },
     ],
     dept_committee: [
