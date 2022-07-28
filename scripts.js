@@ -20,11 +20,7 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 2,
     spaceBetween: 80,
     centeredSlides: true,
-    effect: 'coverflow',
-    coverflowEffect: {
-        rotate: 0,
-        slideShadows: false,
-    },
+
     draggable: true,
     loop: false,
     keyboard: {
@@ -48,10 +44,16 @@ var swiper = new Swiper(".mySwiper", {
     }, breakpoints: {
         // when window width is >= 320px
         0: {
-            slidesPerView: 1
+            slidesPerView: 1,
+
         },
         1276: {
-            slidesPerView: 2
+            slidesPerView: 2,
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 0,
+                slideShadows: false,
+            },
         },
     }
 });
@@ -132,4 +134,13 @@ function ShowMessage(message) {
     setTimeout(() => {
         messageSpace_parent.style.top = '-5rem'
     }, 5000)
+}
+function ul(index) {
+	console.log('click!' + index)
+	
+	var underlines = document.querySelectorAll(".Myunderline");
+
+	for (var i = 0; i < underlines.length; i++) {
+		underlines[i].style.transform = 'translate3d(' + index * 100 + '%,0,0)';
+	}
 }
