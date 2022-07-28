@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Darker Grotesque" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="color_theme.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -93,7 +94,6 @@
 
     </div>
   </header>
-
   <section id="aboutus" class=" z-0 align-middle relative min-h-700px bg-black flex flex-col">
     <div id="more_info" class="flex flex-col">
       <div class="container info-container mx-auto self-center p-4">
@@ -101,21 +101,22 @@
           <div x-data="setup()">
             <div class="flex flex-col gap-2 h-full place-content-center">
               <div id="tab-items" class=" flex   info-menu  ">
-                <ul id="info-menu-list " class=" mx-auto  align-items-center">
+                <ul id="info-menu-list " class=" mx-auto  align-items-center text-center">
                   <template x-for="(tab, index) in tabs.items" :key="index">
                     <div class="inline-block  duration-500 cursor-pointer" @click="activeTab = index">
-                      <li class=" py-2 px-2 text-gray-500 hover:text-gray-200  inline-flex flex-row"
-                        :class="activeTab===index ? 'md:text-gray-100 text-gray-100 ' : ''" x-text="tab">
+                      <li class=" py-2 px-2 inline-flex flex-row text-center"
+                        :class="activeTab===index ? 'md:text-lighter text-lighter ' : ' text-light hover:text-gray-200 '" x-text="tab">
                       </li>
-                      <div class="h-1 duration-500 bg-gray-300 mx-auto"
-                        :class="activeTab===index ? 'w-full' : 'w-0'"></div>
+                      <div class=" h-1 duration-500 mx-auto"
+                        :class="activeTab===index ? 'w-full rounded-0  bg-lighter' : 'w-0 rounded-full bg-gray-900'">
+                      </div>
                     </div>
 
                   </template>
                 </ul>
               </div>
               <div id="tab-field"
-                class=" text-sm  max-w-3xl  text-gray-300  md:text-lg text-sm leading-8 mx-auto md:mt-10 overflow-y-auto h-96   md:h-full py-7">
+                class=" text-sm  max-w-3xl  text-gray-400  md:text-lg text-sm leading-8 mx-auto md:mt-10 overflow-y-auto h-full   md:h-full py-7">
 
                 <div id="info-about" x-show="activeTab===0" class="flex flex-col">
                   <div class="flex flex-grow"></div>
@@ -151,18 +152,17 @@
       </div>
     </div>
   </section>
-  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full " data-aos="fade-up"
-    data-aos-duration="1000">
+  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full " >
 
     <div class="flex md:flex-row flex-col container mx-auto">
       <div class=" md:w-1/2 w-full flex flex-col" data-aos="fade-up" data-aos-duration="1000">
         <div class="flex flex-grow"></div>
         <div class=" pt-5 mx-auto">
-          <div 
-            class="mx-auto md:ml-0 my-5 mt-0  md:h-20 h-16 w-auto text-8xl text-secondary">
-            <i class="fa fa-solid fa-quote-left"></i></div>
+          <div class="mx-auto md:ml-0 my-5 mt-0  md:h-20 h-16 w-auto text-8xl text-light text-center md:text-left">
+            <i class="fa fa-solid fa-quote-left"></i>
+          </div>
           <p
-            class="p-5 md:p-0 md:py-5 max-w-sm md:max-w-auto self-center  text-center md:text-left md:text-5xl text-3xl font-bold serif">
+            class="p-5 md:p-0 md:py-5 max-w-sm md:max-w-auto self-center  text-center md:text-left md:text-5xl text-3xl font-bold serif text-gray-900">
             The modern economic system is completely dominated by interest...
           </p>
           <p class="w-full text-lg text-center md:text-left py-5  ">
@@ -183,11 +183,11 @@
 
   <section id="events" class="relative  min-h-700px bg-black">
     <div
-      class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 right-0">
+      class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-primary hover:text-gray-300 hover:bg-primary right-0">
       <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-right "></i></div>
     </div>
     <div
-      class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-gray-400 hover:text-gray-100 hover:bg-gray-500 left-0">
+      class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-primary hover:text-gray-300 hover:bg-primary left-0">
       <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left "></i></div>
     </div>
     <div class="container mx-auto p-5 ">
