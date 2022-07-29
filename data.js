@@ -1,9 +1,9 @@
 data = {
 
     pages: [
-        { name: 'About us', link: '/about_us' },
-        { name: 'Events', link: '/events' },
-        { name: 'Services', link: '/services' },
+        { name: 'About us', link: 'about_us', local_link: "about_us\\index.html" },
+        { name: 'Events', link: 'events', local_link: "about_us\\index.html" },
+        { name: 'Services', link: 'services', local_link: "about_us\\index.html" },
     ],
     menu_items: [
         { name: 'About us', link: '#aboutus' },

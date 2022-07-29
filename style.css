@@ -74,6 +74,10 @@ nav {
   font-family: serif;
 }
 
+.-z-10 {
+  z-index: -10;
+}
+
 .text-white {
   color: white;
 }
