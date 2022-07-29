@@ -1,4 +1,10 @@
 data = {
+
+    pages: [
+        { name: 'About us', link: '/about_us' },
+        { name: 'Events', link: '/events' },
+        { name: 'Services', link: '/services' },
+    ],
     menu_items: [
         { name: 'About us', link: '#aboutus' },
         { name: 'Events', link: '#events' },

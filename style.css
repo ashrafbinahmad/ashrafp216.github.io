@@ -272,6 +272,15 @@ nav {
 .swiper-slide {
   transition-duration: 1000ms;
 }
+/* GROUP HOVERING */
+
+.group:hover .group-hover\:w-full {
+  width: 100%;
+}
+
+
+
+
 /* md */
 @media (min-width: 768px) {
   .swiper-slide-active .event-item {
