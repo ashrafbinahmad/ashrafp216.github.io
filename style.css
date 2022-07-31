@@ -74,6 +74,10 @@ nav {
   font-family: serif;
 }
 
+.-z-10 {
+  z-index: -10;
+}
+
 .text-white {
   color: white;
 }
@@ -272,6 +276,15 @@ nav {
 .swiper-slide {
   transition-duration: 1000ms;
 }
+/* GROUP HOVERING */
+
+.group:hover .group-hover\:w-full {
+  width: 100%;
+}
+
+
+
+
 /* md */
 @media (min-width: 768px) {
   .swiper-slide-active .event-item {
