@@ -6,12 +6,12 @@ $("#aboutbtn").click(function () {
     }, 2000);
     return false;
 });
-$(".swiper-slide-next").click(()=> {
+$(".swiper-slide-next").click(() => {
     swiper.slidePrev(speed, runCallbacks)
 })
 
 // $('#info-menu-list').click(()=> {
-    
+
 // })
 
 
@@ -32,7 +32,7 @@ function submitForm(event) {
         body: new URLSearchParams(formData).toString(),
     })
         .then(() => {
-            ShowMessage("Thank you for subscribing to our news letter.You will get event notifications to your email: "+ email)
+            ShowMessage("Thank you for subscribing to our news letter.You will get event notifications to your email: " + email)
             document.getElementById("email_input").value = null;
         })
         .catch((error) => ShowMessage(error));
