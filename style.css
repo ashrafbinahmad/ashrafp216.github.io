@@ -1,4 +1,3 @@
-
 * {
   font-family: "montserrat";
   margin: 0px;
@@ -35,14 +34,20 @@ body {
   color: white;
 }
 
+.group:hover .group-hover\:w-full {
+  width: 100%;
+}
 
+.h-90vh {
+  height: 90vh;
+}
 
 div.head {
   background-image: url('images/dh.jpg');
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-background-color: black;
+  background-color: black;
 }
 
 nav {
@@ -92,6 +97,7 @@ nav {
 .min-h-700px {
   min-height: 700px;
 }
+
 .h-700px {
   height: 700px;
 }
@@ -207,6 +213,7 @@ nav {
   background-color: unset;
   border-radius: 1rem;
 }
+
 #btn-toggle.info-off:hover {
   background-color: rgb(0, 88, 160);
   border-radius: 1rem;
@@ -224,10 +231,11 @@ nav {
   margin-right: 2rem;
   transition-duration: 1.5s;
 }
+
 #btn-toggle.info-on p {
- visibility: hidden;
- display: none;
- transition-duration: .5s ;
+  visibility: hidden;
+  display: none;
+  transition-duration: .5s;
 }
 
 #btn-toggle.info-on div>*.close {
@@ -240,9 +248,11 @@ nav {
 .shadow-yellow-200:hover {
   box-shadow: inset 0px 0px 4px 1px rgb(255, 240, 179);
 }
+
 .event-item-bg {
   background-image: url('images/islamic_pattern.png');
 }
+
 .event-item {
   box-shadow: 0px 0px 5px black;
 }
@@ -271,21 +281,26 @@ nav {
 .swiper-slide {
   transition-duration: 1000ms;
 }
+
 /* md */
 @media (min-width: 768px) {
   .swiper-slide-active .event-item {
     box-shadow: 0 20px 20px 10px #00000073;
 
   }
-  .swiper-slide-next .event-item, .swiper-slide-prev .event-item {
+
+  .swiper-slide-next .event-item,
+  .swiper-slide-prev .event-item {
     border: 0;
     box-shadow: none;
     /* transition-duration: 1000ms; */
     opacity: 0.2;
   }
+
   .nav-scrolled .container .div_iefdhiu {
     font-size: 1.5rem;
   }
+
   .md\:h-600px {
     height: 600px;
   }
@@ -343,6 +358,7 @@ nav {
   .sm\:h-625px {
     height: 625px;
   }
+
   .sm\:text-2xs {
     font-size: 0.6rem;
   }

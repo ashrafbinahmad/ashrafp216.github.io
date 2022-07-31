@@ -36,34 +36,27 @@
 
       </div>
       <div class="flex flex-grow"></div>
-      <div x-data="menuData()">
+      <a href="#footer"
+      onclick="document.getElementById('email_input').select() ">
+        <div class=" rounded-sm  bg-primary p-1 md:static flex  mt-2">
+          <div class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer text-sm">
+            SUBSCRIBE
+          </div>
+      </a>
+    </div>
+    <!-- <div x-data="menuData()">
         <div id="menu" class="flex" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
           class="duration-0 mr-0 ml-auto text-lg  md:w-auto md:visible overflow-hidden ">
-          <ul
-            class="absolute rounded-lg right-3 top-10 text-center  bg-black p-2 md:static md:flex   md:bg-transparent md:p-0 md:mr-0 md:ml-auto mt-2">
-            <template x-for="(item,index) in items" :key="index">
-              <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer "
-                @mouseup="show_menu = false">
-                <a :href="item.link" x-text="item.name"></a>
-              </li>
-            </template>
-            <!-- <li class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer px-1 bg-yellow-200  rounded-sm "
-            onclick="document.getElementById ('email_input').focus()"
-            >
-            <a href="#footer" class=" text-black" onclick="document.getElementById ('email_input').focus()">
-              Subscribe</a>
-            </li> -->
-
-          </ul>
+          
         </div>
         <div class="visible md:invisible text-lg pt-1 pr-4  text-gray-300" @click="show_menu = !show_menu">
           <i class="fa fa-bars"></i>
         </div>
-      </div>
+      </div> -->
     </div>
   </nav>
   <header>
-    <div id="head" class="head text-white  relative top-0 z-0 w-full h-700px sm:h-625px">
+    <div id="head" class="head text-white  relative top-0 z-0 w-full h-90vh .h-700px .sm:h-625px">
       <div class="container mx-auto p-5 h-full flex flex-col ">
         <div class="flex flex-grow"></div>
         <div class="head_content ">
@@ -72,12 +65,11 @@
             FINANCE
           </h1>
           <h2 class="icons mx-auto text-center text-gray-400 text-sm">
-            <a href="https://twitter.com" target="_blank">
+            <a href="https://twitter.com/ief_dhiu" target="_blank">
               <i class="px-2 cursor-pointer fa fa-twitter "></i></a>
             <a href="https://www.youtube.com/channel/UCJ2NnNipDCR50L_CRoLyMqg" target="_blank">
               <i class="px-2 cursor-pointer fa fa-brands fa-youtube "></i></a>
-            <a href="https://www.facebook.com/%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A-%D8%A8%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-100344009057312/"
-              target="_blank">
+            <a href="https://www.facebook.com/ief.dhiu" target="_blank">
               <i class="px-2 cursor-pointer fa fa-facebook-official "></i></a>
             <a href="https://www.instagram.com/fin.aissance/" target="_blank">
               <i class="px-3 cursor-pointer fa fa-instagram "></i></a>
@@ -203,7 +195,8 @@
 
       </div>
       <div class="md:w-1/2 flex w-56 mx-auto mb-10 md:mb-0" data-aos="fade-up" data-aos-duration="1000">
-        <img class="mx-auto self-center md:h-1/2 h-1/3  w-auto   md:rounded-2xl rounded-full"
+        <img
+          class="mx-auto self-center md:h-1/2 h-1/3  w-auto   md:rounded-2xl rounded-full border-blue-300 border-4 border-opacity-50 box-border"
           src="images/jafar_usthad.jpg" alt="" srcset="" />
       </div>
     </div>
@@ -214,18 +207,28 @@
 
 
 
-  <section id="links" class="relative bg-lighter">
-    <hr class="border-2">
-    <div class="container mx-auto p-5 ">
-      <div x-data="data.pages"  class="text-center w-full flex md:flex-row flex-col  justify-between">
-          <template x-for="page in data.pages" :key="index">
-            <a href="about_us">
-              <div class="card bg-white rounded-xl filter drop-shadow-md border-2 w-48 flex flex-col p-5 mx-auto">
-                <img src="images/about_us.png" alt="about us">
-                <p class="mt-5" x-text="page.name"></p>
+  <section id="links" class="relative md:bg-transparent .bg-gray-50 overflow-hidden">
+    <!-- <hr class="border-2 border-blue-100"> -->
+    <div class="container mx-auto pt-10 ">
+      <div x-data="data.pages"
+        class="text-center w-full flex flex-row flex-wrap .flex-col mx-auto justify-center duration-400 mb-5">
+        <template x-for="page in data.pages" :key="index">
+
+          <a :href="page.link" class="flex md:flex-col mx-auto md:mx-0" data-aos="fade-up" data-aos-duration="1000">
+            <div
+              class=" card group rounded-xl filter drop-shadow-lg md:drop-shadow-none hover:drop-shadow-lg   hover:bg-gray-200 bg-gray-100 .bg-white hover:border-2 border-black transform hover:scale-110 text-primary border-gray-400 w-48 flex flex-col md:p-5 p-3 px-0 md:m-2   my-3">
+              <img class="md:h-14 md:w-auto w-6 h-auto self-center opacity-80 group-hover:opacity-100" :src="page.image"
+                alt="page.name">
+              <p class="mt-5 font-bold mb-4 md:mb-0 inline-block  mx-auto" x-html="page.title"></p>
+              <div class="h-px w-full overflow-hidden relative -mt-px">
+                <div
+                  class="absolut top-0 left-0 bg-primary w-0 h-full group-hover:w-full duration-300 mx-auto opacity-50">
+                </div>
               </div>
-            </a>
-          </template>
+            </div>
+          </a>
+
+        </template>
       </div>
 
     </div>
@@ -271,7 +274,6 @@
     </div>
 
     <div class="bg-gray-900 text-center text-gray-300 p-4 ">
-      <p class="text-gray-400 text-xs">Visit and follow our social media:</p>
       <h2 class="icons mx-auto text-center text-gray-300 text-xl">
         <a href="https://twitter.com" target="_blank">
           <i class="px-2 cursor-pointer fa fa-twitter hover_scaleup duration-150"></i></a>
