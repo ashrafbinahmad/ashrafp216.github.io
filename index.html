@@ -94,65 +94,80 @@
 
     </div>
   </header>
-  <section id="aboutus" class=" z-0 align-middle relative min-h-700px bg-black flex flex-col">
-    <div id="more_info" class="flex flex-col">
-      <div class="container info-container mx-auto self-center p-4">
-        <div class="info-content ">
-          <div x-data="setup()">
-            <div class="flex flex-col gap-2 h-full place-content-center">
-              <div id="tab-items" class=" flex   info-menu  ">
-                <ul id="info-menu-list " class=" mx-auto  align-items-center text-center">
-                  <template x-for="(tab, index) in tabs.items" :key="index">
-                    <div class="inline-block  duration-500 cursor-pointer" @click="activeTab = index">
-                      <li class=" py-2 px-2 inline-flex flex-row text-center"
-                        :class="activeTab===index ? 'md:text-lighter text-lighter ' : ' text-light hover:text-gray-200 '" x-text="tab">
-                      </li>
-                      <div class=" h-1 duration-500 mx-auto"
-                        :class="activeTab===index ? 'w-full rounded-0  bg-lighter' : 'w-0 rounded-full bg-gray-900'">
+  <div id="aboutushead" class="h-8 -mt-8"></div>
+  <div x-data="{isVisible : false}">
+    <a :href="isVisible ? '#aboutushead' : '#_'">
+      <div id=".aboutushead" class="bg-black h-auto w-full text-gray-200 text-center cursor-pointer p-3 text-sm"
+        @click="isVisible = !isVisible">ABOUT US <br>
+        <i class="fa" :class="isVisible ? 'fa-angle-up' : 'fa-angle-down'"></i>
+      </div>
+    </a>
+
+    <div x-show="isVisible" x-transition>
+      <section id="aboutus" class=" z-0 align-middle relative min-h-700px bg-black flex flex-col">
+        <div id="more_info" class="flex flex-col">
+          <div class="container info-container mx-auto self-center p-4">
+            <div class="info-content ">
+              <div x-data="setup()">
+                <div class="flex flex-col gap-2 h-full place-content-center">
+                  <div id="tab-items" class=" flex   info-menu  ">
+                    <ul id="info-menu-list" class=" mx-auto  align-items-center text-center">
+                      <template x-for="(tab, index) in tabs.items" :key="index">
+                        <div class="inline-block  duration-500 cursor-pointer"
+                          @click="AboutusBtn_click(() => activeTab = index,event)">
+                          <li class=" py-2 px-2 inline-flex flex-row text-center"
+                            :class="activeTab===index ? 'md:text-lighter text-lighter ' : ' text-light hover:text-gray-200 '"
+                            x-text="tab">
+                          </li>
+                          <div class=" h-1 duration-500 mx-auto"
+                            :class="activeTab===index ? 'w-full rounded-0  bg-lighter' : 'w-0 rounded-full bg-gray-900'">
+                          </div>
+                        </div>
+
+                      </template>
+                    </ul>
+                  </div>
+                  <div id="tab-field"
+                    class=" text-sm  max-w-3xl  text-gray-400  md:text-lg text-sm leading-8 mx-auto md:mt-10 overflow-y-auto h-full   md:h-full py-7">
+
+                    <div id="info-about" x-show="activeTab===0" class="flex flex-col">
+                      <div class="flex flex-grow"></div>
+                      <div class="">
+                        <p x-html="tabs.about " class="md:mt-0 "></p>
+                      </div>
+                      <div class="flex flex-grow"></div>
+                    </div>
+
+                    <div id="info-Program_Structure" x-show="activeTab===1" class="">
+                      <div class="self-center">
+                        <p x-html="tabs.Program_Structure"></p>
                       </div>
                     </div>
 
-                  </template>
-                </ul>
+                    <div id="info-Student_life" x-show="activeTab===2" class="">
+                      <div class="self-center">
+                        <p x-html="tabs.Student_life"></p>
+                      </div>
+                    </div>
+
+                    <div id="info-Placement" x-show="activeTab===3" class="">
+                      <div class="self-center">
+                        <p x-html="tabs.Placement"></p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
               </div>
-              <div id="tab-field"
-                class=" text-sm  max-w-3xl  text-gray-400  md:text-lg text-sm leading-8 mx-auto md:mt-10 overflow-y-auto h-full   md:h-full py-7">
-
-                <div id="info-about" x-show="activeTab===0" class="flex flex-col">
-                  <div class="flex flex-grow"></div>
-                  <div class="">
-                    <p x-html="tabs.about " class="md:mt-0 "></p>
-                  </div>
-                  <div class="flex flex-grow"></div>
-                </div>
-
-                <div id="info-Program_Structure" x-show="activeTab===1" class="">
-                  <div class="self-center">
-                    <p x-html="tabs.Program_Structure"></p>
-                  </div>
-                </div>
-
-                <div id="info-Student_life" x-show="activeTab===2" class="">
-                  <div class="self-center">
-                    <p x-html="tabs.Student_life"></p>
-                  </div>
-                </div>
-
-                <div id="info-Placement" x-show="activeTab===3" class="">
-                  <div class="self-center">
-                    <p x-html="tabs.Placement"></p>
-                  </div>
-                </div>
-
-              </div>
-
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
-  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full " >
+  </div>
+
+  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl min-h-full ">
 
     <div class="flex md:flex-row flex-col container mx-auto">
       <div class=" md:w-1/2 w-full flex flex-col" data-aos="fade-up" data-aos-duration="1000">
@@ -341,9 +356,13 @@
   <footer id="footer" class="bg-gray-900 text-center ">
     <div class="flex self-c  enter h-56 content-center">
       <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
-        <form action="" name="subscription" id="subscribe_form" netlify>
+        <form action="" name="subscription" id="subscribe_form" netlify 
+        onclick="{
+          document.getElementById('email_input').value = 'Type your email'
+          document.getElementById('email_input').select()
+          }" onblur="document.getElementById('email_input').value = ''">
 
-          <div class="md:mb-6">
+          <div id="input_div" class="md:mb-6"  >
             <input type="text" id="email_input" name="email" class="
               border-0 
                     form-control
@@ -362,7 +381,8 @@
                     ease-in-out
                     m-0 text-center text-xs cursor-pointer focus:cursor-text 
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
-                  " placeholder="Type your email to subscribe to our news letter" required />
+                  " placeholder= "Subscribe to our news letter"
+            />
           </div>
 
           <div class="">

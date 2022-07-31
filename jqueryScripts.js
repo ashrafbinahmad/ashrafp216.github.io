@@ -10,6 +10,10 @@ $(".swiper-slide-next").click(()=> {
     swiper.slidePrev(speed, runCallbacks)
 })
 
+// $('#info-menu-list').click(()=> {
+    
+// })
+
 
 function submitForm(event) {
     event.preventDefault();
@@ -34,8 +38,10 @@ function submitForm(event) {
         .catch((error) => ShowMessage(error));
 }
 
-$('emailInput').click((event) => {
-    event.target.attr("placeholder", "Type a name (Lastname, Firstname)");
-})
+// $('emailInput').click((event) => {
+//     event.target.attr("placeholder", "Type a name (Lastname, Firstname)");
+// })
+
+
 
 
