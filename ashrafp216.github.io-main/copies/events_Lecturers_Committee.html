@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section id="events" class="relative  min-h-700px bg-black">
+    <div
+      class="next rounded-l-full flex invisible md:visible text-6xl w-7 h-full absolute text-primary hover:text-gray-300 hover:bg-primary right-0">
+      <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-right "></i></div>
+    </div>
+    <div
+      class="prev rounded-r-full flex invisible md:visible text-6xl w-7 h-full absolute text-primary hover:text-gray-300 hover:bg-primary left-0">
+      <div class="self-center mx-auto"><i class="fa fa-solid fa-angle-left "></i></div>
+    </div>
+    <div class="container mx-auto p-5 ">
+      <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center text-white">EVENTS
+      </h2>
+
+      <div class="event-items h-full w-full px-2 self-center my-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class=" " x-data="eventsData()">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <template x-for="(event, index) in events" :key="index">
+
+                <div class="swiper-slide rounded-xl ">
+                  <div
+                    class="event-item bg-white flex flex-col  pb-10 md:flex-row min-h-xl rounded-lg md:h-600px relative overflow-hidden p-2 md:p-5 border-2 my-5 flex-shrink-0 md:flex-grow "
+                    :style="//'border-color: gray '+ event.colors.border">
+                    <div class="flex h-full place-content-center bg-gray-900 rounded-lg z-10">
+                      <img class=" my-auto rounded-xl md:rounded-none w-full mt-1/2     md:mx-1 z-10 "
+                        :src="event.image" :alt="event.description">
+                    </div>
+
+                    <div
+                      class="flex flex-col mt-5 mx-auto w-full   md:mx-0  z-10 text-center md:text-left md:ml-10 h-full content-between">
+                      <h1 class=" text-xl font-bold z-10 md:text-3xl uppercase "
+                        :style="'color: '+ event.colors.title ;" x-html="event.name"></h1>
+                      <div class="flex flex-grow"></div>
+                      <div class="md:mb-20">
+                        <p class="text-xl" x-text="AutoPrepent_0(index + 1)"></p>
+                        <p class="text-white p-2 py-1 inline-flex mb-3 rounded text-sm" x-html="event.date"
+                          :style="'background-color: '+ event.colors.description ;"></p>
+                        <p x-html="event.description" :style="'color: '+ event.colors.description ;"></p>
+
+                      </div>
+                    </div>
+                    <div class="event-item-bg opacity-5 absolute left-0 top-0 w-full h-full -z-0"> </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="mt-5">
+
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          </template>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section id="Lecturers" class="z-0 relative bg-gray-100 hidden">
+    <hr />
+    <div class="container mx-auto align-center text-center p-5">
+      <h2 class="text-3xl mb-5 font-bold" data-aos="fade-up" data-aos-duration="1000">LECTURERS</h2>
+      <div class="flex flex -nowrap place-content-center align-center md:py-10  md:divide-x divide-white">
+
+        <div x-data="lecturers_data()">
+          <template x-for="(lecturer,index) in lecturers" :key="index">
+            <div class="flex flex-col flex-none inline-flex align-center text-center mb-8 p-5  px-10 max-w-sm"
+              data-aos="fade-up">
+              <img class="border-2 border-opacity-25 border-yellow-500 mx-auto rounded-full mx-auto mb-5 w-56 h-auto  "
+                :src="lecturer.image" />
+              <div class="flex mx-auto">
+                <h4 class="name text-lg font-bold text-yellow-900 inline-flex mr-2" x-text="lecturer.name">
+                </h4>
+                <small class="bg-yellow-800 rounded p-1 text-white inline-flex  " x-show="lecturer.HoD">HoD</small>
+              </div>
+
+              <p class="mt-5 text-center max-w-md text-sm" x-text="lecturer.description"></p>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+    <hr />
+  </section>
+  <section id="Dept_Committee " class="z-0 relative bg-gray-100 snap-start  h-screen h-screen-scalable hidden"
+    data-aos="fade-up" data-aos-duration="1000">
+    <hr />
+    <div class=" container mx-auto  p-5">
+      <div class="section-gap"></div>
+      <h2 class="text-3xl mb-5 font-bold text-center">Dept. COMMITTEE</h2>
+      <!-- #CORE COMMITTEE -->
+      <div
+        class="Dept_committee_container flex flex-row flex-shrink-0 overflow-x-auto md:mx-auto  text-center mx-auto  md:pt-10 rounded-lg place-items-center text-center align-items-center md:divide-x divide-white snap-x">
+        <div class="flex w-48 md:w-0 flex-shrink-0 "></div>
+
+        <div class="flex flex-shrink-0 flex-col align-center text-center mb-8 mt-10 p-2  w-80  snap-center">
+          <img class="flex flex-shrink-0 border-2 border-opacity-25 border-yellow-500 mx-8 rounded-full m-10 mb-5 "
+            src="images/Dept_Committee/mubashir.jpg" alt="" srcset="" />
+          <small class="flex rounded-lg bg-yellow-600 text-white mx-auto px-1">Kulliyya coordinator</small>
+          <h4 class="name text-lg font-bold text-yellow-900">Mubashir PE</h4>
+        </div>
+
+        <div class="flex flex-shrink-0 flex-col align-center text-center mb-8 mt-10 p-2  w-80  snap-center">
+          <img class="flex flex-shrink-0 border-2 border-opacity-25 border-yellow-500 mx-8 rounded-full m-10 mb-5 "
+            src="images/Dept_Committee/hashir.jpg" alt="" srcset="" />
+          <small class="flex rounded-lg bg-yellow-600 text-white mx-auto px-1">Chairman</small>
+          <h4 class="name text-lg font-bold text-yellow-900">Hashir Aluva</h4>
+        </div>
+
+        <div class="flex flex-shrink-0 flex-col align-center text-center mb-8 mt-10 p-2  w-80  snap-center">
+          <img class="flex flex-shrink-0 border-2 border-opacity-25 border-yellow-500 mx-8 rounded-full m-10 mb-5 "
+            src="images/Dept_Committee/sinan.jpg" alt="" srcset="" />
+          <small class="flex rounded-lg bg-yellow-600 text-white mx-auto px-1">Convenor</small>
+
+          <h4 class="name text-lg font-bold text-yellow-900">Sinan Muriyanal</h4>
+        </div>
+
+        <div class="flex flex-shrink-0 flex-col align-center text-center mb-8 mt-10 p-2  w-80  snap-center">
+          <img class="flex flex-shrink-0 border-2 border-opacity-25 border-yellow-500 mx-8 rounded-full m-10 mb-5 "
+            src="images/Dept_Committee/rizwi.jpg" alt="" srcset="" />
+          <small class="flex rounded-lg bg-yellow-600 text-white mx-auto px-1">Working convenor</small>
+          <h4 class="name text-lg font-bold text-yellow-900">Masood Rizwi</h4>
+        </div>
+
+        <div class="flex flex-shrink-0 flex-col align-center text-center mb-8 mt-10 p-2  w-80  snap-center">
+          <img class="flex flex-shrink-0 border-2 border-opacity-25 border-yellow-500 mx-8 rounded-full m-10 mb-5 "
+            src="images/Dept_Committee/rizwi.jpg" alt="" srcset="" />
+          <small class="flex rounded-lg bg-yellow-600 text-white mx-auto px-1">Treasurer</small>
+          <h4 class="name text-lg font-bold text-yellow-900">Salim</h4>
+        </div>
+      </div>
+
+
+
+
+      <button id="aboutbtn">about</button>
+
+
+    </div>
+
+
+
+  </section>
+
+</body>
+
+</html>

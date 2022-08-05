@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>IEF | DHIU</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="data.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="tailwind.css" /> -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Darker Grotesque" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="color_theme.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+</head>
+
+<body class="scroll-pt-0 ">
+  <nav id="nav" class="nav-normal z-50 duration-100 absolute top-0 w-full">
+    <div class="container mx-auto flex flex-shrink-0">
+      <div class="div_iefdhiu flex md:ml-0 md:mr-0 md:text-2xl text-lg px-5 text-gray-400">
+        <h1 class="mt-1  duration-0 serif">
+          IEF -
+          <a class="cursor-pointer hover:text-gray-300 serif" href="http://dhiu.in/" target="_blank">DHIU</a>
+        </h1>
+
+
+      </div>
+      <div class="flex flex-grow"></div>
+      <a href="#footer"
+      onclick="document.getElementById('email_input').select() ">
+        <div class="group rounded-sm border border-gray-500 p-1 .md:static flex  mt-2">
+          <div class="md:flex  md:w-auto  mx-2 hover:text-white cursor-pointer text-sm text-gray-300">
+            SUBSCRIBE
+          </div>
+      </a>
+    </div>
+    <!-- <div x-data="menuData()">
+        <div id="menu" class="flex" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
+          class="duration-0 mr-0 ml-auto text-lg  md:w-auto md:visible overflow-hidden ">
+          
+        </div>
+        <div class="visible md:invisible text-lg pt-1 pr-4  text-gray-300" @click="show_menu = !show_menu">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div> -->
+    </div>
+  </nav>
+  <header>
+    <div id="head" class="head text-white  relative top-0 z-0 w-full h-90vh .h-700px .sm:h-625px">
+      <div class="container mx-auto p-5 h-full flex flex-col ">
+        <div class="flex flex-grow"></div>
+        <div class="head_content ">
+          <h1 class="md:text-6xl text-4xl mb-10 text-center serif">
+            <p class="md:text-3xl text-2xl leading-tight serif">DEPARTMENT OF </p> ISLAMIC <br> ECONOMICS <br> AND <br>
+            FINANCE
+          </h1>
+          <h2 class="icons mx-auto text-center text-gray-400 text-sm">
+            <a href="https://twitter.com/ief_dhiu" target="_blank">
+              <i class="px-2 cursor-pointer fa fa-twitter "></i></a>
+            <a href="https://www.youtube.com/channel/UCJ2NnNipDCR50L_CRoLyMqg" target="_blank">
+              <i class="px-2 cursor-pointer fa fa-brands fa-youtube "></i></a>
+            <a href="https://www.facebook.com/ief.dhiu" target="_blank">
+              <i class="px-2 cursor-pointer fa fa-facebook-official "></i></a>
+            <a href="https://www.instagram.com/fin.aissance/" target="_blank">
+              <i class="px-3 cursor-pointer fa fa-instagram "></i></a>
+            <a href="https://dhiu.in" target="_blank">
+              <i class="px-2 cursor-pointer fa fa-globe"></i></a>
+
+          </h2>
+          <br>
+          <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300">DARUL HUDA ISLAMIC
+            UNIVERSITY</h2>
+        </div>
+        <div class="flex flex-grow"></div>
+
+
+      </div>
+
+
+    </div>
+  </header>
+  <div id="aboutushead" class="h-8 -mt-8"></div>
+  <div x-data="{isVisible : false}">
+    <a :href="isVisible ? '#aboutushead' : '#_'">
+      <div id=".aboutushead" class="bg-black h-auto w-full text-gray-200 text-center cursor-pointer p-3 text-sm"
+        @click="isVisible = !isVisible">ABOUT US <br>
+        <i class="fa" :class="isVisible ? 'fa-angle-up' : 'fa-angle-down'"></i>
+      </div>
+    </a>
+
+    <div x-show="isVisible" x-transition>
+      <section id="aboutus" class=" z-0 align-middle relative min-h-700px bg-black flex flex-col">
+        <div id="more_info" class="flex flex-col">
+          <div class="container info-container mx-auto self-center p-4">
+            <div class="info-content ">
+              <div x-data="setup()">
+                <div class="flex flex-col gap-2 h-full place-content-center">
+                  <div id="tab-items" class=" flex   info-menu  ">
+                    <ul id="info-menu-list" class=" mx-auto  align-items-center text-center">
+                      <template x-for="(tab, index) in tabs.items" :key="index">
+                        <div class="inline-block  duration-500 cursor-pointer" @click="activeTab = index">
+                          <li class=" py-2 px-2 inline-flex flex-row text-center"
+                            :class="activeTab===index ? 'md:text-lighter text-lighter ' : ' text-light hover:text-gray-200 '"
+                            x-text="tab">
+                          </li>
+                          <div class=" h-1 duration-500 mx-auto"
+                            :class="activeTab===index ? 'w-full rounded-0  bg-lighter' : 'w-0 rounded-full bg-gray-900'">
+                          </div>
+                        </div>
+
+                      </template>
+                    </ul>
+                  </div>
+                  <div id="tab-field"
+                    class=" text-sm  max-w-3xl  text-gray-400  md:text-lg text-sm leading-8 mx-auto md:mt-10 overflow-y-auto h-full   md:h-full py-7">
+
+                    <div id="info-about" x-show="activeTab===0" class="flex flex-col">
+                      <div class="flex flex-grow"></div>
+                      <div class="">
+                        <p x-html="tabs.about " class="md:mt-0 "></p>
+                      </div>
+                      <div class="flex flex-grow"></div>
+                    </div>
+
+                    <div id="info-Program_Structure" x-show="activeTab===1" class="">
+                      <div class="self-center">
+                        <p x-html="tabs.Program_Structure"></p>
+                      </div>
+                    </div>
+
+                    <div id="info-Student_life" x-show="activeTab===2" class="">
+                      <div class="self-center">
+                        <p x-html="tabs.Student_life"></p>
+                      </div>
+                    </div>
+
+                    <div id="info-Placement" x-show="activeTab===3" class="">
+                      <div class="self-center">
+                        <p x-html="tabs.Placement"></p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section id="message" class=" z-0 align-middle relative bg-white rounded-t-xl  ">
+    <!-- <hr class="border-4 border-gray-400 "> -->
+    <div class="flex md:flex-row flex-col container mx-auto">
+      <div class=" md:w-1/2 w-full flex flex-col" data-aos="fade-up" data-aos-duration="1000">
+        <div class="flex flex-grow"></div>
+        <div class="mx-auto">
+          <div class="mx-auto md:ml-0 md:h-20 my-5 h-16 w-auto text-8xl text-light text-center md:text-left">
+            <svg class="mx-auto md:ml-0 md:mr-auto" xmlns="http://www.w3.org/2000/svg" version="1.0" width="80pt"
+              height="80pt" viewBox="0 0 344.000000 344.000000" preserveAspectRatio="xMidYMid meet">
+
+              <g transform="translate(0.000000,344.000000) scale(0.100000,-0.100000)" stroke="none"
+                class="fill-current">
+                <path
+                  d="M1101 2640 c-207 -72 -387 -185 -542 -339 -150 -150 -220 -261 -278 -439 -64 -194 -85 -465 -47 -602 66 -241 232 -409 464 -472 115 -31 301 -30 402 1 168 52 301 153 383 292 69 118 104 280 92 424 -26 320 -193 536 -461 601 -95 23 -286 23 -379 0 -114 -29 -226 -89 -310 -168 -79 -74 -80 -73 -32 35 62 138 224 321 387 438 97 70 248 146 365 185 82 27 97 37 88 61 -7 19 -37 15 -132 -17z">
+                </path>
+                <path
+                  d="M2745 2636 c-279 -101 -510 -270 -672 -490 -113 -153 -176 -342 -204 -603 -38 -373 160 -678 496 -759 86 -21 278 -24 355 -5 30 7 97 33 148 57 166 80 288 233 339 424 26 95 23 298 -5 403 -64 234 -217 390 -438 443 -46 12 -110 17 -194 17 -106 -1 -139 -5 -215 -27 -116 -35 -199 -82 -282 -159 -75 -70 -76 -63 -13 63 51 102 113 181 223 286 148 142 324 247 515 309 88 29 95 34 86 59 -9 23 -37 19 -139 -18z">
+                </path>
+              </g>
+            </svg>
+          </div>
+          <p
+            class="p-5 md:p-0 md:py-5 max-w-sm md:max-w-auto self-center  text-center md:text-left md:text-5xl text-3xl font-bold serif text-gray-900">
+            The modern economic system is completely dominated by interest...
+          </p>
+          <p class="w-full text-lg text-center md:text-left py-5  ">
+            - Dr. Jafar Hudawi Kulathur <br>
+            <small class="bg-primary rounded p-1 text-white  text-xs">(Our Head of Dept.)</small>
+          </p>
+        </div>
+        <div class="flex flex-grow"></div>
+
+      </div>
+      <div class="md:w-1/2 flex w-56 mx-auto mb-10 md:mb-0" data-aos="fade-up" data-aos-duration="1000">
+        <img
+          class="mx-auto self-center md:h-1/2 h-1/3  w-auto   md:rounded-2xl rounded-full border-blue-300 border-4 border-opacity-50 box-border"
+          src="images/jafar_usthad.jpg" alt="" srcset="" />
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section id="links" class="relative md:bg-transparent .bg-gray-50 overflow-hidden">
+    <!-- <hr class="border-2 border-blue-100"> -->
+    <div class="container mx-auto pt-10 ">
+      <div x-data="data.pages"
+        class="text-center w-full flex flex-row flex-wrap .flex-col mx-auto justify-center duration-400 mb-5">
+        <template x-for="page in data.pages" :key="index">
+
+          <a :href="page.link" class="flex md:flex-col mx-auto md:mx-0" data-aos="fade-up" data-aos-duration="1000">
+            <div
+              class=" card group md:rounded-xl rounded border hover:border-2 filter drop-shadow-lg md:drop-shadow-0 md:hover:drop-shadow-lg   hover:bg-white bg-gray-100 .bg-white hover:border-2 border-black transform hover:scale-110 text-primary border-gray-400 w-48 flex flex-col md:p-5 p-3 px-0 md:m-2   my-3">
+              <img class="md:h-14 md:w-auto w-auto h-6 self-center opacity-80 group-hover:opacity-100" :src="page.image"
+                alt="page.name">
+              <p class="md:mt-5 font-bold inline-block  mx-auto " x-html="page.title"></p>
+              <div class="h-0.5 w-1/2 overflow-hidden relative -mt-px mx-auto">
+                <div
+                  class="absolut top-0 left-0 bg-primary w-0 h-full group-hover:w-full duration-300 mx-auto opacity-50">
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </template>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="footer" class="bg-gray-900 text-center ">
+    <div class="flex self-c  enter h-56 content-center">
+      <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
+        <form action="" name="subscription" id="subscribe_form" netlify onclick="{
+          document.getElementById('email_input').value = 'Type your email'
+          document.getElementById('email_input').select()
+          }" onblur="document.getElementById('email_input').value = ''">
+
+          <div id="input_div" class="md:mb-6">
+            <input type="text" id="email_input" name="email" class="
+              border-0 
+                    form-control
+                    block
+                    mx-1
+                    w-96
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-transparent
+                    bg-clip-padding
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0 text-center text-xs cursor-pointer focus:cursor-text 
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
+                  " placeholder="Subscribe to our news letter" />
+          </div>
+
+          <div class="">
+            <button id="submit" type="submit"
+              class="inline-block my-2 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out"
+              onclick="submitForm(event)">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="bg-gray-900 text-center text-gray-300 p-4 ">
+      <h2 class="icons mx-auto text-center text-gray-300 text-xl">
+        <a href="https://twitter.com" target="_blank">
+          <i class="px-2 cursor-pointer fa fa-twitter hover_scaleup duration-150"></i></a>
+        <a href="https://www.youtube.com/channel/UCJ2NnNipDCR50L_CRoLyMqg" target="_blank">
+          <i class="px-2 cursor-pointer fa fa-brands fa-youtube hover_scaleup duration-150"></i></a>
+        <a href="https://www.facebook.com/%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A-%D8%A8%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-100344009057312/"
+          target="_blank">
+          <i class="px-2 cursor-pointer fa fa-facebook-official hover_scaleup duration-150"></i></a>
+        <a href="https://www.instagram.com/fin.aissance/" target="_blank">
+          <i class="px-2 cursor-pointer fa fa-instagram hover_scaleup duration-150"></i></a>
+        <a href="https://dhiu.in" target="_blank">
+          <i class="px-2  cursor-pointer fa fa-globe hover_scaleup duration-150"></i></a>
+      </h2>
+    </div>
+    <div class="bg-black text-gray-300">
+      <p class="p-2 text-xs sm:text-2xs">Created by <a class="underline hover:text-gray-300"
+          href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
+      </p>
+    </div>
+
+  </footer>
+
+  <div id="messageSpace_parent"
+    class="fixed w-screen text-gray-100 z-50 h-auto -top-10 left-0 flex duration-400 text-center text-sm">
+    <div id="messageSpace" class="mx-auto bg-gray-800 border-2 border-black rounded-lg p-2 max-w-sm inline-block">
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+    integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Flip.min.js"
+    integrity="sha512-98oWClulhnGKlxmGJShhS651oP8eAaaLLcGF8b/Nx1BKv+BsMqfbnmLJ8OnXoqnaQd6hOo0WE/gcQ2QkeBLHIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
+  </script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+  <script src="scripts.js"></script>
+  <script src="jqueryScripts.js"></script>
+</body>
+
+</html>
