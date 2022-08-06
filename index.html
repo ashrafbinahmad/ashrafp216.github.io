@@ -36,15 +36,17 @@
 
       </div>
       <div class="flex flex-grow"></div>
-      <a href="#footer"
-      onclick="document.getElementById('email_input').select() ">
-        <div class="group rounded-sm border border-gray-500 p-1 .md:static flex  mt-2">
-          <div class="md:flex  md:w-auto  mx-2 hover:text-white cursor-pointer text-sm text-gray-300">
-            SUBSCRIBE
-          </div>
-      </a>
-    </div>
-    <!-- <div x-data="menuData()">
+      <div class=" group rounded-sm border border-gray-500 py-1 .md:static flex mt-2 hover:text-black
+        hover:bg-gray-100 cursor-pointer text-xs md:text-sm text-gray-300" onclick="{
+          document.getElementById('email_input').focus()
+          document.getElementById('email_input').value = 'Type your email'
+          document.getElementById('email_input').select()
+        } ">
+        <div class="md:flex  md:w-auto  mx-2">
+          SUBSCRIBE
+        </div>
+      </div>
+      <!-- <div x-data="menuData()">
         <div id="menu" class="flex" :class="(show_menu ? 'visible' : 'invisible md:visible ')"
           class="duration-0 mr-0 ml-auto text-lg  md:w-auto md:visible overflow-hidden ">
           
@@ -56,32 +58,33 @@
     </div>
   </nav>
   <header>
-    <div id="head" class="head text-white  relative top-0 z-0 w-full h-90vh .h-700px .sm:h-625px">
+    <div id="head" class="head text-white  relative top-0 z-0 w-full md:h-90vh sm.h-content">
       <div class="container mx-auto p-5 h-full flex flex-col ">
-        <div class="flex flex-grow"></div>
+        <div class="flex md:flex-grow md:h-auto h-28"></div>
         <div class="head_content ">
           <h1 class="md:text-6xl text-4xl mb-10 text-center serif">
             <p class="md:text-3xl text-2xl leading-tight serif">DEPARTMENT OF </p> ISLAMIC <br> ECONOMICS <br> AND <br>
             FINANCE
           </h1>
+          <div x-data=""></div>
           <h2 class="icons mx-auto text-center text-gray-400 text-sm">
             <a href="https://twitter.com/ief_dhiu" target="_blank">
-              <i class="px-2 cursor-pointer fa fa-twitter "></i></a>
+              <i class="px-1 hover:transform hover:scale-110 cursor-pointer fa fa-twitter "></i></a>
             <a href="https://www.youtube.com/channel/UCJ2NnNipDCR50L_CRoLyMqg" target="_blank">
-              <i class="px-2 cursor-pointer fa fa-brands fa-youtube "></i></a>
+              <i class="px-1 hover:transform hover:scale-110 cursor-pointer fa fa-brands fa-youtube "></i></a>
             <a href="https://www.facebook.com/ief.dhiu" target="_blank">
-              <i class="px-2 cursor-pointer fa fa-facebook-official "></i></a>
+              <i class="px-1 hover:transform hover:scale-110 cursor-pointer fa fa-facebook-official "></i></a>
             <a href="https://www.instagram.com/fin.aissance/" target="_blank">
-              <i class="px-3 cursor-pointer fa fa-instagram "></i></a>
+              <i class="px-1 hover:transform hover:scale-110 cursor-pointer fa fa-instagram "></i></a>
             <a href="https://dhiu.in" target="_blank">
-              <i class="px-2 cursor-pointer fa fa-globe"></i></a>
+              <i class="px-1 hover:transform hover:scale-110 cursor-pointer fa fa-globe"></i></a>
 
           </h2>
           <br>
           <h2 class="tracking-widest text-center md:text-sm text-xs text-gray-300">DARUL HUDA ISLAMIC
             UNIVERSITY</h2>
         </div>
-        <div class="flex flex-grow"></div>
+        <div class="flex md:flex-grow md:h-auto h-28"></div>
 
 
       </div>
@@ -214,9 +217,10 @@
         class="text-center w-full flex flex-row flex-wrap .flex-col mx-auto justify-center duration-400 mb-5">
         <template x-for="page in data.pages" :key="index">
 
-          <a :href="page.link" class="flex md:flex-col mx-auto md:mx-0" data-aos="fade-up" data-aos-duration="1000">
+          <a :href="page.local_link" class="flex md:flex-col mx-auto md:mx-0" data-aos="fade-up"
+            data-aos-duration="1000">
             <div
-              class=" card group md:rounded-xl rounded border hover:border-2 filter drop-shadow-lg md:drop-shadow-0 md:hover:drop-shadow-lg   hover:bg-white bg-gray-100 .bg-white hover:border-2 border-black transform hover:scale-110 text-primary border-gray-400 w-48 flex flex-col md:p-5 p-3 px-0 md:m-2   my-3">
+              class="card group md:rounded-xl rounded border hover:border-2 filter drop-shadow-lg md:drop-shadow-0 md:hover:drop-shadow-lg   hover:bg-white bg-gray-100 .bg-white hover:border-2 border-black transform hover:scale-110 text-primary border-gray-400 w-48 flex flex-col md:p-5 p-3 px-0 md:m-2   my-3">
               <img class="md:h-14 md:w-auto w-auto h-6 self-center opacity-80 group-hover:opacity-100" :src="page.image"
                 alt="page.name">
               <p class="md:mt-5 font-bold inline-block  mx-auto " x-html="page.title"></p>
@@ -248,7 +252,8 @@
                     form-control
                     block
                     mx-1
-                    w-96
+                    w-full
+                    md:w-96
                     px-3
                     py-1.5
                     text-base
@@ -300,6 +305,10 @@
     class="fixed w-screen text-gray-100 z-50 h-auto -top-10 left-0 flex duration-400 text-center text-sm">
     <div id="messageSpace" class="mx-auto bg-gray-800 border-2 border-black rounded-lg p-2 max-w-sm inline-block">
     </div>
+  </div>
+
+  <div id="btn_scrollup" class="fixed hidden bottom-5 right-5 md:bottom-10 md:right-10 p-2 rounded-full bg-gray-700 text-white text-center " onclick="window.scroll({top:0})">
+    <i class="fa fa-angle-up"></i>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"

@@ -1,9 +1,9 @@
 data = {
     pages: [
-        { name: 'About us',title:"About us  <i class='fa fa-angle-right'></i>", link: 'about_us.html', local_link: "about_us\\index.html", image: "images/about_us.png" },
-        { name: 'Events',title:"Events  <i class='fa fa-angle-right'></i>", link: 'events.html', local_link: "events\\index.html", image: "images/events.png" },
-        { name: 'Services',title:"Services  <i class='fa fa-angle-right'></i>", link: 'services.html', local_link: "services\\index.html", image: "images/services.png" },
-        { name: 'Archieves',title:"Archieves  <i class='fa fa-angle-right'></i>", link: 'archieves.html', local_link: "archieves\\index.html", image: "images/archieves.png" },
+        //{ name: 'About us',title:"About us  <i class='fa fa-angle-right'></i>", link: 'about_us', local_link: "about_us.html", image: "images/about_us.png" },
+        { name: 'Events', title: "Events  <i class='fa fa-angle-right'></i>", link: 'events', local_link: "events.html", image: "images/events.png" },
+        { name: 'Services', title: "Services  <i class='fa fa-angle-right'></i>", link: 'services', local_link: "services.html", image: "images/services.png" },
+        { name: 'Archieves', title: "Archieves  <i class='fa fa-angle-right'></i>", link: 'archieves', local_link: "archieves.html", image: "images/archieves.png" },
     ],
     menu_items: [
         { name: 'About us', link: '#aboutus' },
@@ -80,6 +80,14 @@ data = {
             image: "",
             role: ""
         },
-    ]
+    ],
+    social_media_links:
+    {
+        fb: "",
+        insta: "",
+        tw: "",
+        yt: "",
+    }
+
 
 };

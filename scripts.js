@@ -62,18 +62,15 @@ function SaveToDb(data, ref, action) {
     firebase.database().ref(ref).push(data).then(action);
 }
 
-var nav = document.getElementById('nav');
+var btn_scrollup = document.getElementById('btn_scrollup');
 
 window.addEventListener('scroll', function (event) {
     event.preventDefault();
 
-    if (window.scrollY <= 150) {
-        nav.classList.add('nav-normal')
-        nav.classList.remove('nav-scrolled')
+    if (window.scrollY <= 500) {
+        btn_scrollup.classList.add('hidden')
     } else {
-        nav.classList.add('nav-scrolled')
-        nav.classList.remove('nav-normal')
-
+        btn_scrollup.classList.remove('hidden')
     }
 });
 
@@ -135,4 +132,6 @@ function ShowMessage(message) {
         messageSpace_parent.style.top = '-5rem'
     }, 5000)
 }
+
+
 

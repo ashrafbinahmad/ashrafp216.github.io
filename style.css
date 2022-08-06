@@ -38,9 +38,6 @@ body {
   width: 100%;
 }
 
-.h-90vh {
-  height: 90vh;
-}
 
 div.head {
   background-image: url('images/dh.jpg');
@@ -289,6 +286,10 @@ nav {
 
   }
 
+  .md\:h-90vh {
+    height: 90vh;
+  }
+
   .swiper-slide-next .event-item,
   .swiper-slide-prev .event-item {
     border: 0;
@@ -361,5 +362,8 @@ nav {
 
   .sm\:text-2xs {
     font-size: 0.6rem;
+  }
+  .sm\:h-content {
+    height: fit-content;
   }
 }
