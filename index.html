@@ -27,10 +27,10 @@
 <body class="scroll-pt-0 ">
   <nav id="nav" class="nav-normal z-50 duration-100 absolute top-0 w-full">
     <div class="container mx-auto flex flex-shrink-0">
-      <div class="div_iefdhiu flex md:ml-0 md:mr-0 md:text-2xl text-lg px-5  text-gray-300">
-        <h1 class="mt-1  duration-0">
-          IEF |
-          <a class="cursor-pointer hover:text-gray-300" href="http://dhiu.in/" target="_blank">DHIU</a>
+      <div class="div_iefdhiu flex md:ml-0 md:mr-0 md:text-2xl text-lg px-5 text-gray-400">
+        <h1 class="mt-1  duration-0 serif">
+          IEF -
+          <a class="cursor-pointer hover:text-gray-300 serif" href="http://dhiu.in/" target="_blank">DHIU</a>
         </h1>
 
 
@@ -38,8 +38,8 @@
       <div class="flex flex-grow"></div>
       <a href="#footer"
       onclick="document.getElementById('email_input').select() ">
-        <div class=" rounded-sm  bg-primary p-1 md:static flex  mt-2">
-          <div class="md:flex  md:w-auto  mx-2 hover:text-white text-gray-300 cursor-pointer text-sm">
+        <div class="group rounded-sm border border-gray-500 p-1 .md:static flex  mt-2">
+          <div class="md:flex  md:w-auto  mx-2 hover:text-white cursor-pointer text-sm text-gray-300">
             SUBSCRIBE
           </div>
       </a>
@@ -216,11 +216,11 @@
 
           <a :href="page.link" class="flex md:flex-col mx-auto md:mx-0" data-aos="fade-up" data-aos-duration="1000">
             <div
-              class=" card group rounded-xl filter drop-shadow-lg md:drop-shadow-none hover:drop-shadow-lg   hover:bg-gray-200 bg-gray-100 .bg-white hover:border-2 border-black transform hover:scale-110 text-primary border-gray-400 w-48 flex flex-col md:p-5 p-3 px-0 md:m-2   my-3">
-              <img class="md:h-14 md:w-auto w-6 h-auto self-center opacity-80 group-hover:opacity-100" :src="page.image"
+              class=" card group md:rounded-xl rounded border hover:border-2 filter drop-shadow-lg md:drop-shadow-0 md:hover:drop-shadow-lg   hover:bg-white bg-gray-100 .bg-white hover:border-2 border-black transform hover:scale-110 text-primary border-gray-400 w-48 flex flex-col md:p-5 p-3 px-0 md:m-2   my-3">
+              <img class="md:h-14 md:w-auto w-auto h-6 self-center opacity-80 group-hover:opacity-100" :src="page.image"
                 alt="page.name">
-              <p class="mt-5 font-bold mb-4 md:mb-0 inline-block  mx-auto" x-html="page.title"></p>
-              <div class="h-px w-full overflow-hidden relative -mt-px">
+              <p class="md:mt-5 font-bold inline-block  mx-auto " x-html="page.title"></p>
+              <div class="h-0.5 w-1/2 overflow-hidden relative -mt-px mx-auto">
                 <div
                   class="absolut top-0 left-0 bg-primary w-0 h-full group-hover:w-full duration-300 mx-auto opacity-50">
                 </div>
