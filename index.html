@@ -42,18 +42,18 @@
           document.getElementById('email_input').value = 'Type your email'
           document.getElementById('email_input').select()
         } ">
-        <div class="md:flex  md:w-auto  mx-2 text-xs md:text-sm">
+        <div class=".md:flex  md:w-auto  mx-2 text-xs md:text-sm">
           SUBSCRIBE
         </div>
       </div>
-      <div x-data="{pages:data.pages, shown : true   }">
+      <div x-data="{pages : data.pages, shown : false}">
         <div class="px-3 my-auto text-gray-400 hover:text-gray-200 cursor-pointer " @click="shown = !shown">
           <i class="fa fa-bars"></i>
         </div>
         <div x-show="shown" x-transition id="menu_area"
           class="absolute top-10 right-3 rounded bg-gray-800 text-gray-100 p-2 border-px border-white">
           <ul class="select-none text-sm text-center ">
-            <template x-for="page in pages">
+            <template x-for="page in data.pages">
               <a :href="page.local_link" @click="shown = !shown" class="">
                 <li
                   class="px-4 py-1 hover:underline text-gray-300 hover:text-gray-100 hover:bg-gray-900 rounded duration-150"
@@ -198,7 +198,7 @@
             </svg>
           </div>
           <p
-            class="p-5 md:p-0 md:py-5 max-w-sm md:max-w-auto self-center  text-center md:text-left md:text-5xl text-3xl font-bold serif text-gray-900">
+            class="p-5 md:p-0 md:py-5 max-w-sm md:max-w-auto self-center  text-center md:text-left md:text-5xl text-3xl font-bold serif text-gray-700">
             The modern economic system is completely dominated by interest...
           </p>
           <p class="w-full text-lg text-center md:text-left py-5  ">
@@ -225,20 +225,21 @@
   <section id="links" class="relative md:bg-transparent .bg-gray-50 overflow-hidden">
     <!-- <hr class="border-2 border-blue-100"> -->
     <div class="container mx-auto pt-10 ">
-      <div x-data="data.pages"
+      <div x-data=""
         class="text-center w-full flex flex-row flex-wrap .flex-col mx-auto justify-center duration-400 mb-5">
         <template x-for="page in data.pages" :key="index">
 
           <a :href="page.local_link" class="flex md:flex-col mx-auto md:mx-0" data-aos="fade-up"
             data-aos-duration="1000">
             <div
-              class="card group md:rounded-xl rounded border hover:border-2 filter drop-shadow-lg md:drop-shadow-0 md:hover:drop-shadow-lg   hover:bg-white bg-gray-100 .bg-white hover:border-2 border-black transform hover:scale-110 text-primary border-gray-400 w-48 flex flex-col md:p-5 p-3 px-0 md:m-2   my-3">
-              <img class="md:h-14 md:w-auto w-auto h-6 self-center opacity-80 group-hover:opacity-100" :src="page.image"
-                alt="page.name">
-              <p class="md:mt-5 font-bold inline-block  mx-auto " x-html="page.title"></p>
+              class="card group md:rounded-xl rounded  filter drop-shadow-lg md:drop-shadow-0 md:hover:drop-shadow-lg   hover:bg-white bg-gradient-to-br from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 bg-white  transform hover:scale-110 text-gray-200 border-2 border-blue-200 w-48 flex flex-col md:p-5 p-3 px-0 md:m-2   my-3">
+              <img
+                class=".filter .invert md:h-14 md:w-auto w-auto h-6 self-center md:opacity-80 group-hover:opacity-100"
+                :src="page.image" alt="page.name">
+              <p class="md:mt-5 font-thin inline-block  mx-auto " x-html="page.title"></p>
               <div class="h-0.5 w-1/2 overflow-hidden relative -mt-px mx-auto">
                 <div
-                  class="absolut top-0 left-0 bg-primary w-0 h-full group-hover:w-full duration-300 mx-auto opacity-50">
+                  class="absolut top-0 left-0 bg-gray-100 w-0 h-full group-hover:w-full duration-300 mx-auto opacity-50">
                 </div>
               </div>
             </div>
@@ -289,9 +290,9 @@
         </form>
       </div>
     </div>
-    <div x-data="{pages : data.pages}" class="flex text-center ">
+    <div x-data="" class="flex text-center ">
       <ul class="mx-auto flex">
-        <template x-for="page in pages">
+        <template x-for="page in data.pages">
           <a :href="page.local_link">
             <li class="text-gray-400 hover:text-gray-200  text-xs px-3 " x-text="page.name"></li>
           </a>

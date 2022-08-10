@@ -118,11 +118,20 @@ function lecturers_data() {
 }
 
 function eventsData() {
-    // console.log(data.events)
     return {
         events: data.events
     }
 }
+
+// function pagesData() {
+//     let pages = data.pages
+//     pages.unshift({ name: 'Home', title: "Home  <i class='fa fa-angle-right'></i>", link: '/', local_link: "./index.html", image: "images/__.png" },
+//     )
+//     return {
+//         _pages : pages ,
+//         shown : true
+//     }
+// }
 function ShowMessage(message) {
     let messageSpace = document.getElementById('messageSpace')
     let messageSpace_parent = document.getElementById('messageSpace_parent')

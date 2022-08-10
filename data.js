@@ -1,8 +1,13 @@
 data = {
     pages: [
-        { name: 'Events', title: "Events  <i class='fa fa-angle-right'></i>", link: 'events', local_link: "events.html", image: "images/events.png" },
-        { name: 'Services', title: "Services  <i class='fa fa-angle-right'></i>", link: 'services', local_link: "services.html", image: "images/services.png" },
-        { name: 'Archieves', title: "Archieves  <i class='fa fa-angle-right'></i>", link: 'archieves', local_link: "archieves.html", image: "images/archieves.png" },
+        { name: 'Events', title: "Events  <i class='fa fa-angle-right'></i>", link: 'events', local_link: "events.html", image: "images/events_w.png" },
+        { name: 'Services', title: "Services  <i class='fa fa-angle-right'></i>", link: 'services', local_link: "services.html", image: "images/services_w.png" },
+        { name: 'Archieves', title: "Archieves  <i class='fa fa-angle-right'></i>", link: 'archieves', local_link: "archieves.html", image: "images/archieves_w.png" },
+    ],
+    services : [
+        { name: 'Service1', title: "Service1  <i class='fa fa-angle-right'></i>", link: 'events', local_link: "events.html", image: "images/events_w.png" },
+        { name: 'Service2', title: "Service2  <i class='fa fa-angle-right'></i>", link: 'services', local_link: "services.html", image: "images/services_w.png" },
+        { name: 'Service3', title: "Service3  <i class='fa fa-angle-right'></i>", link: 'archieves', local_link: "archieves.html", image: "images/archieves_w.png" },
     ],
     menu_items: [
         { name: 'About us', link: '#aboutus' },

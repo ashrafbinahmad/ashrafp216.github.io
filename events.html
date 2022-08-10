@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <title>IEF | DHIU</title>
+    <script src="data.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="data.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
         integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,22 +19,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="color_theme.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
 
 
 </head>
 
 <body class="scroll-pt-0 ">
     <nav id="nav" class="nav-normal z-50 duration-100 absolute top-0 w-full">
-        <div class="container mx-auto flex flex-shrink-0">
-            <!-- <div class="div_iefdhiu flex md:ml-0 md:mr-0 md:text-2xl text-lg px-5 text-gray-400">
-                <h1 class="mt-1  duration-0 serif">
-                    IEF -
-                    <a class="cursor-pointer hover:text-gray-300 serif" href="http://dhiu.in/" target="_blank">DHIU</a>
-                </h1>
-            </div> -->
+        <div class="container mx-auto flex flex-shrink-0 relative">
+
             <div class="flex flex-grow"></div>
-            <div class=" group rounded-sm border border-gray-500 py-1 .md:static flex mt-2 hover:text-black
+            <!-- <div class=" group rounded-sm border border-gray-500 py-1 .md:static flex mt-2 hover:text-black
             hover:bg-gray-100 cursor-pointer text-xs md:text-sm text-gray-300" onclick="{
               document.getElementById('email_input').focus()
               document.getElementById('email_input').value = 'Type your email'
@@ -43,34 +38,90 @@
                 <div class="md:flex  md:w-auto  mx-2">
                     SUBSCRIBE
                 </div>
-            </div>
+            </div> -->
+            <div x-data="{pages:data.pages, shown : false   }">
+                <div class="px-3 my-10 text-gray-400 hover:text-gray-200 cursor-pointer " @click="shown = !shown">
+                  <i class="fa fa-bars"></i>
+                </div>
+                <div x-show="shown" x-transition id="menu_area"
+                  class="absolute top-24 right-3 rounded bg-gray-800 text-gray-100 p-2 border-px border-white">
+                  <ul class="select-none text-sm text-center ">
+                    <template x-for="page in pages">
+                      <a :href="page.local_link" @click="shown = !shown" class="">
+                        <li
+                          class="px-4 py-1 hover:underline text-gray-300 hover:text-gray-100 hover:bg-gray-900 rounded duration-150"
+                          x-text="page.name + ' >'"></li>
+                      </a>
+        
+                    </template>
+                  </ul>
+        
+                </div>
+              </div>
         </div>
     </nav>
     <header class="">
         <div id="head" class="head text-white relative top-0 z-0 w-full h-40 ">
             <div class="container mx-auto flex flex-col w-full h-full">
-                <h1 class="md:text-2xl text-xl .mb-10 text-gray-200 serif p-5">
+                <h1 class="md:text-2xl text-xl .mb-10 text-gray-200 serif p-5 mt-6">
                     <p class="md:text-sm text-xs leading-tight serif">DEPARTMENT OF </p> ISLAMIC ECONOMICS AND <br>
                     FINANCE
-                  </h1>
-                <div class="map bg-gray-900 text-white opacity-80 text-xs p-2"> <a href="index.html">Home</a> > <a
-                        href="events.html">Events</a> </div>
+                </h1>
 
             </div>
         </div>
     </header>
+    <div class="map bg-gray-800">
+        <div class="container mx-auto text-white opacity-80 text-xs p-2"> <a href="index.html">Home</a> <i
+                class="fa fa-angle-right"></i> <a href="events.html">Events</a> </div>
 
+    </div>
+    <section id="content" class="bg-gray-200">
+        <div class="container mx-auto p-5">
+            <h2 class="text-3xl mb-0 md:mb-5 font-bold  text-center text-black">EVENTS
+            </h2>
+            <p class="text-center max-w-lg py-4 mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="event-items  h-full w-full px-2 self-center my-5" data-aos="fade-up" data-aos-duration="1000">
+                <div x-data="eventsData()" class="flex flex-row flex-wrap">
+                    <template x-for="(event, index) in events" :key="index">
+                        <div class="event-item relative bg-white flex flex-col md:flex-row pb-10  min-h-sm rounded-lg md:w-1/2 w-full  overflow-hidden p-2 md:p-5 border-2 my-5 flex-shrink-0 "
+                            :style="//'border-color: gray '+ event.colors.border">
+                            <div class="flex h-full place-content-center bg-gray-900 rounded-lg z-10">
+                                <img class=" my-auto rounded-xl md:rounded-none w-full mt-1/2     md:mx-1 z-10 "
+                                    :src="event.image" :alt="event.description">
+                            </div>
+                            <div
+                                class="flex flex-col mt-5 mx-auto w-full   md:mx-0  z-10 text-center md:text-left md:ml-10 h-full content-between">
+                                <h1 class=" text-xl font-bold z-10 md:text-3xl uppercase "
+                                    :style="'color: '+ event.colors.title ;" x-html="event.name"></h1>
+                                <div class="flex flex-grow"></div>
+                                <div class="md:mb-20">
+                                    <p class="text-xl" x-text="AutoPrepent_0(index + 1)"></p>
+                                    <p class="text-white p-2 py-1 inline-flex mb-3 rounded text-sm" x-html="event.date"
+                                        :style="'background-color: '+ event.colors.description ;"></p>
+                                    <p x-html="event.description" :style="'color: '+ event.colors.description ;">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-item-bg opacity-5 absolute left-0 top-0 w-full h-full -z-0"> </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="text-center md:text-sm text-xs p-5 ">MORE EVENTS SOON... SUBSCRIBE TO OUR NEWS LETTER TO GET NOTIFICATION.</div>
+    </section>
 
     <footer id="footer" class="bg-gray-900 text-center ">
         <div class="flex self-c  enter h-56 content-center">
-            <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
-                <form action="" name="subscription" id="subscribe_form" netlify onclick="{
+          <div class="flex flex-shrink-0 flex-col self-center mx-auto text-center">
+            <form action="" name="subscription" id="subscribe_form" netlify onclick="{
               document.getElementById('email_input').value = 'Type your email'
               document.getElementById('email_input').select()
               }" onblur="document.getElementById('email_input').value = ''">
-
-                    <div id="input_div" class="md:mb-6">
-                        <input type="text" id="email_input" name="email" class="
+    
+              <div id="input_div" class="md:mb-6">
+                <input type="text" id="email_input" name="email" class="
                   border-0 
                         form-control
                         block
@@ -90,57 +141,60 @@
                         m-0 text-center text-xs cursor-pointer focus:cursor-text 
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 outline-none
                       " placeholder="Subscribe to our news letter" />
-                    </div>
-
-                    <div class="">
-                        <button id="submit" type="submit"
-                            class="inline-block my-2 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out"
-                            onclick="submitForm(event)">Subscribe</button>
-                    </div>
-                </form>
-            </div>
+              </div>
+    
+              <div class="">
+                <button id="submit" type="submit"
+                  class="inline-block my-2 px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out"
+                  onclick="submitForm(event)">Subscribe</button>
+              </div>
+            </form>
+          </div>
         </div>
-
+        <div x-data="" class="flex text-center ">
+          <ul class="mx-auto flex">
+            <template x-for="page in data.pages">
+              <a :href="page.local_link">
+                <li class="text-gray-400 hover:text-gray-200  text-xs px-3 " x-text="page.name"></li>
+              </a>
+            </template>
+    
+          </ul>
+        </div>
         <div class="bg-gray-900 text-center text-gray-300 p-4 ">
-            <h2 class="icons mx-auto text-center text-gray-300 text-xl">
-                <a href="https://twitter.com" target="_blank">
-                    <i class="px-2 cursor-pointer fa fa-twitter hover_scaleup duration-150"></i></a>
-                <a href="https://www.youtube.com/channel/UCJ2NnNipDCR50L_CRoLyMqg" target="_blank">
-                    <i class="px-2 cursor-pointer fa fa-brands fa-youtube hover_scaleup duration-150"></i></a>
-                <a href="https://www.facebook.com/%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A-%D8%A8%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-100344009057312/"
-                    target="_blank">
-                    <i class="px-2 cursor-pointer fa fa-facebook-official hover_scaleup duration-150"></i></a>
-                <a href="https://www.instagram.com/fin.aissance/" target="_blank">
-                    <i class="px-2 cursor-pointer fa fa-instagram hover_scaleup duration-150"></i></a>
-                <a href="https://dhiu.in" target="_blank">
-                    <i class="px-2  cursor-pointer fa fa-globe hover_scaleup duration-150"></i></a>
-            </h2>
+          <h2 class="icons mx-auto text-center text-gray-300 text-xl">
+            <a href="https://twitter.com" target="_blank">
+              <i class="px-2 cursor-pointer fa fa-twitter hover_scaleup duration-150"></i></a>
+            <a href="https://www.youtube.com/channel/UCJ2NnNipDCR50L_CRoLyMqg" target="_blank">
+              <i class="px-2 cursor-pointer fa fa-brands fa-youtube hover_scaleup duration-150"></i></a>
+            <a href="https://www.facebook.com/%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A-%D8%A8%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D8%AF%D9%89-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-100344009057312/"
+              target="_blank">
+              <i class="px-2 cursor-pointer fa fa-facebook-official hover_scaleup duration-150"></i></a>
+            <a href="https://www.instagram.com/fin.aissance/" target="_blank">
+              <i class="px-2 cursor-pointer fa fa-instagram hover_scaleup duration-150"></i></a>
+            <a href="https://dhiu.in" target="_blank">
+              <i class="px-2  cursor-pointer fa fa-globe hover_scaleup duration-150"></i></a>
+          </h2>
         </div>
         <div class="bg-black text-gray-300">
-            <p class="p-2 text-xs sm:text-2xs">Created by <a class="underline hover:text-gray-300"
-                    href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
-            </p>
+          <p class="p-2 text-xs sm:text-2xs">Created by <a class="underline hover:text-gray-300"
+              href="https://linktr.ee/ashraf_bin_ahmad" target="_blank">paperboat</a>
+          </p>
         </div>
-
-    </footer>
-
-    <div id="messageSpace_parent"
+    
+      </footer>
+    
+      <div id="messageSpace_parent"
         class="fixed w-screen text-gray-100 z-50 h-auto -top-10 left-0 flex duration-400 text-center text-sm">
         <div id="messageSpace" class="mx-auto bg-gray-800 border-2 border-black rounded-lg p-2 max-w-sm inline-block">
         </div>
-    </div>
-
-    <div id="btn_scrollup"
-        class="fixed hidden bottom-5 right-5 md:bottom-10 md:right-10 p-2 rounded-full bg-gray-700 text-white text-center "
+      </div>
+    
+      <div id="btn_scrollup"
+        class="fixed hidden cursor-pointer  bottom-5 right-5 md:bottom-10 md:right-10 p-2 rounded-full bg-gray-700 text-white text-center "
         onclick="window.scroll({top:0})">
         <i class="fa fa-angle-up"></i>
-    </div>
-
-    <div id="messageSpace_parent"
-        class="fixed w-screen text-gray-100 z-50 h-auto -top-10 left-0 flex duration-400 text-center text-sm">
-        <div id="messageSpace" class="mx-auto bg-gray-800 border-2 border-black rounded-lg p-2 max-w-sm inline-block">
-        </div>
-    </div>
+      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
         integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
