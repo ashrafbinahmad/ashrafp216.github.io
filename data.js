@@ -1,6 +1,5 @@
 data = {
     pages: [
-        //{ name: 'About us',title:"About us  <i class='fa fa-angle-right'></i>", link: 'about_us', local_link: "about_us.html", image: "images/about_us.png" },
         { name: 'Events', title: "Events  <i class='fa fa-angle-right'></i>", link: 'events', local_link: "events.html", image: "images/events.png" },
         { name: 'Services', title: "Services  <i class='fa fa-angle-right'></i>", link: 'services', local_link: "services.html", image: "images/services.png" },
         { name: 'Archieves', title: "Archieves  <i class='fa fa-angle-right'></i>", link: 'archieves', local_link: "archieves.html", image: "images/archieves.png" },
